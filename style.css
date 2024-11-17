@@ -140,12 +140,17 @@ img {
 h1 {
   writing-mode: vertical-rl;
   position: absolute;
-  top: 50px;
-  left: 300px;
+  bottom: 60px;
+  left: 35px;
+  color: #fff;
+  padding: 20px;
 }
 .main {
   position: relative;
 }
 .main img {
   border-radius: 8px;
+  object-fit: cover;
+  width: 1130px;
+  height: 280px;
 }
