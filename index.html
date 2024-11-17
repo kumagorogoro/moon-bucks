@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,26 +8,68 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <header>
-      <!-- ハンバーガーメニューボタン -->
-      <div class="hamburger" id="hamburger">
-        <div id="bar1"></div>
-        <div id="bar2"></div>
-        <div id="bar3"></div>
-        <div id="bar4">menu</div>
-      </div>
+    <div class="wrapper" id="top">
+      <header>
+        <!-- ハンバーガーメニューボタン -->
+        <div class="hamburger" id="hamburger">
+          <div id="bar1"></div>
+          <div id="bar2"></div>
+          <div id="bar3"></div>
+          <div id="bar4">menu</div>
+        </div>
 
-      <!-- ナビゲーションメニュー -->
-      <nav class="menu" id="menu">
-        <span id="close" class="close">&times;</span>
-        <ul>
-          <li><a href="#">information</a></li>
-          <li><a href="#">food</a></li>
-          <li><a href="#">store</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main></main>
-    <footer></footer>
+        <!-- ナビゲーションメニュー -->
+        <nav class="menu" id="menu">
+          <span id="close" class="close">&times;</span>
+          <ul>
+            <li><a href="#top">top</a></li>
+            <li><a href="#info">information</a></li>
+            <li><a href="#food">food</a></li>
+            <li><a href="#shop">shop</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="main">
+          <img src="cafe.jpg" alt="" />
+          <h1>ほっとする<br />ひととき<br />カフェ</h1>
+        </div>
+        <section id="info">
+          <div>
+            <h2>Information</h2>
+          </div>
+          <div>
+            <p>2024.11.1<span>クリスマスフェア開催決定</span></p>
+            <p>2024.10.3<span>クリスマスお持ち帰り用ケーキ予約開始</span></p>
+            <p>2024.9.25<span>年末年始の営業日のお知らせ</span></p>
+          </div>
+        </section>
+        <section id="food">
+          <div>
+            <h2>Food</h2>
+          </div>
+          <div>
+            <img src="pizza.jpg" alt="当店特製マルゲリータ" />
+            <p>マルゲリータピザ<br />1,800円</p>
+            <p>チーズハンバーグ<br />ポテト・ドリンクセット<br />1,800円</p>
+            <img src="hamburger.jpg" alt="チーズハンバーガーセット" />
+            <img src="rollcake.jpg" alt="フルーツロールケーキ" />
+            <p>季節のフルーツロールケーキ<br />ドリンク付き<br />1,100円</p>
+            <img src="cheesecake.jpg" alt="チーズケーキ" />
+            <p>チーズケーキ<br />ドリンク付き<br />1,000円</p>
+          </div>
+        </section>
+        <section id="shop">
+          <div>
+            <h2>Shop</h2>
+          </div>
+          <p>営業時間<span>11:00〜17:00</span></p>
+          <p>定休日<span>火曜日</span></p>
+          <p>住所<span>札幌市南区⚪︎⚪︎町△△丁目</span></p>
+          <p>駐車場<span>店舗前に５台駐車スペースあり。</span></p>
+        </section>
+      </main>
+      <footer></footer>
+    </div>
   </body>
 </html>

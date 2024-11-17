@@ -3,17 +3,30 @@
   padding: 0;
   box-sizing: border-box;
 }
-header {
-  position: relative;
+body {
+  background: linear-gradient(#41342b, #9e4133, #41342b);
 }
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.wrapper {
+  width: 1130px;
+  margin: 0 auto;
+}
+/* hamburger */
 .hamburger {
+  z-index: 999;
   width: 60px;
   height: 60px;
-  position: absolute;
+  position: fixed;
   top: 0px;
-  right: 0px;
-  border: 2px solid black;
+  left: 0px;
+  border: 2px solid rgb(255, 255, 255);
   display: flex;
+  border-radius: 8px;
+  margin: 5px;
 }
 .hamburger {
   cursor: pointer;
@@ -21,29 +34,29 @@ header {
 #bar1 {
   width: 40px;
   height: 4px;
-  background-color: #333;
+  background-color: rgb(255, 255, 255);
   margin: 5px 0;
   position: absolute;
   top: 5px;
-  left: 9px;
+  left: 8px;
 }
 #bar2 {
   width: 40px;
   height: 4px;
-  background-color: #333;
+  background-color: rgb(255, 255, 255);
   margin: 5px 0;
   position: absolute;
   top: 15px;
-  left: 9px;
+  left: 8px;
 }
 #bar3 {
   width: 40px;
   height: 4px;
-  background-color: #333;
+  background-color: rgb(255, 255, 255);
   margin: 5px 0;
   position: absolute;
   top: 25px;
-  left: 9px;
+  left: 8px;
 }
 #bar4 {
   width: 40px;
@@ -51,13 +64,18 @@ header {
   margin: 5px 0;
   position: absolute;
   top: 28px;
-  left: 7px;
+  left: 6px;
+  color: rgb(255, 255, 255);
 }
 .menu {
   display: none;
   justify-content: center;
   background-color: #333;
   padding: 10px 0;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .menu ul {
@@ -99,8 +117,6 @@ header {
 }
 .menu {
   position: fixed;
-  top: 0px;
-  right: 0;
   width: 10%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -117,4 +133,19 @@ header {
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
+}
+/* header */
+
+/* main */
+h1 {
+  writing-mode: vertical-rl;
+  position: absolute;
+  top: 50px;
+  left: 300px;
+}
+.main {
+  position: relative;
+}
+.main img {
+  border-radius: 8px;
 }

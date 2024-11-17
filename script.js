@@ -5,6 +5,7 @@ const bar1 = document.querySelector("#bar1");
 const bar2 = document.querySelector("#bar2");
 const bar3 = document.querySelector("#bar3");
 const bar4 = document.querySelector("#bar4");
+const links = document.querySelectorAll("#menu ul li a");
 
 hamburger.addEventListener("click", function (e) {
   console.log(e);
@@ -25,4 +26,10 @@ window.addEventListener("click", function (e) {
     e.target !== bar4
   )
     menu.style.display = "none";
+});
+
+links.forEach(function (link) {
+  link.addEventListener("click", function () {
+    menu.style.display = "none";
+  });
 });
