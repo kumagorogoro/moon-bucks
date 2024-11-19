@@ -147,14 +147,13 @@ h2 {
   position: relative;
 }
 .border {
-  width: 300px;
-  margin-bottom: 30px;
   border-bottom: 1px dashed white;
 }
 #info .border {
   position: absolute;
   top: 0%;
   left: 2%;
+  width: 300px;
 }
 .right-container {
   width: 700px;
@@ -211,11 +210,13 @@ button {
   position: absolute;
   top: 0%;
   left: 2%;
+  width: 300px;
 }
 /* food */
 .food {
   width: 1130px;
   margin: auto;
+  margin-top: 50px;
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -229,7 +230,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 180px auto;
+  margin-top: 210px;
+  margin-left: 100px;
 }
 .square :nth-of-type(1) {
   grid-column: 1/2;
@@ -249,11 +251,43 @@ button {
 }
 
 .position {
-  margin: 50px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 600px;
+  height: 476px;
+  position: relative;
+  /* background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    white,
+    rgba(255, 255, 255, 0)
+  ); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.position:after {
+  width: 1000px;
+  height: 10px;
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    white,
+    rgba(255, 255, 255, 0)
+  );
+}
+.position img {
+  width: 100%;
+  margin-bottom: 150px;
+  margin-right: 100px;
 }
 
 #food {
-  margin-bottom: 200px;
   padding-top: 100px;
   position: relative;
 }
@@ -277,4 +311,5 @@ button {
   position: absolute;
   top: 0%;
   left: 2%;
+  width: 300px;
 }
