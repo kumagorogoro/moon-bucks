@@ -1,11 +1,8 @@
 // メニュー
-const hamburger = document.querySelector("#hamburger");
+const hamburger = document.querySelector("#menubtn");
 const menu = document.querySelector("#menu");
 const closeBtn = document.getElementById("close");
-// const bar1 = document.querySelector("#bar1");
-// const bar2 = document.querySelector("#bar2");
-// const bar3 = document.querySelector("#bar3");
-const bar4 = document.querySelector("#bar4");
+const menutext = document.querySelector("#menutext");
 const links = document.querySelectorAll("#menu ul li a");
 
 hamburger.addEventListener("click", function (e) {
@@ -24,7 +21,7 @@ window.addEventListener("click", function (e) {
     // e.target !== bar1 &&
     // e.target !== bar2 &&
     // e.target !== bar3 &&
-    e.target !== bar4
+    e.target !== menutext
   )
     menu.style.display = "none";
 });
