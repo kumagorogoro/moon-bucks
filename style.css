@@ -257,15 +257,19 @@ button {
   width: 600px;
   height: 476px;
   position: relative;
-  /* background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0),
-    white,
-    rgba(255, 255, 255, 0)
-  ); */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.position::before {
+  width: 580px;
+  height: 376px;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  bottom: 100px;
+  right: 63px;
+  background: rgba(255, 255, 255, 0.643);
 }
 .position:after {
   width: 1000px;
@@ -284,7 +288,7 @@ button {
 .position img {
   width: 100%;
   margin-bottom: 150px;
-  margin-right: 100px;
+  margin-right: 150px;
 }
 
 #food {
