@@ -10,7 +10,7 @@
   <body>
     <div class="wrapper" id="top">
       <header>
-        <!-- ハンバーガーメニューボタン -->
+        <!-- メニューボタン -->
         <div class="hamburger" id="hamburger">
           <!-- <div id="bar1"></div>
           <div id="bar2"></div>
@@ -24,6 +24,7 @@
           <ul>
             <li><a href="#top">top</a></li>
             <li><a href="#info">information</a></li>
+            <li><a href="#drink">drink</a></li>
             <li><a href="#food">food</a></li>
             <li><a href="#shop">shop</a></li>
           </ul>
@@ -31,21 +32,34 @@
       </header>
       <main>
         <div class="main">
-          <img src="cafe.jpg" alt="" />
+          <img src="cafe.jpg" alt="" / class="active"> <img src="coffee2.jpg"
+          alt="" / id="size">
+          <img src="coffeebeans.jpg" alt="" />
           <h1>ほ っ と<br />ひ と 息<br />カ フ ェ</h1>
         </div>
         <section id="info">
           <div class="border">
             <h2>Information</h2>
           </div>
-          <div>
+          <div class="info-open">
             <p>2024.11.1<span>クリスマスフェア開催決定</span></p>
             <p>2024.10.3<span>クリスマスお持ち帰り用ケーキ予約開始</span></p>
             <p>2024.9.25<span>年末年始の営業日のお知らせ</span></p>
           </div>
+          <div class="info-hidden">
+            <p>2024.11.1<span>クリスマスフェア開催決定</span></p>
+            <p>2024.10.3<span>クリスマスお持ち帰り用ケーキ予約開始</span></p>
+            <p>2024.9.25<span>年末年始の営業日のお知らせ</span></p>
+          </div>
+          <button class="btn">more</button>
+        </section>
+        <section id="drink">
+          <div class="border">
+            <h2>Drink</h2>
+          </div>
         </section>
         <section id="food">
-          <div>
+          <div class="border">
             <h2>Food</h2>
           </div>
           <div class="flex">
@@ -60,7 +74,7 @@
           </div>
         </section>
         <section id="shop">
-          <div>
+          <div class="border">
             <h2>Shop</h2>
           </div>
           <p>営業時間<span>11:00〜17:00</span></p>
