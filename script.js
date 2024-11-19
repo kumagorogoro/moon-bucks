@@ -47,14 +47,17 @@ setInterval(change, 5000);
 
 // moreボタンクリック時の動作
 const btn = document.querySelector(".btn");
-const infoHidden = document.querySelector(".info-hidden"); // info-hiddenを選択
+const border = document.querySelector(".info-new");
+const infoHidden = document.querySelector(".info-old");
 
 btn.addEventListener("click", function () {
   if (infoHidden.style.display === "none" || infoHidden.style.display === "") {
     infoHidden.style.display = "block"; // 表示
+    border.style.borderBottom = "none";
     btn.textContent = "close"; // ボタンのテキストを「close」に変更
   } else {
     infoHidden.style.display = "none"; // 非表示
     btn.textContent = "more"; // ボタンのテキストを「more」に変更
+    border.style.border = "solid 1px white";
   }
 });
