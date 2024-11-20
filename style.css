@@ -212,17 +212,16 @@ button {
   left: 2%;
   width: 300px;
 }
-/* food */
-.food {
+.drink {
   width: 1130px;
   margin: auto;
   margin-top: 50px;
   text-align: center;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 554 * 4;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 554px 554px 554px 554px;
 }
-.square {
+.drink .square {
   width: 200px;
   height: 200px;
   color: white;
@@ -231,26 +230,25 @@ button {
   justify-content: center;
   align-items: center;
   margin-top: 210px;
-  margin-left: 100px;
+  margin-right: 100px;
 }
-.square :nth-of-type(1) {
+.drink .square :nth-of-type(1) {
   grid-column: 1/2;
   grid-row: 1/2;
 }
-.square :nth-of-type(2) {
+.drink .square :nth-of-type(2) {
   grid-column: 1/2;
   grid-row: 2/3;
 }
-.square :nth-of-type(3) {
+.drink .square :nth-of-type(3) {
   grid-column: 1/2;
   grid-row: 3/4;
 }
-.square :nth-of-type(4) {
+.drink .square :nth-of-type(4) {
   grid-column: 1/2;
   grid-row: 4/5;
 }
-
-.position {
+.drink .photo {
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -261,7 +259,88 @@ button {
   align-items: center;
   justify-content: center;
 }
-.position::before {
+.drink .photo::before {
+  width: 580px;
+  height: 376px;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  bottom: 100px;
+  right: 85px;
+  background: rgba(255, 255, 255, 0.643);
+}
+.drink .photo:after {
+  width: 1000px;
+  height: 10px;
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 430px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    white,
+    rgba(255, 255, 255, 0)
+  );
+}
+.drink .photo img {
+  width: 600px;
+  height: 400px;
+  margin-bottom: 150px;
+  margin-right: 100px;
+}
+
+/* food */
+.food {
+  width: 1130px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 554px 554px 554px 554px;
+}
+.food .square {
+  width: 200px;
+  height: 200px;
+  color: white;
+  border: white 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 210px;
+  margin-left: 100px;
+}
+.food .square :nth-of-type(1) {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.food .square :nth-of-type(2) {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.food .square :nth-of-type(3) {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.food .square :nth-of-type(4) {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+.food .photo {
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 600px;
+  height: 476px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.food .photo::before {
   width: 580px;
   height: 376px;
   z-index: -1;
@@ -271,7 +350,7 @@ button {
   right: 63px;
   background: rgba(255, 255, 255, 0.643);
 }
-.position:after {
+.food .photo:after {
   width: 1000px;
   height: 10px;
   content: "";
@@ -285,7 +364,7 @@ button {
     rgba(255, 255, 255, 0)
   );
 }
-.position img {
+.food .photo img {
   width: 100%;
   margin-bottom: 150px;
   margin-right: 150px;
@@ -316,4 +395,24 @@ button {
   top: 0%;
   left: 2%;
   width: 300px;
+}
+#map-sepia {
+  height: 300px;
+  width: 50%;
+  filter: sepia(100%);
+}
+/* #map-grayscale {
+    height: 300px;
+    width: 100%;
+    filter: grayscale(100%);//白黒に変換
+} */
+.container {
+  display: flex;
+  justify-content: center;
+}
+/* footer */
+footer div {
+  width: 1130px;
+  margin: auto;
+  text-align: center;
 }
