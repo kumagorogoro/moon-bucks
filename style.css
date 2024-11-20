@@ -154,6 +154,7 @@ h2 {
   top: 0%;
   left: 2%;
   width: 300px;
+  margin-top: 100px;
 }
 .right-container {
   width: 700px;
@@ -211,6 +212,7 @@ button {
   top: 0%;
   left: 2%;
   width: 300px;
+  margin-top: 100px;
 }
 .drink-menu {
   width: 1130px;
@@ -276,7 +278,7 @@ button {
 }
 #food .border {
   width: 300px;
-  margin-bottom: 30px;
+  margin-top: 100px;
   border-bottom: 1px dashed white;
   position: absolute;
   top: 0%;
@@ -342,6 +344,7 @@ button {
 /* shop */
 #shop {
   width: 1130px;
+  margin-top: 150px;
   margin-bottom: 200px;
   padding-top: 100px;
   position: relative;
@@ -351,24 +354,32 @@ button {
   top: 0%;
   left: 2%;
   width: 300px;
+  margin-top: 100px;
 }
-#map-sepia {
+/* #map-sepia {
   height: 300px;
   width: 50%;
   filter: sepia(100%);
-}
-/* #map-grayscale {
-    height: 300px;
-    width: 100%;
-    filter: grayscale(100%);//白黒に変換
 } */
+#map-grayscale {
+  width: fit-content;
+  /* filter: grayscale(100%); //白黒に変換 */
+}
 .container {
+  width: 1130px;
+  margin-top: 200px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  line-height: 35px;
 }
 /* footer */
 footer div {
   width: 1130px;
   margin: auto;
   text-align: center;
+}
+footer div p {
+  color: white;
 }
