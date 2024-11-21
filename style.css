@@ -122,6 +122,8 @@ h2 {
   text-align: left;
   color: #fff;
   font-size: 2.5em;
+  position: absolute;
+  top: -70px;
 }
 .main {
   position: relative;
@@ -142,8 +144,8 @@ h2 {
 /* info */
 #info {
   width: 1130px;
-  margin-bottom: 200px;
-  padding-top: 100px;
+  margin-bottom: 150px;
+  padding-top: 250px;
   position: relative;
 }
 .border {
@@ -151,7 +153,7 @@ h2 {
 }
 #info .border {
   position: absolute;
-  top: 0%;
+  top: 50px;
   left: 2%;
   width: 300px;
   margin-top: 100px;
@@ -203,13 +205,13 @@ button {
 /* drink */
 #drink {
   width: 1130px;
-  margin-bottom: 200px;
-  padding-top: 100px;
+  margin-bottom: 150px;
+  padding-top: 150px;
   position: relative;
 }
 #drink .border {
   position: absolute;
-  top: 0%;
+  top: 50px;
   left: 2%;
   width: 300px;
   margin-top: 100px;
@@ -273,7 +275,8 @@ button {
 
 /* food */
 #food {
-  padding-top: 100px;
+  margin-bottom: 150px;
+  padding-top: 150px;
   position: relative;
 }
 #food .border {
@@ -281,14 +284,14 @@ button {
   margin-top: 100px;
   border-bottom: 1px dashed white;
   position: absolute;
-  top: 0%;
+  top: 50px;
   left: 2%;
   display: flex;
 }
 .food-menu {
   width: 1130px;
   margin: auto;
-  margin-top: 50px;
+  margin-bottom: 150px;
 }
 .food-menu .container .square {
   width: 200px;
@@ -344,14 +347,13 @@ button {
 /* shop */
 #shop {
   width: 1130px;
-  margin-top: 150px;
-  margin-bottom: 200px;
-  padding-top: 100px;
+  margin-bottom: 150px;
+  padding-top: 150px;
   position: relative;
 }
 #shop .border {
   position: absolute;
-  top: 0%;
+  top: 50px;
   left: 2%;
   width: 300px;
   margin-top: 100px;
@@ -367,7 +369,7 @@ button {
 }
 .container {
   width: 1130px;
-  margin-top: 200px;
+  margin-top: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
