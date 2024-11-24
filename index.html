@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MoonBacks</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.svg" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -13,33 +14,36 @@
         <!-- メニューボタン -->
         <div class="menubtn" id="menubtn">
           <div id="menutext">menu</div>
+          <img class="menubeans" src="menu.png" />
         </div>
 
         <!-- ナビゲーションメニュー -->
         <nav class="menu" id="menu">
           <span id="close" class="close">&times;</span>
           <ul>
-            <li><a href="#top">top</a></li>
-            <li><a href="#info">information</a></li>
-            <li><a href="#drink">drink</a></li>
-            <li><a href="#food">food</a></li>
-            <li><a href="#shop">shop</a></li>
+            <li><a href="#top">Top</a></li>
+            <li><a href="#info">Information</a></li>
+            <li><a href="#drink">Drink</a></li>
+            <li><a href="#food">Food</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#">Concept</a></li>
           </ul>
         </nav>
       </header>
       <main>
-        <div class="main">
-          <img src="cafe.jpg" alt="" / class="active"> <img src="coffee2.jpg"
-          alt="" / id="size">
-          <img src="coffeebeans.jpg" alt="" />
-          <h1>Moon<br />Backs</h1>
-        </div>
+        <section class="hero">
+          <img class="logo" src="moon bucks.svg" />
+          <div class="main">
+            <img src="cafe.jpg" alt="" / class="active"> <img src="coffee2.jpg"
+            alt="" / id="size">
+            <img src="coffeebeans.jpg" alt="" />
+          </div>
+        </section>
         <section id="info">
           <div class="border">
             <h2>Information</h2>
-            <button class="btn">more</button>
           </div>
-
+          <button class="btn">more</button>
           <div class="right-container">
             <div class="info-new">
               <p>2024.11.1<span>クリスマスフェア開催決定</span></p>

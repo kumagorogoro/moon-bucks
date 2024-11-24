@@ -1,31 +1,39 @@
 // メニュー
 const hamburger = document.querySelector("#menubtn");
+const menubeans = document.querySelector(".menubeans");
 const menu = document.querySelector("#menu");
 const closeBtn = document.getElementById("close");
 const menutext = document.querySelector("#menutext");
 const links = document.querySelectorAll("#menu ul li a");
 
-hamburger.addEventListener("click", function (e) {
-  console.log(e);
+// ハンバーガーメニューアイコン（menubeans）クリック時にもメニューを表示
+menubeans.addEventListener("click", function () {
   menu.style.display = "flex";
 });
+
+// ハンバーガーメニューを開くボタン（menubtn）クリック時にもメニューを表示
+hamburger.addEventListener("click", function () {
+  menu.style.display = "flex";
+});
+
 // 閉じるボタンをクリックしたとき
 closeBtn.addEventListener("click", function () {
   menu.style.display = "none"; // ハンバーガーメニュー非表示
 });
 
+// メニュー外をクリックした場合にメニューを閉じる
 window.addEventListener("click", function (e) {
   if (
     !menu.contains(e.target) &&
     e.target !== hamburger &&
-    // e.target !== bar1 &&
-    // e.target !== bar2 &&
-    // e.target !== bar3 &&
-    e.target !== menutext
-  )
+    e.target !== menutext &&
+    e.target !== menubeans // menubeansも除外
+  ) {
     menu.style.display = "none";
+  }
 });
 
+// メニューリンクをクリックしたときにメニューを閉じる
 links.forEach(function (link) {
   link.addEventListener("click", function () {
     menu.style.display = "none";
