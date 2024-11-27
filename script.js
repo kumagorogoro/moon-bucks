@@ -66,3 +66,19 @@ btn.addEventListener("click", function () {
     border.style.border = "solid 1px white";
   }
 });
+let lastScrollTop = 0; // 最後にスクロールした位置
+const navbar = document.querySelector("nav");
+
+window.addEventListener("scroll", function () {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScrollTop) {
+    // 下にスクロールした場合（隠す）
+    navbar.style.top = "-110px"; // ナビゲーションを上に隠す（高さ分調整）
+  } else {
+    // 上にスクロールした場合（表示）
+    navbar.style.top = "0";
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // スクロール位置が0以下にならないように
+});
