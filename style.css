@@ -383,7 +383,7 @@ button {
 /* shop */
 #shop {
   width: 1130px;
-  margin-bottom: 1280px;
+  margin-bottom: 1000px;
   padding-top: 150px;
   position: relative;
 }
@@ -531,271 +531,363 @@ footer div p {
   }
 }
 /* steam */
-
-.steam {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  z-index: -1;
+.circles {
+  height: 0px;
 }
-
-.steam:nth-child(1) {
-  animation: rise1 70s infinite linear, sway1 5s infinite ease-in-out;
-  width: 50px;
-  height: 15px;
-}
-.steam:nth-child(2) {
-  animation: rise2 70s infinite linear, sway2 5s infinite ease-in-out;
-  width: 200px;
-  height: 25px;
-}
-
-.steam:nth-child(3) {
-  animation: rise3 70s infinite linear, sway3 5s infinite ease-in-out;
-  width: 400px;
-}
-
-.steam:nth-child(4) {
-  animation: rise4 30s infinite linear, sway4 5s infinite ease-in-out;
-  width: 50px;
-  height: 15px;
-  left: 50%; /* 中央に配置 */
-  top: 50%; /* 中央に配置 */
-  margin-left: -25px; /* 幅の半分を引いて中央揃え */
-}
-.steam:nth-child(5) {
-  animation: rise5 30s infinite linear, sway5 5s infinite ease-in-out;
-  width: 200px;
-  height: 25px;
-  left: 50%; /* 中央に配置 */
-  top: 50%; /* 中央に配置 */
-  margin-left: -100px; /* 幅の半分を引いて中央揃え */
-}
-
-.steam:nth-child(6) {
-  animation: rise6 30s infinite linear, sway6 5s infinite ease-in-out;
-  width: 400px;
-  left: 50%; /* 中央に配置 */
-  top: 50%; /* 中央に配置 */
-  margin-left: -200px; /* 幅の半分を引いて中央揃え */
-}
-
-/* 各種アニメーションのキー設定 */
-@keyframes rise1 {
-  0% {
-    top: 98%;
-    left: 25%;
-    opacity: 0;
-  }
-  25% {
-    left: 40%;
-  }
-  50% {
-    left: 10%;
-    opacity: 0.5;
-  }
-  100% {
-    top: 10%;
-    left: 90%;
-    opacity: 0;
-  }
-}
-@keyframes rise2 {
-  0% {
-    top: 95%;
-    left: 25%;
-    opacity: 0;
-  }
-  25% {
-    left: 40%;
-  }
-  50% {
-    left: 10%;
-    opacity: 0.3;
-  }
-  100% {
-    top: 5%;
-    left: 90%;
-    opacity: 0;
-  }
-}
-@keyframes rise3 {
-  0% {
-    top: 90%;
-    left: 20%;
-    opacity: 0;
-  }
-  25% {
-    left: 40%;
-  }
-  50% {
-    left: 10%;
-    opacity: 0.3;
-  }
-  100% {
-    top: 0%;
-    left: 90%;
-    opacity: 0;
-  }
-}
-@keyframes rise4 {
-  0% {
-    top: 78%;
-    left: 30%;
-    opacity: 0;
-  }
-  25% {
-    left: 60%;
-  }
-  50% {
-    left: 70%;
-    opacity: 0.5;
-  }
-  75% {
-    left: 50%;
-  }
-  100% {
-    top: 10%;
-    left: 20%;
-    opacity: 0;
-  }
-}
-@keyframes rise5 {
-  0% {
-    top: 75%;
-    left: 30%;
-    opacity: 0;
-  }
-  25% {
-    left: 60%;
-  }
-  50% {
-    left: 70%;
-    opacity: 0.3;
-  }
-  75% {
-    left: 50%;
-  }
-  100% {
-    top: 5%;
-    left: 20%;
-    opacity: 0;
-  }
-}
-@keyframes rise6 {
-  0% {
-    top: 70%;
-    left: 30%;
-    opacity: 0;
-  }
-  25% {
-    left: 60%;
-  }
-  50% {
-    left: 70%;
-    opacity: 0.3;
-  }
-  75% {
-    left: 50%;
-  }
-  100% {
-    top: 0%;
-    left: 20%;
-    opacity: 0;
-  }
-}
-
-/* 各湯気の左右揺れのアニメーション */
-@keyframes sway1 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sway2 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(50px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sway3 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(50px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sway4 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sway5 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(50px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sway6 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(50px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-/* ビデオ背景の設定 */
-.video-background {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-/* ビデオの設定 */
-#background-video {
+.circles li {
   position: absolute;
-  top: 50%;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: 1;
+}
+/* .circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  transform: translateY(-100%);
+  animation: animate 64s linear infinite;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(100%);
+  animation: animate 56s linear infinite;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(100%);
+  animation: animate 68s linear infinite;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  transform: translateY(-100%);
+  animation: animate 60s linear infinite;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(100%);
+  animation: animate 62s linear infinite;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  transform: translateY(-100%);
+  animation: animate2 58s linear infinite;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  transform: translateY(-100%);
+  animation: animate2 62s linear infinite;
+}
+
+.circles li:nth-child(8) {
   left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 99; /* 背景として配置 */
+  width: 25px;
+  height: 25px;
+  transform: translateY(100%);
+  animation: animate2 60s linear infinite;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  transform: translateY(100%);
+  animation: animate2 65s linear infinite;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  transform: translateY(-100%);
+  animation: animate2 60s linear infinite;
+} */
+.circles li:nth-child(11) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  transform: translateY(100%);
+  animation: animatemiddle 50s linear infinite;
+}
+
+.circles li:nth-child(12) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation: animatemiddle 56s linear infinite;
+}
+
+.circles li:nth-child(13) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(500%);
+  animation: animatemiddle 58s linear infinite;
+}
+
+.circles li:nth-child(14) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation: animatemiddle2 60s linear infinite;
+}
+
+.circles li:nth-child(15) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation: animatemiddle2 62s linear infinite;
+  transform: translateY(500%);
+}
+
+.circles li:nth-child(16) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  transform: translateY(100%);
+  animation: animatemiddle3 58s linear infinite;
+}
+
+.circles li:nth-child(17) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation: animatemiddle3 52s linear infinite;
+}
+
+.circles li:nth-child(18) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation: animatemiddle3 60s linear infinite;
+  transform: translateY(500%);
+}
+
+.circles li:nth-child(19) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation: animatemiddle3 55s linear infinite;
+}
+
+.circles li:nth-child(20) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation: animatemiddle3 60s linear infinite;
+}
+.circles li:nth-child(21) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation: animatemiddle4 44s linear infinite;
+  transform: translateY(500%);
+}
+
+.circles li:nth-child(22) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation: animatemiddle4 46s linear infinite;
+}
+
+.circles li:nth-child(23) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation: animatemiddle4 48s linear infinite;
+  transform: translateY(100%);
+}
+
+.circles li:nth-child(24) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation: animatemiddle4 40s linear infinite;
+}
+
+.circles li:nth-child(25) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation: animatemiddle4 42s linear infinite;
+}
+
+.circles li:nth-child(26) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation: animatemiddle5 48s linear infinite;
+  transform: translateY(500%);
+}
+
+.circles li:nth-child(27) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation: animatemiddle5 42s linear infinite;
+  transform: translateY(100%);
+}
+
+.circles li:nth-child(28) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation: animatemiddle5 50s linear infinite;
+}
+
+.circles li:nth-child(29) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation: animatemiddle5 45s linear infinite;
+}
+
+.circles li:nth-child(30) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation: animatemiddle5 40s linear infinite;
+}
+
+/* @keyframes animate {
+  0% {
+    left: 40%;
+    bottom: 0%;
+    opacity: 0.3;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+@keyframes animate2 {
+  0% {
+    left: 50%;
+    bottom: 0%;
+    opacity: 0.3;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+} */
+@keyframes animatemiddle {
+  0% {
+    top: 100%;
+    opacity: 0.5;
+  }
+  50% {
+    top: 0%;
+    opacity: 0;
+  }
+  50.0000001% {
+    top: 650%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 100%;
+    opacity: 0.5;
+  }
+}
+@keyframes animatemiddle2 {
+  0% {
+    top: 200%;
+    opacity: 0.5;
+  }
+  50% {
+    top: 0%;
+    opacity: 0;
+  }
+  50.0000001% {
+    top: 650%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 200%;
+    opacity: 0.5;
+  }
+}
+@keyframes animatemiddle3 {
+  0% {
+    top: 350%;
+    opacity: 0.5;
+  }
+  50% {
+    top: 0%;
+    opacity: 0;
+  }
+  50.0000001% {
+    top: 650%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 350%;
+    opacity: 0.5;
+  }
+}
+@keyframes animatemiddle4 {
+  0% {
+    top: 500%;
+    opacity: 0.5;
+  }
+  50% {
+    top: 0%;
+    opacity: 0;
+  }
+  50.0000001% {
+    top: 650%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 500%;
+    opacity: 0.5;
+  }
+}
+@keyframes animatemiddle5 {
+  0% {
+    top: 600%;
+    opacity: 0.5;
+  }
+  50% {
+    top: 0%;
+    opacity: 0;
+  }
+  50.0000001% {
+    top: 650%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 600%;
+    opacity: 0.5;
+  }
 }
