@@ -11,9 +11,15 @@ img {
   width: 100%;
   vertical-align: bottom;
 }
+body {
+  width: 100%;
+  height: 100%;
+}
 .wrapper {
   width: 1130px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 /* menu */
 .menubtn {
@@ -21,7 +27,7 @@ img {
   width: 180px;
   height: 180px;
   position: fixed;
-  top: 50px;
+  top: 54px;
   right: 6%;
   /* border: 5px solid rgb(255, 255, 255); */
   border-radius: 50%;
@@ -134,7 +140,7 @@ nav .menu {
   object-fit: cover;
   position: absolute;
   z-index: 10;
-  top: 50%;
+  top: 52%;
   left: 50px;
   transform: translateY(-50%);
 }
@@ -173,7 +179,7 @@ h2 {
 #info {
   width: 1130px;
   margin-bottom: 150px;
-  padding-top: 250px;
+  padding-top: 200px;
   position: relative;
 }
 .border {
@@ -523,4 +529,273 @@ footer div p {
     transform: translate(-50%, -50%);
     color: white;
   }
+}
+/* steam */
+
+.steam {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  z-index: -1;
+}
+
+.steam:nth-child(1) {
+  animation: rise1 70s infinite linear, sway1 5s infinite ease-in-out;
+  width: 50px;
+  height: 15px;
+}
+.steam:nth-child(2) {
+  animation: rise2 70s infinite linear, sway2 5s infinite ease-in-out;
+  width: 200px;
+  height: 25px;
+}
+
+.steam:nth-child(3) {
+  animation: rise3 70s infinite linear, sway3 5s infinite ease-in-out;
+  width: 400px;
+}
+
+.steam:nth-child(4) {
+  animation: rise4 30s infinite linear, sway4 5s infinite ease-in-out;
+  width: 50px;
+  height: 15px;
+  left: 50%; /* 中央に配置 */
+  top: 50%; /* 中央に配置 */
+  margin-left: -25px; /* 幅の半分を引いて中央揃え */
+}
+.steam:nth-child(5) {
+  animation: rise5 30s infinite linear, sway5 5s infinite ease-in-out;
+  width: 200px;
+  height: 25px;
+  left: 50%; /* 中央に配置 */
+  top: 50%; /* 中央に配置 */
+  margin-left: -100px; /* 幅の半分を引いて中央揃え */
+}
+
+.steam:nth-child(6) {
+  animation: rise6 30s infinite linear, sway6 5s infinite ease-in-out;
+  width: 400px;
+  left: 50%; /* 中央に配置 */
+  top: 50%; /* 中央に配置 */
+  margin-left: -200px; /* 幅の半分を引いて中央揃え */
+}
+
+/* 各種アニメーションのキー設定 */
+@keyframes rise1 {
+  0% {
+    top: 98%;
+    left: 25%;
+    opacity: 0;
+  }
+  25% {
+    left: 40%;
+  }
+  50% {
+    left: 10%;
+    opacity: 0.5;
+  }
+  100% {
+    top: 10%;
+    left: 90%;
+    opacity: 0;
+  }
+}
+@keyframes rise2 {
+  0% {
+    top: 95%;
+    left: 25%;
+    opacity: 0;
+  }
+  25% {
+    left: 40%;
+  }
+  50% {
+    left: 10%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 5%;
+    left: 90%;
+    opacity: 0;
+  }
+}
+@keyframes rise3 {
+  0% {
+    top: 90%;
+    left: 20%;
+    opacity: 0;
+  }
+  25% {
+    left: 40%;
+  }
+  50% {
+    left: 10%;
+    opacity: 0.3;
+  }
+  100% {
+    top: 0%;
+    left: 90%;
+    opacity: 0;
+  }
+}
+@keyframes rise4 {
+  0% {
+    top: 78%;
+    left: 30%;
+    opacity: 0;
+  }
+  25% {
+    left: 60%;
+  }
+  50% {
+    left: 70%;
+    opacity: 0.5;
+  }
+  75% {
+    left: 50%;
+  }
+  100% {
+    top: 10%;
+    left: 20%;
+    opacity: 0;
+  }
+}
+@keyframes rise5 {
+  0% {
+    top: 75%;
+    left: 30%;
+    opacity: 0;
+  }
+  25% {
+    left: 60%;
+  }
+  50% {
+    left: 70%;
+    opacity: 0.3;
+  }
+  75% {
+    left: 50%;
+  }
+  100% {
+    top: 5%;
+    left: 20%;
+    opacity: 0;
+  }
+}
+@keyframes rise6 {
+  0% {
+    top: 70%;
+    left: 30%;
+    opacity: 0;
+  }
+  25% {
+    left: 60%;
+  }
+  50% {
+    left: 70%;
+    opacity: 0.3;
+  }
+  75% {
+    left: 50%;
+  }
+  100% {
+    top: 0%;
+    left: 20%;
+    opacity: 0;
+  }
+}
+
+/* 各湯気の左右揺れのアニメーション */
+@keyframes sway1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sway2 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sway3 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sway4 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sway5 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sway6 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ビデオ背景の設定 */
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ビデオの設定 */
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 99; /* 背景として配置 */
 }
