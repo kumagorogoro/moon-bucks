@@ -387,7 +387,7 @@ button {
 /* shop */
 #shop {
   width: 1130px;
-  margin-bottom: 1000px;
+  margin-bottom: 150px;
   padding-top: 150px;
   position: relative;
 }
@@ -608,4 +608,20 @@ footer div p {
   .food-menu .container:nth-of-type(even)::after {
     display: none;
   }
+}
+
+.flipbook {
+  position: relative;
+  width: 300px; /* 画像の横幅 */
+  height: 400px; /* 画像の高さ */
+  overflow: hidden;
+}
+
+.flipbook img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* 最初は全て非表示 */
 }

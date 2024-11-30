@@ -114,3 +114,40 @@ navLinks.forEach((link) => {
     });
   });
 });
+
+// マウスカーソルの位置を監視して、上部200px以内ならナビゲーションを表示
+window.addEventListener("mousemove", function (event) {
+  const mouseY = event.clientY;
+
+  if (mouseY < 50) {
+    navbar.style.top = "0"; // 上部200px以内に入ったらナビゲーションを表示
+  }
+});
+
+// 画面スクロールしたときの処理（マウスが画面上部200px以内にいる場合）
+window.addEventListener("scroll", function () {
+  const currentScroll =
+    window.pageYOffset || document.documentElement.scrollTop;
+
+  // もしスクロール位置が200px以下で、マウスが上部200px以内にいない場合、ナビゲーションバーを表示
+  if (currentScroll <= 50) {
+    navbar.style.top = "0"; // スクロールが上部200px以内に戻ったら表示
+  }
+});
+
+// flipbook
+let currentFrame = 0;
+const frames = document.querySelectorAll(".flipbook .frame");
+const totalFrames = frames.length;
+
+function showNextFrame() {
+  // 現在のフレームを非表示
+  frames[currentFrame].style.display = "none";
+
+  // 次のフレームを表示
+  currentFrame = (currentFrame + 1) % totalFrames;
+  frames[currentFrame].style.display = "block";
+}
+
+// 100msごとに次のフレームを表示
+setInterval(showNextFrame, 100); // フレームを100msごとに切り替え
