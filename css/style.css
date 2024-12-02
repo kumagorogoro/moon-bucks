@@ -384,25 +384,29 @@ button {
   margin-bottom: 135px;
   margin-left: 100px;
 }
-/* shop */
-#shop {
+/* access */
+#access {
   width: 1130px;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   padding-top: 150px;
   position: relative;
 }
-#shop .border {
+#access .border {
   position: absolute;
   top: 50px;
   left: 2%;
   width: 300px;
   margin-top: 100px;
 }
-/* #map-sepia {
+#access .container div a {
+  text-decoration: none;
+  color: white;
+}
+#map-sepia {
   height: 300px;
   width: 50%;
   filter: sepia(100%);
-} */
+}
 #map-grayscale {
   width: fit-content;
   /* filter: grayscale(100%); //白黒に変換 */
@@ -528,6 +532,11 @@ footer div p {
     transform: translate(-50%, -50%);
     color: white;
   }
+
+  .square {
+    border-radius: 50%;
+    font-size: 0.5em;
+  }
   .drink-menu .container {
     width: 80%;
     height: 100%;
@@ -609,118 +618,61 @@ footer div p {
     display: none;
   }
 }
+.concept {
+  width: 100%;
+  height: 800px;
+}
 /* flipbook */
 .flipbook {
   position: relative;
-  width: 600px; /* 画像の横幅 */
-  height: 800px; /* 画像の高さ */
+  width: 100%; /* 画像の横幅 */
+  height: 700px;
   overflow: hidden;
 }
 
 .flipbook img {
   position: absolute;
-  top: 200px;
-  left: 0;
-  width: 80%;
-  height: 80%;
+  top: 150px;
+  left: 100px;
+  width: 400px;
+  height: 400px;
   display: none; /* 最初は全て非表示 */
   z-index: 999;
 }
 /* steam */
 .concept {
-  height: 800px;
+  height: 700px;
   position: relative;
 }
-.steam-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.concept p {
+  display: block;
   position: absolute;
-  top: 120px;
-  left: 50px;
+  width: 600px;
+  font-size: 1.5em;
+  top: 50px;
+  left: 512px;
+  color: white;
 }
-
 .steam {
   position: absolute;
   z-index: -1;
-}
-.steam:nth-child(1) {
-  animation: rise 1.8s infinite linear, sway1 1.8s infinite ease-in-out,
-    expand 1.8s infinite linear;
-  width: 100px;
-  height: 150px;
-  margin-left: 40px;
-}
-.steam:nth-child(2) {
-  animation: rise 1.8s infinite linear, sway2 1.8s infinite ease-in-out,
-    expand 1.8s infinite linear;
-  width: 100px;
-  height: 150px;
+  width: 750px;
+  opacity: 0.3;
+  animation: rise 5.4s infinite linear;
 }
 
-.steam:nth-child(3) {
-  animation: rise 1.8s infinite linear, sway3 1.8s infinite ease-in-out,
-    expand 1.8s infinite linear;
-  width: 100px;
-  height: 150px;
-}
 @keyframes rise {
   0% {
-    top: 220px;
-    left: 100px;
+    top: -30px;
+    left: 300px;
     opacity: 0;
   }
   50% {
     opacity: 0.2;
   }
   100% {
-    top: 0px;
-    left: 100px;
+    top: -90px;
+    left: 350px;
     opacity: 0;
-  }
-}
-@keyframes sway1 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(20px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sway2 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-20px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sway3 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes expand {
-  0% {
-    width: 100px;
-    height: 150px;
-  }
-  100% {
-    width: 200px;
-    height: 300px;
   }
 }
