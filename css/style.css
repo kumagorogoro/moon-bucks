@@ -609,129 +609,77 @@ footer div p {
     display: none;
   }
 }
-
+/* flipbook */
 .flipbook {
   position: relative;
-  width: 300px; /* 画像の横幅 */
-  height: 400px; /* 画像の高さ */
+  width: 600px; /* 画像の横幅 */
+  height: 800px; /* 画像の高さ */
   overflow: hidden;
 }
 
 .flipbook img {
   position: absolute;
-  top: 0;
+  top: 200px;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   display: none; /* 最初は全て非表示 */
+  z-index: 999;
 }
 /* steam */
+.concept {
+  height: 800px;
+  position: relative;
+}
 .steam-container {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 120px;
+  top: 120px;
   left: 50px;
-  height: 500px;
 }
 
 .steam {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   z-index: -1;
 }
 .steam:nth-child(1) {
-  animation: rise1 5s infinite linear, sway1 5s infinite ease-in-out;
-  width: 25px;
-  height: 5px;
+  animation: rise 1.8s infinite linear, sway1 1.8s infinite ease-in-out,
+    expand 1.8s infinite linear;
+  width: 100px;
+  height: 150px;
   margin-left: 40px;
 }
 .steam:nth-child(2) {
-  animation: rise2 5s infinite linear, sway2 5s infinite ease-in-out;
+  animation: rise 1.8s infinite linear, sway2 1.8s infinite ease-in-out,
+    expand 1.8s infinite linear;
   width: 100px;
-  height: 8px;
+  height: 150px;
 }
 
 .steam:nth-child(3) {
-  animation: rise3 5s infinite linear, sway3 5s infinite ease-in-out;
-  width: 120px;
-  height: 10px;
+  animation: rise 1.8s infinite linear, sway3 1.8s infinite ease-in-out,
+    expand 1.8s infinite linear;
+  width: 100px;
+  height: 150px;
 }
-@keyframes rise1 {
+@keyframes rise {
   0% {
-    top: 78%;
-    left: 30%;
+    top: 220px;
+    left: 100px;
     opacity: 0;
-  }
-  25% {
-    left: 60%;
   }
   50% {
-    left: 80%;
-    opacity: 0.3;
+    opacity: 0.2;
   }
   100% {
-    top: 10%;
-    left: 90%;
-    opacity: 0;
-  }
-}
-@keyframes rise2 {
-  0% {
-    top: 75%;
-    left: 30%;
-    opacity: 0;
-  }
-  25% {
-    left: 60%;
-  }
-  50% {
-    left: 80%;
-    opacity: 0.3;
-  }
-  100% {
-    top: 5%;
-    left: 90%;
-    opacity: 0;
-  }
-}
-@keyframes rise3 {
-  0% {
-    top: 70%;
-    left: 30%;
-    opacity: 0;
-  }
-  25% {
-    left: 60%;
-  }
-  50% {
-    left: 80%;
-    opacity: 0.3;
-  }
-  100% {
-    top: 0%;
-    left: 90%;
+    top: 0px;
+    left: 100px;
     opacity: 0;
   }
 }
 @keyframes sway1 {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sway2 {
   0% {
     transform: translateX(0);
   }
@@ -743,14 +691,36 @@ footer div p {
   }
 }
 
+@keyframes sway2 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes sway3 {
   0% {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(5px);
+    transform: translateX(0px);
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes expand {
+  0% {
+    width: 100px;
+    height: 150px;
+  }
+  100% {
+    width: 200px;
+    height: 300px;
   }
 }
