@@ -1,0 +1,288 @@
+@charset "utf-8";
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(#41342b, #60342e, #41342b);
+  width: 100vw;
+  height: 100vh;
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.wrapper {
+  width: 1130px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.topback {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  font-size: 2em;
+  color: white;
+}
+/* menu */
+header {
+  position: fixed; /* スクロールしても固定 */
+  top: 0; /* 初期位置 */
+  left: 0;
+  width: 100%; /* 横幅を100%に */
+  z-index: 1000; /* 他の要素より上に表示 */
+}
+
+.menubtn {
+  z-index: 999;
+  width: 180px;
+  height: 180px;
+  position: fixed;
+  top: 54px;
+  right: 6%;
+  /* border: 5px solid rgb(255, 255, 255); */
+  border-radius: 50%;
+  cursor: pointer;
+}
+#menutext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-size: 1.6em;
+}
+.menubeans {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
+  transform-origin: center; /* 回転の中心をdivの中央に設定 */
+}
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg); /* 開始時の角度 */
+  }
+  100% {
+    transform: rotate(360deg); /* 360度回転 */
+  }
+}
+.menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .menu li {
+  margin: 50px 50px;
+  height: 200px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+nav .menu li a:hover {
+  text-decoration: underline;
+}
+nav .menu li {
+  padding: 20px;
+  text-align: center;
+}
+.pc {
+  display: none;
+}
+.pcmenu {
+  display: none;
+}
+nav .menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  display: none;
+  padding: 10px 0;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.close {
+  position: absolute;
+  top: 55px;
+  right: 75px;
+  color: #fff;
+  font-size: 100px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* main */
+main {
+  width: 1130px;
+  margin-top: 200px;
+}
+main h1 {
+  padding-top: 190px;
+}
+/* footer */
+footer div {
+  width: 1130px;
+  margin: auto;
+  text-align: center;
+}
+footer div p {
+  color: white;
+}
+/* メディアクエリ */
+@media screen and (min-width: 768px) {
+  nav .menu {
+    width: 25%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .close {
+    top: 30px;
+    right: 30px;
+    font-size: 30px;
+  }
+
+  .menu li {
+    width: 110px;
+  }
+
+  .menu li a {
+    font-size: 0.5em;
+  }
+}
+@media screen and (min-width: 1130px) {
+  .menubtn {
+    right: 7%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menubtn {
+    display: none;
+  }
+  nav {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 110px;
+    transition: top 0.3s; /* スムーズなアニメーション */
+  }
+  .pc {
+    display: block;
+    margin-top: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .pc li {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pc li a {
+    text-decoration: none;
+    color: white;
+  }
+  .pcmenu {
+    display: block;
+    z-index: 999;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+  }
+  .pcbeans {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
+    transform-origin: center; /* 回転の中心をdivの中央に設定 */
+  }
+  @keyframes rotateAnimation {
+    0% {
+      transform: rotate(0deg); /* 開始時の角度 */
+    }
+    100% {
+      transform: rotate(360deg); /* 360度回転 */
+    }
+  }
+
+  #pctext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+}
+/* main */
+main {
+  margin: auto;
+  text-align: center;
+}
+.mainwrapper {
+  width: 600px;
+  margin: auto;
+  padding-bottom: 150px;
+}
+/* 送信ボタン */
+.submit-btn {
+  /* buttonタグのリセットCSS */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+
+  color: #fff;
+  padding: 8px 24px;
+  background-color: #3abec1;
+  cursor: pointer; /* ポインターカーソルを表示 */
+}
+
+.submit-btn[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed; /* クリック不可のカーソルを表示 */
+}
