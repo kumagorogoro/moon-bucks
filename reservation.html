@@ -3,207 +3,266 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>フォームバリデーション</title>
-    <link rel="stylesheet" href="stay.html" />
+    <title>MoonBacks</title>
+    <link rel="stylesheet" href="css/reservation.css" />
+    <link rel="stylesheet" href="scss/style.css" />
+    <link rel="icon" href="img/favicon.svg" />
+    <script src="js/reservation.js" defer></script>
   </head>
   <body>
-    <h1>宿泊予約フォーム</h1>
+    <div class="wrapper" id="top">
+      <header>
+        <!-- メニューボタン -->
+        <div class="menubtn" id="menubtn">
+          <div id="menutext">menu</div>
+          <img class="menubeans" src="img/menu.png" />
+        </div>
 
-    <form id="reservationForm" action="" method="post">
-      <!-- 名前 -->
-      <label for="name">名前:</label><label class="required">必須</label><br />
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="名前を入力してください"
-      />
-      <span id="nameError" class="error-mark"></span><br /><br />
+        <nav>
+          <ul class="pc">
+            <li>
+              <div class="pcmenu" id="pcmenu">
+                <div id="pctext">menu</div>
+                <img class="pcbeans" src="img/menu.png" />
+              </div>
+            </li>
+            <li><a href="index.html">カフェ</a></li>
+            <li><a href="stay.html">ご宿泊</a></li>
+          </ul>
+          <!-- ナビゲーションメニュー -->
+          <ul class="menu" id="menu">
+            <span id="close" class="close">&times;</span>
+            <li><a href="index.html">カフェ</a></li>
+            <li><a href="stay.html">ご宿泊について</a></li>
+          </ul>
+          <a href="#top" class="topback"><img src="" alt="" />Top</a>
+        </nav>
+      </header>
+      <main>
+        <div class="mainwrapper">
+          <h1>宿泊予約フォーム</h1>
 
-      <!-- 住所 -->
-      <label for="name">住所:</label><label class="required">必須</label><br />
-      <label for="postal_code">郵便番号:</label>
-      <input
-        type="text"
-        id="postal_code"
-        name="postal_code"
-        placeholder="例: 123-4567"
-        oninput="fetchAddressFromPostalCode()"
-      />
-      <span id="postalCodeError" class="error-mark"></span><br /><br />
+          <form id="reservationForm" action="" method="post">
+            <!-- 名前 -->
+            <label for="name">名前:</label><label class="required">必須</label
+            ><br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="名前を入力してください"
+            />
+            <span id="nameError" class="error-mark"></span><br /><br />
 
-      <label for="prefecture">都道府県:</label>
-      <select id="prefecture" name="prefecture" required>
-        <option value="">選択してください</option>
-        <option value="北海道">北海道</option>
-        <option value="青森県">青森県</option>
-        <option value="岩手県">岩手県</option>
-        <option value="宮城県">宮城県</option>
-        <option value="秋田県">秋田県</option>
-        <option value="山形県">山形県</option>
-        <option value="福島県">福島県</option>
-        <option value="茨城県">茨城県</option>
-        <option value="栃木県">栃木県</option>
-        <option value="群馬県">群馬県</option>
-        <option value="埼玉県">埼玉県</option>
-        <option value="千葉県">千葉県</option>
-        <option value="東京都" selected>東京都</option>
-        <option value="神奈川県">神奈川県</option>
-        <option value="新潟県">新潟県</option>
-        <option value="富山県">富山県</option>
-        <option value="石川県">石川県</option>
-        <option value="福井県">福井県</option>
-        <option value="山梨県">山梨県</option>
-        <option value="長野県">長野県</option>
-        <option value="岐阜県">岐阜県</option>
-        <option value="静岡県">静岡県</option>
-        <option value="愛知県">愛知県</option>
-        <option value="三重県">三重県</option>
-        <option value="滋賀県">滋賀県</option>
-        <option value="京都府">京都府</option>
-        <option value="大阪府">大阪府</option>
-        <option value="兵庫県">兵庫県</option>
-        <option value="奈良県">奈良県</option>
-        <option value="和歌山県">和歌山県</option>
-        <option value="鳥取県">鳥取県</option>
-        <option value="島根県">島根県</option>
-        <option value="岡山県">岡山県</option>
-        <option value="広島県">広島県</option>
-        <option value="山口県">山口県</option>
-        <option value="徳島県">徳島県</option>
-        <option value="香川県">香川県</option>
-        <option value="愛媛県">愛媛県</option>
-        <option value="高知県">高知県</option>
-        <option value="福岡県">福岡県</option>
-        <option value="佐賀県">佐賀県</option>
-        <option value="長崎県">長崎県</option>
-        <option value="熊本県">熊本県</option>
-        <option value="大分県">大分県</option>
-        <option value="宮崎県">宮崎県</option>
-        <option value="鹿児島県">鹿児島県</option>
-        <option value="沖縄県">沖縄県</option>
-      </select>
-      <span id="prefectureError" class="error-mark"></span><br /><br />
-      <label for="city" class="required">市区町村:</label>
-      <input type="text" id="city" name="city" />
-      <span id="cityError" class="error-mark"></span><br /><br />
+            <!-- 住所 -->
+            <label for="name">住所:</label><label class="required">必須</label
+            ><br />
+            <label for="postal_code">郵便番号:</label>
+            <input
+              type="text"
+              id="postal_code"
+              name="postal_code"
+              placeholder="例: 123-4567"
+              oninput="fetchAddressFromPostalCode()"
+            />
+            <span id="postalCodeError" class="error-mark"></span><br /><br />
 
-      <label for="address" class="required">番地・建物名:</label>
-      <input
-        type="text"
-        id="address"
-        name="address"
-        placeholder="例: 1-2-3 ABCビル"
-      />
-      <span id="addressError" class="error-mark"></span><br /><br />
+            <label for="prefecture">都道府県:</label>
+            <select id="prefecture" name="prefecture" required>
+              <option value="">選択してください</option>
+              <option value="北海道">北海道</option>
+              <option value="青森県">青森県</option>
+              <option value="岩手県">岩手県</option>
+              <option value="宮城県">宮城県</option>
+              <option value="秋田県">秋田県</option>
+              <option value="山形県">山形県</option>
+              <option value="福島県">福島県</option>
+              <option value="茨城県">茨城県</option>
+              <option value="栃木県">栃木県</option>
+              <option value="群馬県">群馬県</option>
+              <option value="埼玉県">埼玉県</option>
+              <option value="千葉県">千葉県</option>
+              <option value="東京都" selected>東京都</option>
+              <option value="神奈川県">神奈川県</option>
+              <option value="新潟県">新潟県</option>
+              <option value="富山県">富山県</option>
+              <option value="石川県">石川県</option>
+              <option value="福井県">福井県</option>
+              <option value="山梨県">山梨県</option>
+              <option value="長野県">長野県</option>
+              <option value="岐阜県">岐阜県</option>
+              <option value="静岡県">静岡県</option>
+              <option value="愛知県">愛知県</option>
+              <option value="三重県">三重県</option>
+              <option value="滋賀県">滋賀県</option>
+              <option value="京都府">京都府</option>
+              <option value="大阪府">大阪府</option>
+              <option value="兵庫県">兵庫県</option>
+              <option value="奈良県">奈良県</option>
+              <option value="和歌山県">和歌山県</option>
+              <option value="鳥取県">鳥取県</option>
+              <option value="島根県">島根県</option>
+              <option value="岡山県">岡山県</option>
+              <option value="広島県">広島県</option>
+              <option value="山口県">山口県</option>
+              <option value="徳島県">徳島県</option>
+              <option value="香川県">香川県</option>
+              <option value="愛媛県">愛媛県</option>
+              <option value="高知県">高知県</option>
+              <option value="福岡県">福岡県</option>
+              <option value="佐賀県">佐賀県</option>
+              <option value="長崎県">長崎県</option>
+              <option value="熊本県">熊本県</option>
+              <option value="大分県">大分県</option>
+              <option value="宮崎県">宮崎県</option>
+              <option value="鹿児島県">鹿児島県</option>
+              <option value="沖縄県">沖縄県</option>
+            </select>
+            <span id="prefectureError" class="error-mark"></span><br /><br />
+            <label for="city" class="required">市区町村:</label>
+            <input type="text" id="city" name="city" />
+            <span id="cityError" class="error-mark"></span><br /><br />
 
-      <!-- メールアドレス -->
-      <label for="email">メールアドレス:</label
-      ><label class="required">必須</label><br />
-      <input
-        type="text"
-        id="email"
-        name="email"
-        placeholder="example@domain.com"
-      />
-      <span id="emailError" class="error-mark"></span><br /><br />
+            <label for="address" class="required">番地・建物名:</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="例: 1-2-3 ABCビル"
+            />
+            <span id="addressError" class="error-mark"></span><br /><br />
 
-      <!-- 電話番号 -->
-      <label for="phone">電話番号:</label><label class="required">必須</label
-      ><br />
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="例: 090-1234-5678"
-      />
-      <span id="phoneError" class="error-mark"></span><br /><br />
-      <!--plan-->
-      <fieldset>
-        <legend>宿泊プラン</legend>
-        <label>
-          <input
-            type="radio"
-            name="plan"
-            value="no_meal"
-            onclick="toggleMealOptions()"
-            checked
-          />
-          素泊まり </label
-        ><br />
-        <label>
-          <input
-            type="radio"
-            name="plan"
-            value="with_meal"
-            onclick="toggleMealOptions()"
-          />
-          食事付き </label
-        ><br />
-      </fieldset>
+            <!-- メールアドレス -->
+            <label for="email">メールアドレス:</label
+            ><label class="required">必須</label><br />
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="example@domain.com"
+            />
+            <span id="emailError" class="error-mark"></span><br /><br />
 
-      <fieldset>
-        <legend>食事内容</legend>
-        <label>
-          <input
-            type="checkbox"
-            name="meal[]"
-            id="dinner"
-            value="dinner"
-            disabled
-          />
-          夕食 </label
-        ><br />
-        <label>
-          <input
-            type="checkbox"
-            name="meal[]"
-            id="breakfast"
-            value="breakfast"
-            disabled
-          />
-          朝食 </label
-        ><br />
-      </fieldset>
+            <!-- 電話番号 -->
+            <label for="phone">電話番号:</label
+            ><label class="required">必須</label><br />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="例: 090-1234-5678"
+            />
+            <span id="phoneError" class="error-mark"></span><br /><br />
+            <!--plan-->
+            <fieldset>
+              <legend>宿泊プラン</legend>
+              <label>
+                <input
+                  type="radio"
+                  name="plan"
+                  value="no_meal"
+                  onclick="toggleMealOptions()"
+                  checked
+                />
+                素泊まり </label
+              ><br />
+              <label>
+                <input
+                  type="radio"
+                  name="plan"
+                  value="with_meal"
+                  onclick="toggleMealOptions()"
+                />
+                食事付き </label
+              ><br />
+            </fieldset>
 
-      <label for="checkin">チェックイン日時:</label>
-      <label class="required">必須</label><br />
-      <input type="datetime-local" id="checkin" name="checkin" />
-      <span id="checkinError" class="error-mark"></span><br /><br />
+            <fieldset>
+              <legend>食事内容</legend>
+              <label>
+                <input
+                  type="checkbox"
+                  name="meal[]"
+                  id="dinner"
+                  value="dinner"
+                  disabled
+                />
+                夕食 </label
+              ><br />
+              <label>
+                <input
+                  type="checkbox"
+                  name="meal[]"
+                  id="breakfast"
+                  value="breakfast"
+                  disabled
+                />
+                朝食 </label
+              ><br />
+            </fieldset>
 
-      <!-- チェックアウト日時 -->
-      <label for="checkout">チェックアウト日時:</label>
-      <label class="required">必須</label><br />
-      <input type="datetime-local" id="checkout" name="checkout" />
-      <span id="checkoutError" class="error-mark"></span><br /><br />
+            <label for="checkin">チェックイン日時:</label>
+            <label class="required">必須</label><br />
+            <input type="datetime-local" id="checkin" name="checkin" />
+            <span id="checkinError" class="error-mark"></span><br /><br />
 
-      <!-- 宿泊人数 -->
-      <label for="adults">大人:</label><label class="required">必須</label
-      ><br />
-      <input type="number" id="adults" name="adults" min="1" />
-      <span id="adultsError" class="error-mark"></span><br /><br />
+            <!-- チェックアウト日時 -->
+            <label for="checkout">チェックアウト日時:</label>
+            <label class="required">必須</label><br />
+            <input type="datetime-local" id="checkout" name="checkout" />
+            <span id="checkoutError" class="error-mark"></span><br /><br />
 
-      <label for="children">子ども:</label><label class="required">必須</label
-      ><br />
-      <input type="number" id="children" name="children" min="0" />
-      <span id="childrenError" class="error-mark"></span><br /><br />
+            <!-- 宿泊人数 -->
+            <label for="adults">大人:</label><label class="required">必須</label
+            ><br />
+            <input type="number" id="adults" name="adults" min="1" />
+            <span id="adultsError" class="error-mark"></span><br /><br />
 
-      <!-- 備考欄 -->
-      <label for="notes">備考:</label><br />
-      <textarea
-        id="notes"
-        name="notes"
-        rows="4"
-        cols="50"
-        placeholder="ご要望などを記入してください"
-      ></textarea
-      ><br /><br />
+            <label for="children">子ども:</label
+            ><label class="required">必須</label><br />
+            <input type="number" id="children" name="children" min="0" />
+            <span id="childrenError" class="error-mark"></span><br /><br />
 
-      <input type="submit" value="送信" onclick="validateForm(event)" />
-    </form>
+            <!-- 備考欄 -->
+            <label for="notes">備考:</label><br />
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              cols="50"
+              placeholder="ご要望などを記入してください"
+            ></textarea
+            ><br /><br />
+            <div>
+              <input type="checkbox" id="agree" />
+              <label for="agree">同意する</label>
+            </div>
+            <input
+              type="submit"
+              value="送信"
+              onclick="validateForm(event)"
+              class="submit-btn"
+              id="submit-btn"
+              disabled
+            />送信する
+          </form>
 
-    <div id="errorMessages" class="error"></div>
-
+          <div id="errorMessages" class="error"></div>
+        </div>
+      </main>
+      <footer>
+        <div>
+          <p>All Rights Reserved 2024 &copy; Copyright Mayumi Kuwana</p>
+        </div>
+      </footer>
+      <div class="page-bg"></div>
+      <div class="animation-wrapper">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+      </div>
+    </div>
     <script src="js/reservation.js"></script>
   </body>
 </html>
