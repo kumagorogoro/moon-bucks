@@ -79,7 +79,7 @@ window.addEventListener("scroll", function () {
 
   // 下にスクロールした場合は非表示
   if (currentScroll > lastScrollTop) {
-    navbar.style.top = "-110px"; // ナビゲーションを隠す（高さ分調整）
+    navbar.style.top = "-140px"; // ナビゲーションを隠す（高さ分調整）
   } else {
     // 上にスクロールした場合は表示
     navbar.style.top = "0";
@@ -94,7 +94,7 @@ const navLinks = document.querySelectorAll("nav ul li a");
 navLinks.forEach((link) => {
   link.addEventListener("click", function (event) {
     // "Top"リンクがクリックされた場合はナビゲーションを表示したまま
-    if (link.textContent === "Top") {
+    if (link.textContent === "カフェ") {
       // 何もしない、ナビゲーションは表示のまま
       return;
     }
@@ -105,7 +105,7 @@ navLinks.forEach((link) => {
     // Promise.resolve() で非同期に最優先で実行
     Promise.resolve().then(() => {
       // ナビゲーションを非表示にする
-      navbar.style.top = "-110px"; // ナビゲーションを非表示にする
+      navbar.style.top = "-140px"; // ナビゲーションを非表示にする
 
       // 少し待ってからスクロールイベントを再度有効化
       setTimeout(() => {
