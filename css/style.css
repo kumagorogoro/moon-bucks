@@ -91,9 +91,10 @@ nav .menu li {
   padding: 20px;
   text-align: center;
 }
-.pc {
+.pc,.pc2{
   display: none;
 }
+
 .pcmenu {
   display: none;
 }
@@ -122,6 +123,20 @@ nav .menu {
   font-size: 100px;
   font-weight: bold;
   cursor: pointer;
+}
+.topback {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  font-size: 2em;
+  color: white;
+}
+.reservation{
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  font-size: 1.5em;
+  color: white;
 }
 /* スライドショー */
 .main .active {
@@ -472,29 +487,27 @@ footer div p {
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    height: 110px;
+    height: 140px;
     transition: top 0.3s; /* スムーズなアニメーション */
   }
   .pc {
     display: block;
-    margin-top: 20px;
     margin: auto;
+    margin-top: 20px;
+    margin-left: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
-    gap: 50px;
+    gap: 100px;
     list-style: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
-  .pc li {
+  .pc li:nth-child(1) {
     width: 100px;
     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+  .pc li:nth-child(n + 2) {
+    width: 100px;
+    height: 0px;
   }
   .pc li a {
     text-decoration: none;
@@ -515,6 +528,22 @@ footer div p {
     object-fit: cover;
     animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
     transform-origin: center; /* 回転の中心をdivの中央に設定 */
+  }
+  .pc2 {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    gap: 100px;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .pc2 li a {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
   }
   @keyframes rotateAnimation {
     0% {
