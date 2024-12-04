@@ -29,7 +29,6 @@ body {
   position: fixed;
   top: 54px;
   right: 6%;
-  /* border: 5px solid rgb(255, 255, 255); */
   border-radius: 50%;
   cursor: pointer;
 }
@@ -61,9 +60,39 @@ body {
     transform: rotate(360deg); /* 360度回転 */
   }
 }
-.menu {
-  list-style-type: none;
+/* メニューが表示されるときのアニメーション */
+#menu.show {
   display: flex;
+}
+
+/* リストアイテムがアニメーションで表示されるように */
+#menu.show ul li {
+  opacity: 1;
+  transform: translateY(0);
+  animation: typing 2s forwards; /* タイピングアニメーション */
+}
+/* タイピングアニメーション */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* メニューリンクのタイピングを制御 */
+#menu ul li a {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid black;
+  padding-right: 5px;
+  animation: typing 2s forwards;
+}
+.menu {
+  display: none;
+  list-style-type: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -71,17 +100,28 @@ body {
 
 nav .menu li {
   margin: 50px 50px;
-  height: 200px;
-  width: 400px;
+  height: 100px;
+  width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0; /* 初めは非表示 */
+  transform: translateY(0px); /* 少し下にずらしてスタート */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 nav .menu li a {
   color: white;
+  width: 600px;
   text-decoration: none;
   font-size: 1em;
+  text-align: center;
+}
+nav .menu li:nth-child(1) a {
+  text-align: left;
+}
+nav .menu li:nth-child(6) a {
+  text-align: left;
 }
 
 nav .menu li a:hover {
@@ -89,9 +129,9 @@ nav .menu li a:hover {
 }
 nav .menu li {
   padding: 20px;
-  text-align: center;
 }
-.pc,.pc2{
+.pc,
+.pc2 {
   display: none;
 }
 
@@ -131,13 +171,14 @@ nav .menu {
   font-size: 2em;
   color: white;
 }
-.reservation{
+.reservation {
   position: fixed;
   bottom: 5%;
   right: 5%;
   font-size: 1.5em;
   color: white;
 }
+
 /* スライドショー */
 .main .active {
   opacity: 1;
@@ -204,18 +245,12 @@ h2 {
   position: absolute;
   top: 50px;
   left: 2%;
-  width: 300px;
+  width: 500px;
   margin-top: 100px;
 }
-.right-container {
+.info-container {
   width: 700px;
   margin-left: 350px;
-}
-button {
-  position: absolute;
-  top: 105px;
-  left: 40%;
-  cursor: pointer;
 }
 #info .info-new {
   width: 700px;
@@ -243,9 +278,13 @@ button {
   padding-left: 20px;
 }
 .btn {
+  position: absolute;
+  top: 105px;
+  left: 40%;
+  cursor: pointer;
   width: 120px;
   height: 120px;
-  font-size: 1.6em;
+  font-size: 1.2em;
   color: white;
   border: white 1px solid;
   border-radius: 50%;
@@ -265,7 +304,7 @@ button {
   position: absolute;
   top: 50px;
   left: 2%;
-  width: 300px;
+  width: 500px;
   margin-top: 100px;
 }
 .drink-menu {
@@ -334,7 +373,7 @@ button {
   position: relative;
 }
 #food .border {
-  width: 300px;
+  width: 500px;
   margin-top: 100px;
   border-bottom: 1px dashed white;
   position: absolute;
@@ -410,7 +449,7 @@ button {
   position: absolute;
   top: 50px;
   left: 2%;
-  width: 300px;
+  width: 500px;
   margin-top: 100px;
 }
 #access .container div a {
@@ -418,14 +457,9 @@ button {
   color: white;
 }
 #map-sepia {
-  height: 300px;
-  width: 50%;
   filter: sepia(100%);
 }
-#map-grayscale {
-  width: fit-content;
-  /* filter: grayscale(100%); //白黒に変換 */
-}
+
 .container {
   width: 1130px;
   margin-top: 100px;
@@ -496,22 +530,31 @@ footer div p {
     margin-top: 20px;
     margin-left: 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 100px;
+    gap: 20px;
     list-style: none;
+    position: relative;
   }
-  .pc li:nth-child(1) {
-    width: 100px;
+  .line {
+    width: 8%;
+    height: 80%;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .pc li {
     height: 50px;
   }
   .pc li:nth-child(n + 2) {
-    width: 100px;
-    height: 0px;
+    width: 50%;
+    text-align: start;
   }
   .pc li a {
     text-decoration: none;
     color: white;
+    font-size: 1.5em;
   }
   .pcmenu {
     display: block;
@@ -532,18 +575,20 @@ footer div p {
   .pc2 {
     height: 50px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     list-style: none;
-    gap: 100px;
     margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 180px;
     position: relative;
   }
-
+  .pc2 li:nth-child(4) {
+    margin-right: 50px;
+  }
   .pc2 li a {
     color: white;
     text-decoration: none;
-    margin-right: 50px;
   }
   @keyframes rotateAnimation {
     0% {

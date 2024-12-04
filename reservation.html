@@ -26,25 +26,46 @@
                 <img class="pcbeans" src="img/menu.png" />
               </div>
             </li>
-            <li><a href="index.html">カフェ</a></li>
+            <li><a href="#top">カフェ</a></li>
             <li><a href="stay.html">ご宿泊</a></li>
           </ul>
-          <!-- ナビゲーションメニュー -->
-          <ul class="menu" id="menu">
-            <span id="close" class="close">&times;</span>
-            <li><a href="index.html">カフェ</a></li>
-            <li><a href="stay.html">ご宿泊について</a></li>
+          <ul class="pc2">
+            <li><a href="#info">お知らせ</a></li>
+            <li><a href="#drink">ドリンク</a></li>
+            <li><a href="#food">フード</a></li>
+            <li><a href="#access">アクセス</a></li>
+            <li><a href="stay.html#inside">お部屋&設備</a></li>
+            <li><a href="stay.html#food">お食事</a></li>
+            <li><a href="stay.html#view">夜景</a></li>
+            <li><a href="stay.html#price">宿泊料金</a></li>
           </ul>
+          <!-- ナビゲーションメニュー -->
+          <div class="menu" id="menu">
+            <span id="close" class="close">&times;</span>
+            <ul>
+              <li><a href="#top">カフェ</a></li>
+              <li><a href="#info">お知らせ</a></li>
+              <li><a href="#drink">ドリンク</a></li>
+              <li><a href="#food">フード</a></li>
+              <li><a href="#access">アクセス</a></li>
+              <li><a href="stay.html">ご宿泊</a></li>
+              <li><a href="stay.html#inside">お部屋&設備</a></li>
+              <li><a href="stay.html#food">お食事</a></li>
+              <li><a href="stay.html#view">夜景</a></li>
+              <li><a href="stay.html#price">宿泊料金</a></li>
+            </ul>
+          </div>
           <a href="#top" class="topback"><img src="" alt="" />Top</a>
         </nav>
       </header>
       <main>
+        <div class="border">
+          <h1>宿泊予約</h1>
+        </div>
         <div class="mainwrapper">
-          <h1>宿泊予約フォーム</h1>
-
           <form id="reservationForm" action="" method="post">
             <!-- 名前 -->
-            <label for="name">名前:</label><label class="required">必須</label
+            <label for="name">名前</label><label class="required">*</label
             ><br />
             <input
               type="text"
@@ -55,9 +76,9 @@
             <span id="nameError" class="error-mark"></span><br /><br />
 
             <!-- 住所 -->
-            <label for="name">住所:</label><label class="required">必須</label
+            <label for="name">住所</label><label class="required">*</label
             ><br />
-            <label for="postal_code">郵便番号:</label>
+            <label for="postal_code">郵便番号</label><br />
             <input
               type="text"
               id="postal_code"
@@ -67,7 +88,7 @@
             />
             <span id="postalCodeError" class="error-mark"></span><br /><br />
 
-            <label for="prefecture">都道府県:</label>
+            <label for="prefecture">都道府県</label><br />
             <select id="prefecture" name="prefecture" required>
               <option value="">選択してください</option>
               <option value="北海道">北海道</option>
@@ -119,7 +140,7 @@
               <option value="沖縄県">沖縄県</option>
             </select>
             <span id="prefectureError" class="error-mark"></span><br /><br />
-            <label for="city" class="required">市区町村:</label>
+            <label for="city" class="required">市区町村</label><br />
             <input type="text" id="city" name="city" />
             <span id="cityError" class="error-mark"></span><br /><br />
 
@@ -133,8 +154,8 @@
             <span id="addressError" class="error-mark"></span><br /><br />
 
             <!-- メールアドレス -->
-            <label for="email">メールアドレス:</label
-            ><label class="required">必須</label><br />
+            <label for="email">メールアドレス</label
+            ><label class="required">*</label><br />
             <input
               type="text"
               id="email"
@@ -144,8 +165,8 @@
             <span id="emailError" class="error-mark"></span><br /><br />
 
             <!-- 電話番号 -->
-            <label for="phone">電話番号:</label
-            ><label class="required">必須</label><br />
+            <label for="phone">電話番号</label><label class="required">*</label
+            ><br />
             <input
               type="tel"
               id="phone"
@@ -186,6 +207,7 @@
                   id="dinner"
                   value="dinner"
                   disabled
+                  checked
                 />
                 夕食 </label
               ><br />
@@ -196,30 +218,31 @@
                   id="breakfast"
                   value="breakfast"
                   disabled
+                  checked
                 />
                 朝食 </label
               ><br />
             </fieldset>
 
             <label for="checkin">チェックイン日時:</label>
-            <label class="required">必須</label><br />
+            <label class="required">*</label><br />
             <input type="datetime-local" id="checkin" name="checkin" />
             <span id="checkinError" class="error-mark"></span><br /><br />
 
             <!-- チェックアウト日時 -->
             <label for="checkout">チェックアウト日時:</label>
-            <label class="required">必須</label><br />
+            <label class="required">*</label><br />
             <input type="datetime-local" id="checkout" name="checkout" />
             <span id="checkoutError" class="error-mark"></span><br /><br />
 
             <!-- 宿泊人数 -->
-            <label for="adults">大人:</label><label class="required">必須</label
+            <label for="adults">大人:</label><label class="required">*</label
             ><br />
             <input type="number" id="adults" name="adults" min="1" />
             <span id="adultsError" class="error-mark"></span><br /><br />
 
             <label for="children">子ども:</label
-            ><label class="required">必須</label><br />
+            ><label class="required">*</label><br />
             <input type="number" id="children" name="children" min="0" />
             <span id="childrenError" class="error-mark"></span><br /><br />
 
@@ -235,7 +258,10 @@
             ><br /><br />
             <div>
               <input type="checkbox" id="agree" />
-              <label for="agree">同意する</label>
+              <label for="agree" class="label_test"
+                ><a href="" class="white">プライバシーポリシー</a
+                >に同意する</label
+              >
             </div>
             <input
               type="submit"
@@ -244,7 +270,7 @@
               class="submit-btn"
               id="submit-btn"
               disabled
-            />送信する
+            />
           </form>
 
           <div id="errorMessages" class="error"></div>

@@ -1,4 +1,3 @@
-// メニュー
 const hamburger = document.querySelector("#menubtn");
 const menubeans = document.querySelector(".menubeans");
 const menu = document.querySelector("#menu");
@@ -8,17 +7,17 @@ const links = document.querySelectorAll("#menu li a");
 
 // ハンバーガーメニューアイコン（menubeans）クリック時にもメニューを表示
 menubeans.addEventListener("click", function () {
-  menu.style.display = "flex";
+  menu.classList.add("show"); // メニューに 'show' クラスを追加して表示
 });
 
 // ハンバーガーメニューを開くボタン（menubtn）クリック時にもメニューを表示
 hamburger.addEventListener("click", function () {
-  menu.style.display = "flex";
+  menu.classList.add("show"); // メニューに 'show' クラスを追加して表示
 });
 
 // 閉じるボタンをクリックしたとき
 closeBtn.addEventListener("click", function () {
-  menu.style.display = "none"; // ハンバーガーメニュー非表示
+  menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
 });
 
 // メニュー外をクリックした場合にメニューを閉じる
@@ -29,20 +28,16 @@ window.addEventListener("click", function (e) {
     e.target !== menutext &&
     e.target !== menubeans // menubeansも除外
   ) {
-    menu.style.display = "none";
+    menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
   }
 });
 
 // メニューリンクをクリックしたときにメニューを閉じる
 links.forEach(function (link) {
   link.addEventListener("click", function () {
-    menu.style.display = "none";
+    menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
   });
 });
-let lastScrollTop = 0; // 最後にスクロールした位置
-const navbar = document.querySelector("nav");
-let isScrollEnabled = true; // スクロールが有効かどうかを示すフラグ
-
 // スクロールイベント
 window.addEventListener("scroll", function () {
   if (!isScrollEnabled) return; // スクロールが無効な時は処理をスキップ

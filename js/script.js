@@ -1,4 +1,3 @@
-// メニュー
 const hamburger = document.querySelector("#menubtn");
 const menubeans = document.querySelector(".menubeans");
 const menu = document.querySelector("#menu");
@@ -8,17 +7,17 @@ const links = document.querySelectorAll("#menu li a");
 
 // ハンバーガーメニューアイコン（menubeans）クリック時にもメニューを表示
 menubeans.addEventListener("click", function () {
-  menu.style.display = "flex";
+  menu.classList.add("show"); // メニューに 'show' クラスを追加して表示
 });
 
 // ハンバーガーメニューを開くボタン（menubtn）クリック時にもメニューを表示
 hamburger.addEventListener("click", function () {
-  menu.style.display = "flex";
+  menu.classList.add("show"); // メニューに 'show' クラスを追加して表示
 });
 
 // 閉じるボタンをクリックしたとき
 closeBtn.addEventListener("click", function () {
-  menu.style.display = "none"; // ハンバーガーメニュー非表示
+  menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
 });
 
 // メニュー外をクリックした場合にメニューを閉じる
@@ -29,14 +28,14 @@ window.addEventListener("click", function (e) {
     e.target !== menutext &&
     e.target !== menubeans // menubeansも除外
   ) {
-    menu.style.display = "none";
+    menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
   }
 });
 
 // メニューリンクをクリックしたときにメニューを閉じる
 links.forEach(function (link) {
   link.addEventListener("click", function () {
-    menu.style.display = "none";
+    menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
   });
 });
 // スライドショー
@@ -59,10 +58,10 @@ btn.addEventListener("click", function () {
   if (infoHidden.style.display === "none" || infoHidden.style.display === "") {
     infoHidden.style.display = "block"; // 表示
     border.style.borderBottom = "none";
-    btn.textContent = "close"; // ボタンのテキストを「close」に変更
+    btn.textContent = "閉じる"; // ボタンのテキストを「close」に変更
   } else {
     infoHidden.style.display = "none"; // 非表示
-    btn.textContent = "more"; // ボタンのテキストを「more」に変更
+    btn.textContent = "さらに表示"; // ボタンのテキストを「more」に変更
     border.style.border = "solid 1px white";
   }
 });

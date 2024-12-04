@@ -150,6 +150,9 @@ main {
 main h1 {
   padding-top: 190px;
 }
+.white {
+  color: white;
+}
 /* footer */
 footer div {
   width: 1130px;
@@ -258,14 +261,118 @@ footer div p {
   }
 }
 /* main */
+h1 {
+  border-bottom: 1px dashed white;
+  width: 300px;
+}
 main {
   margin: auto;
-  text-align: center;
+  position: relative;
+}
+main h1 {
+  display: block;
+  margin-left: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .mainwrapper {
   width: 600px;
-  margin: auto;
   padding-bottom: 150px;
+  padding-top: 300px;
+  margin: auto;
+}
+#name {
+  width: 400px;
+  height: 50px;
+  border-radius: 8px;
+}
+#name,
+#postal_code,
+#prefecture,
+#city,
+#address,
+#email,
+#phone,
+#checkin,
+#checkout,
+#adults,
+#children,
+#notes,
+.submit-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+}
+#name,
+#postal_code,
+#prefecture,
+#city,
+#email,
+#phone,
+#checkin,
+#checkout,
+#adults,
+#children {
+  width: 50%;
+  height: 50px;
+  border-radius: 8px;
+}
+/*標準表示のチェックボックスを非表示にする*/
+#agree {
+  display: none;
+}
+
+/*ボックス枠のCSS*/
+.label_test:after {
+  position: absolute;
+  display: block;
+  top: 150px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.label_test {
+  position: relative;
+}
+
+.label_test:hover:after {
+  border: 5px double white;
+  position: absolute;
+  top: 35px;
+  left: 41px;
+  transform: translate(-50%, -50%);
+}
+.label_test:after,
+.label_test:before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+}
+.agreebtn {
+  height: 100px;
+}
+.white {
+  margin-left: 200px;
+}
+/*チェックマークの追加*/
+.label_test:before {
+  left: 35px;
+  top: 20px;
+  width: 9px; /* チェックマークの幅 */
+  height: 18px; /* チェックマークの高さ */
+  border: solid white;
+  border-width: 0 1px 1px 0; /* チェックマークの線を作成 */
+  transform: rotate(45deg);
+  opacity: 0;
+}
+/*チェックボックスがチェックされた時に動作する内容*/
+input[type="checkbox"]:checked + .label_test:before {
+  opacity: 1;
 }
 /* 送信ボタン */
 .submit-btn {
@@ -277,9 +384,9 @@ main {
   appearance: none;
 
   color: #fff;
-  padding: 8px 24px;
   background-color: #3abec1;
   cursor: pointer; /* ポインターカーソルを表示 */
+  margin-top: 100px;
 }
 
 .submit-btn[disabled] {
