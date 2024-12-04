@@ -38,6 +38,9 @@ links.forEach(function (link) {
     menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
   });
 });
+let lastScrollTop = 0; // 最後にスクロールした位置
+const navbar = document.querySelector("nav");
+let isScrollEnabled = true; // スクロールが有効かどうかを示すフラグ
 // スクロールイベント
 window.addEventListener("scroll", function () {
   if (!isScrollEnabled) return; // スクロールが無効な時は処理をスキップ
@@ -90,6 +93,25 @@ window.addEventListener("mousemove", function (event) {
     navbar.style.top = "0"; // 上部200px以内に入ったらナビゲーションを表示
   }
 });
+// 「同意する」のチェックボックスを取得
+const agreeCheckbox = document.getElementById("agree");
+// 送信ボタンを取得
+const submitBtn = document.getElementById("submit-btn");
+
+// チェックボックスをクリックした時に送信ボタンの状態を切り替える
+agreeCheckbox.addEventListener("change", () => {
+  // チェックされている場合、送信ボタンを有効化
+  if (agreeCheckbox.checked) {
+    submitBtn.disabled = false; // disabledを外す
+  } else {
+    submitBtn.disabled = true; // disabledを付与
+  }
+});
+
+// 初期状態でプライバシーポリシーの同意がチェックされていない場合、送信ボタンを無効にしておく
+if (!agreeCheckbox.checked) {
+  submitBtn.disabled = true; // 初期状態で送信ボタンを無効にする
+}
 
 // 画面スクロールしたときの処理（マウスが画面上部200px以内にいる場合）
 window.addEventListener("scroll", function () {
@@ -119,6 +141,7 @@ function toggleMealOptions() {
     breakfastCheckbox.disabled = false;
   }
 }
+
 document
   .getElementById("reservationForm")
   .addEventListener("submit", function (event) {
@@ -256,6 +279,20 @@ document
       errors.push("食事タイプは必須です。");
     }
 
+    // 食事付きプランの場合、食事内容が選択されているかを確認
+    if (
+      document.querySelector('input[name="plan"]:checked').value === "with_meal"
+    ) {
+      const mealCheckboxes = document.querySelectorAll(
+        'input[name="meal[]"]:checked'
+      );
+      if (mealCheckboxes.length === 0) {
+        document.getElementById("mealError").textContent =
+          "食事内容（夕食または朝食）を選択してください。";
+        errors.push("食事内容（夕食または朝食）を選択してください。");
+      }
+    }
+
     // エラーがない場合は送信
     if (errors.length === 0) {
       alert("フォームは正常に送信されました！");
@@ -263,6 +300,7 @@ document
       // document.getElementById("reservationForm").submit();
     }
   });
+
 // 郵便番号を入力したときに住所情報を自動入力する関数
 function fetchAddressFromPostalCode() {
   const postalCode = document.getElementById("postal_code").value;
@@ -293,24 +331,48 @@ function fetchAddressFromPostalCode() {
       alert("住所情報の取得に失敗しました。");
     });
 }
+// フォーム送信時の処理
+document
+  .getElementById("reservationForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // フォーム送信を防止
 
-// バリデーション等は他の部分と同様に進めてください
-function validateForm(event) {
-  // ここにバリデーションのコードを追加
-}
-// 「同意する」のチェックボックスを取得
-const agreeCheckbox = document.getElementById("agree");
-// 送信ボタンを取得
-const submitBtn = document.getElementById("submit-btn");
+    // 各フィールドのエラーメッセージ用spanをリセット
+    var errorSpans = document.querySelectorAll(".error-mark");
+    errorSpans.forEach(function (span) {
+      span.textContent = ""; // エラーメッセージをクリア
+    });
 
-// チェックボックスをクリックした時
-agreeCheckbox.addEventListener("click", () => {
-  // チェックされている場合
-  if (agreeCheckbox.checked === true) {
-    submitBtn.disabled = false; // disabledを外す
-  }
-  // チェックされていない場合
-  else {
-    submitBtn.disabled = true; // disabledを付与
-  }
-});
+    var errors = []; // エラーメッセージを格納する配列
+
+    // 食事付きプランのチェック
+    const plan = document.querySelector('input[name="plan"]:checked').value;
+    const dinnerCheckbox = document.getElementById("dinner");
+    const breakfastCheckbox = document.getElementById("breakfast");
+
+    if (
+      plan === "with_meal" &&
+      !dinnerCheckbox.checked &&
+      !breakfastCheckbox.checked
+    ) {
+      document.getElementById("mealError").textContent =
+        "食事内容（夕食または朝食）を選択してください。";
+      errors.push("食事内容（夕食または朝食）を選択してください。");
+    }
+
+    // 他のバリデーション部分（名前、郵便番号、電話番号など）はそのままで...
+
+    if (errors.length === 0) {
+      // 予約完了メッセージを表示
+      const confirmationMessage = document.getElementById(
+        "confirmationMessage"
+      );
+      confirmationMessage.style.display = "block";
+
+      // フォーム送信を実際に行う場合
+      // document.getElementById("reservationForm").submit();
+
+      // フォームをリセット
+      document.getElementById("reservationForm").reset();
+    }
+  });
