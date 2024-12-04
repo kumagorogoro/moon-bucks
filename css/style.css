@@ -171,6 +171,7 @@ nav .menu {
   right: 5%;
   font-size: 2em;
   color: white;
+  z-index: 1;
 }
 .reservation {
   position: fixed;
@@ -178,6 +179,7 @@ nav .menu {
   right: 5%;
   font-size: 1.5em;
   color: white;
+  z-index: 1;
 }
 
 /* スライドショー */
@@ -492,6 +494,7 @@ footer div p {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-top: 100px;
   }
   .menu ul li {
     height: 50px 0px;
@@ -508,9 +511,9 @@ footer div p {
     font-size: 2em;
   }
   .close {
-    top: 30px;
-    right: 30px;
-    font-size: 2em;
+    top: 50px;
+    right: 50px;
+    font-size: 3em;
   }
 }
 @media screen and (min-width: 1130px) {
