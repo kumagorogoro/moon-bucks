@@ -97,11 +97,12 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-nav .menu li {
-  margin: 50px 50px;
-  height: 100px;
+.menu ul {
   width: 600px;
+}
+nav .menu li {
+  margin: 100px 0px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,16 +113,17 @@ nav .menu li {
 
 nav .menu li a {
   color: white;
-  width: 600px;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 2em;
   text-align: center;
 }
 nav .menu li:nth-child(1) a {
   text-align: left;
+  font-size: 3em;
 }
 nav .menu li:nth-child(6) a {
   text-align: left;
+  font-size: 3em;
 }
 
 nav .menu li a:hover {
@@ -481,22 +483,29 @@ footer div p {
 /* メディアクエリ */
 @media screen and (min-width: 768px) {
   nav .menu {
-    width: 25%;
+    width: 30%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
+  }
+  .menu ul {
+    width: 90%;
+  }
+  .menu ul li {
+    font-size: 0.8em;
+    text-align: right;
+  }
+  nav .menu li:nth-child(1) a {
+    text-align: left;
+    font-size: 2em;
+  }
+  nav .menu li:nth-child(6) a {
+    text-align: left;
+    font-size: 2em;
   }
   .close {
     top: 30px;
     right: 30px;
-    font-size: 30px;
-  }
-
-  .menu li {
-    width: 110px;
-  }
-
-  .menu li a {
-    font-size: 0.5em;
+    font-size: 2em;
   }
 }
 @media screen and (min-width: 1130px) {
@@ -523,12 +532,21 @@ footer div p {
     background-color: rgba(0, 0, 0, 0.8);
     height: 140px;
     transition: top 0.3s; /* スムーズなアニメーション */
+    display: flex;
+    justify-content: center;
+  }
+  .cafemenu {
+    width: 30%;
+    margin-right: 50px;
+  }
+  .staymenu {
+    width: 30%;
+    margin-left: 50px;
   }
   .pc {
     display: block;
     margin: auto;
     margin-top: 20px;
-    margin-left: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -536,59 +554,62 @@ footer div p {
     list-style: none;
     position: relative;
   }
-  .line {
-    width: 8%;
-    height: 80%;
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
-    margin-left: 20px;
-    margin-top: 10px;
+  .cafemenu .pc {
+    display: flex;
+    justify-content: flex-end;
   }
   .pc li {
     height: 50px;
   }
   .pc li:nth-child(n + 2) {
-    width: 50%;
+    width: fit-content;
     text-align: start;
   }
   .pc li a {
     text-decoration: none;
     color: white;
-    font-size: 1.5em;
+    font-size: 2em;
   }
   .pcmenu {
     display: block;
-    z-index: 999;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     position: relative;
   }
   .pcbeans {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    transform: translateY(-50%);
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
     animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
-    transform-origin: center; /* 回転の中心をdivの中央に設定 */
+  }
+  #pctext {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
   }
   .pc2 {
     height: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     list-style: none;
     margin-top: 10px;
-    margin-right: 10px;
-    margin-left: 180px;
-    position: relative;
   }
-  .pc2 li:nth-child(4) {
-    margin-right: 50px;
+  .pc2:nth-child(1) li:nth-child(n + 2) {
+    margin-right: 5%;
+  }
+  .pc2:nth-child(2) li:nth-child(n + 2) {
+    margin-left: 5%;
   }
   .pc2 li a {
     color: white;
     text-decoration: none;
+    font-size: 1.2em;
   }
   @keyframes rotateAnimation {
     0% {
@@ -597,14 +618,6 @@ footer div p {
     100% {
       transform: rotate(360deg); /* 360度回転 */
     }
-  }
-
-  #pctext {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
   }
 
   .square {
@@ -692,6 +705,7 @@ footer div p {
     display: none;
   }
 }
+
 .concept {
   width: 100%;
   height: 800px;
