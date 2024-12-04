@@ -38,6 +38,9 @@ links.forEach(function (link) {
     menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
   });
 });
+let lastScrollTop = 0; // 最後にスクロールした位置
+const navbar = document.querySelector("nav");
+let isScrollEnabled = true; // スクロールが有効かどうかを示すフラグ
 // スクロールイベント
 window.addEventListener("scroll", function () {
   if (!isScrollEnabled) return; // スクロールが無効な時は処理をスキップ
