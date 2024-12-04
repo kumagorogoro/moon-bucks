@@ -86,7 +86,6 @@ body {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid black;
   padding-right: 5px;
   animation: typing 2s forwards;
 }
@@ -489,8 +488,14 @@ footer div p {
   }
   .menu ul {
     width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
   .menu ul li {
+    height: 50px 0px;
+    margin: 0;
     font-size: 0.8em;
     text-align: right;
   }
