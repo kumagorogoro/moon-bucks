@@ -58,10 +58,10 @@ btn.addEventListener("click", function () {
   if (infoHidden.style.display === "none" || infoHidden.style.display === "") {
     infoHidden.style.display = "block"; // 表示
     border.style.borderBottom = "none";
-    btn.textContent = "閉じる"; // ボタンのテキストを「close」に変更
+    btn.textContent = "close"; // ボタンのテキストを「close」に変更
   } else {
     infoHidden.style.display = "none"; // 非表示
-    btn.textContent = "さらに表示"; // ボタンのテキストを「more」に変更
+    btn.textContent = "more"; // ボタンのテキストを「more」に変更
     border.style.border = "solid 1px white";
   }
 });

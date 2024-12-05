@@ -11,17 +11,16 @@ img {
   width: 100%;
   vertical-align: bottom;
 }
-body {
-  width: 100%;
-  height: 100%;
-}
 .wrapper {
-  width: 1130px;
-  margin: 0 auto;
+  width: 100%;
   position: relative;
   z-index: 2;
 }
 /* menu */
+menu {
+  width: 1130px;
+  margin: auto;
+}
 .menubtn {
   z-index: 999;
   width: 180px;
@@ -190,8 +189,13 @@ nav .menu {
   object-position: 0px -200px;
 }
 /* main */
+main {
+  width: 1130px;
+  margin: auto;
+}
 .hero {
   position: relative;
+  width: 1130px;
 }
 .logo {
   width: 180px;
@@ -236,7 +240,8 @@ h2 {
 }
 /* info */
 #info {
-  width: 1130px;
+  width: 1030px;
+  margin: auto;
   margin-bottom: 150px;
   padding-top: 200px;
   position: relative;
@@ -252,8 +257,8 @@ h2 {
   margin-top: 100px;
 }
 .info-container {
-  width: 700px;
-  margin-left: 350px;
+  width: 600px;
+  margin-left: 300px;
 }
 #info .info-new {
   width: 700px;
@@ -299,6 +304,7 @@ h2 {
 /* drink */
 #drink {
   width: 1130px;
+  margin: auto;
   margin-bottom: 150px;
   padding-top: 150px;
   position: relative;
@@ -311,9 +317,9 @@ h2 {
   margin-top: 100px;
 }
 .drink-menu {
-  width: 1130px;
   margin: auto;
   margin-top: 50px;
+  padding: 0 100px;
 }
 .drink-menu .container .square {
   width: 200px;
@@ -371,9 +377,11 @@ h2 {
 
 /* food */
 #food {
+  width: 1130px;
   margin-bottom: 150px;
   padding-top: 150px;
   position: relative;
+  margin: auto;
 }
 #food .border {
   width: 500px;
@@ -385,9 +393,9 @@ h2 {
   display: flex;
 }
 .food-menu {
-  width: 1130px;
   margin: auto;
   margin-bottom: 150px;
+  padding: 0 100px;
 }
 .food-menu .container .square {
   width: 200px;
@@ -447,6 +455,7 @@ h2 {
   margin-bottom: 50px;
   padding-top: 150px;
   position: relative;
+  margin: auto;
 }
 #access .border {
   position: absolute;
