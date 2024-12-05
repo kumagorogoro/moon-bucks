@@ -110,7 +110,7 @@ nav .menu li {
 nav .menu li a {
   color: white;
   text-decoration: none;
-  font-size: 4em;
+  font-size: 2em;
   text-align: center;
 }
 nav .menu li:nth-child(1) a {
