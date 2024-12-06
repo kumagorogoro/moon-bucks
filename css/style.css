@@ -395,7 +395,6 @@ nav .spmenu {
 /* info */
 #info {
   width: 100%;
-  margin-bottom: 75px;
   padding-top: 100px;
   position: relative;
 }
@@ -405,10 +404,9 @@ h2 {
   font-size: 2.5em;
 }
 .info-container {
-  padding-top: 20px;
+  margin: 20px 10px 0 0;
 }
 #info .border {
-  width: 250px;
   margin-top: 50px;
 }
 #info .info-new {
@@ -456,7 +454,6 @@ h2 {
   }
   #info .border {
     top: 50px;
-    width: 500px;
     margin-top: 100px;
   }
   .info-container {
@@ -485,23 +482,11 @@ h2 {
 }
 /* drink */
 #drink {
-  width: 600px;
-  margin: auto;
-  margin-bottom: 75px;
   padding-top: 75px;
-  position: relative;
-}
-#drink .border {
-  position: absolute;
-  top: 25px;
-  left: 2%;
-  width: 250px;
-  margin-top: 50px;
 }
 .drink-menu {
-  margin: auto;
   margin-top: 25px;
-  padding: 0 50px;
+  padding: 0 10px;
 }
 .drink-menu .container .square {
   width: 100px;
@@ -512,36 +497,24 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 120px;
+  margin-bottom: 10px;
 }
 
 .drink-menu .container {
-  margin: auto;
   margin-top: 50px;
-  width: 450px;
-  height: 275px;
+  padding-bottom: 30px;
   position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
 }
-.drink-menu .container::before {
-  width: 290px;
-  height: 165px;
-  z-index: -1;
-  content: "";
-  position: absolute;
-  bottom: 62.5px;
-  right: 165px;
-  background: rgba(255, 255, 255, 0.643);
-}
+
 .drink-menu .container:after {
-  width: 500px;
+  width: 100%;
   height: 5px;
   content: "";
   position: absolute;
-  bottom: 35px;
-  left: -50px;
+  bottom: 0;
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 0),
@@ -550,11 +523,8 @@ h2 {
   );
 }
 .drink-menu .container img {
-  width: 300px;
-  height: 200px;
+  width: 50%;
   object-fit: cover;
-  margin-bottom: 65px;
-  margin-right: 50px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -615,25 +585,11 @@ h2 {
 }
 /* food */
 #food {
-  width: 600px;
-  margin-bottom: 75px;
   padding-top: 75px;
-  position: relative;
-  margin: auto;
-}
-#food .border {
-  width: 250px;
-  margin-top: 50px;
-  border-bottom: 1px dashed white;
-  position: absolute;
-  top: 25px;
-  left: 2%;
-  display: flex;
 }
 .food-menu {
-  margin: auto;
-  margin-bottom: 75px;
-  padding: 0 50px;
+  margin-top: 25px;
+  padding: 0 10px;
 }
 .food-menu .container .square {
   width: 100px;
@@ -644,35 +600,24 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 75px;
+  margin-bottom: 10px;
 }
+
 .food-menu .container {
-  margin: auto;
   margin-top: 50px;
-  width: 450px;
-  height: 275px;
+  padding-bottom: 30px;
   position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
 }
-.food-menu .container::before {
-  width: 300px;
-  height: 165px;
-  z-index: -1;
-  content: "";
-  position: absolute;
-  bottom: 60px;
-  left: 165px;
-  background: rgba(255, 255, 255, 0.643);
-}
-.food-menu .container::after {
-  width: 500px;
+
+.food-menu .container:after {
+  width: 100%;
   height: 5px;
   content: "";
   position: absolute;
-  bottom: 35px;
-  left: -50px;
+  bottom: 0;
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 0),
@@ -681,11 +626,8 @@ h2 {
   );
 }
 .food-menu .container img {
-  width: 300px;
-  height: 200px;
+  width: 50%;
   object-fit: cover;
-  margin-bottom: 65px;
-  margin-left: 50px;
 }
 @media screen and (min-width: 1200px) {
   #food {
