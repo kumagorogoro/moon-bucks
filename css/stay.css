@@ -6,6 +6,7 @@
   list-style: none;
 }
 body {
+  width: 100%;
   background: linear-gradient(#41342b, #60342e, #41342b);
   color: white;
 }
@@ -21,11 +22,11 @@ img {
 /* menu */
 .menubtn {
   z-index: 999;
-  width: 180px;
-  height: 180px;
+  width: 90px;
+  height: 90px;
   position: fixed;
-  top: 54px;
-  right: 6%;
+  top: 27px;
+  right: 3%;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -38,8 +39,8 @@ img {
   font-size: 1.6em;
 }
 .menubeans {
-  width: 180px;
-  height: 180px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
@@ -58,12 +59,12 @@ img {
   }
 }
 /* メニューが表示されるときのアニメーション */
-#menu.show {
+#spmenu.show {
   display: flex;
 }
 
 /* リストアイテムがアニメーションで表示されるように */
-#menu.show ul li {
+#spmenu.show ul li {
   opacity: 1;
   transform: translateY(0);
   animation: typing 2s forwards; /* タイピングアニメーション */
@@ -79,26 +80,26 @@ img {
 }
 
 /* メニューリンクのタイピングを制御 */
-#menu ul li a {
+#spmenu ul li a {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  padding-right: 5px;
+  padding-right: 2.5px;
   animation: typing 2s forwards;
 }
-.menu {
+.spmenu {
   display: none;
   list-style-type: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.menu ul {
-  width: 600px;
+.spmenu ul {
+  width: 300px;
 }
-nav .menu li {
-  margin: 100px 0px;
-  height: 100px;
+nav .spmenu li {
+  margin: 50px 0px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,26 +108,26 @@ nav .menu li {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-nav .menu li a {
+nav .spmenu li a {
   color: white;
   text-decoration: none;
   font-size: 2em;
   text-align: center;
 }
-nav .menu li:nth-child(1) a {
+nav .spmenu li:nth-child(1) a {
   text-align: left;
   font-size: 3em;
 }
-nav .menu li:nth-child(6) a {
+nav .spmenu li:nth-child(6) a {
   text-align: left;
   font-size: 3em;
 }
 
-nav .menu li a:hover {
+nav .spmenu li a:hover {
   text-decoration: underline;
 }
-nav .menu li {
-  padding: 20px;
+nav .spmenu li {
+  padding: 10px;
 }
 .pc,
 .pc2 {
@@ -136,7 +137,7 @@ nav .menu li {
 .pcmenu {
   display: none;
 }
-nav .menu {
+nav .spmenu {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -146,7 +147,7 @@ nav .menu {
   justify-content: center;
   align-content: space-around;
   display: none;
-  padding: 10px 0;
+  padding: 5px 0;
   z-index: 9999;
   position: fixed;
   top: 0;
@@ -155,8 +156,8 @@ nav .menu {
 
 .close {
   position: absolute;
-  top: 55px;
-  right: 75px;
+  top: 27.5px;
+  right: 37.5px;
   color: #fff;
   font-size: 100px;
   font-weight: bold;
@@ -168,6 +169,7 @@ nav .menu {
   right: 5%;
   font-size: 2em;
   color: white;
+  z-index: 1;
 }
 .reservation {
   position: fixed;
@@ -175,164 +177,15 @@ nav .menu {
   right: 5%;
   font-size: 1.5em;
   color: white;
+  z-index: 1;
 }
-/* main */
-main {
-  width: 1130px;
-  margin: auto;
-}
-#view-container {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 100px 100px 0px;
-  position: relative;
-}
-#view-container img {
-  object-fit: cover;
-  order: 1;
-}
-#view-container div {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  order: 2;
-}
-
-#room div img,
-#dinner div img,
-.breakfast div img,
-.coffee div img,
-#price div img {
-  border: 10px solid rgba(255, 255, 255, 0.393);
-  border-radius: 8px;
-  height: fit-content;
-}
-#view {
-  text-align: right;
-}
-#roomfood-container {
-  padding: 100px;
-}
-#room {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding-bottom: 100px;
-}
-#room img {
-  width: 500px;
-  height: fit-content;
-}
-
-#room div {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-#food {
-  display: flex;
-  justify-content: center;
-  margin: 30px 0;
-}
-#food div {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin: 0 10px;
-}
-#food img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-}
-
-.breakfast {
-  display: flex;
-  justify-content: center;
-  margin: 30px 0;
-}
-.breakfast div {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin: 0 10px;
-}
-.breakfast img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-}
-.breakfast div {
-  width: 300px;
-}
-
-.coffee {
-  display: flex;
-  justify-content: center;
-  margin: 30px 0;
-}
-.coffee div {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin: 0 10px;
-  width: 300px;
-}
-.coffee img {
-  width: 300px;
-}
-#price {
-  display: flex;
-  width: 100%;
-  margin: auto;
-  padding: 100px;
-  gap: 20px;
-}
-#price img {
-  width: 300px;
-}
-table tr th {
-  width: 200px;
-}
-table tr td {
-  width: 600px;
-}
-table {
-  position: relative;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-}
-caption {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-/* footer */
-footer div {
-  width: 1130px;
-  margin: auto;
-  text-align: center;
-}
-footer div p {
-  color: white;
-}
-/* メディアクエリ */
 @media screen and (min-width: 768px) {
-  nav .menu {
+  nav .spmenu {
     width: 30%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
   }
-  .menu ul {
+  .spmenu ul {
     width: 90%;
     height: 100%;
     display: flex;
@@ -340,18 +193,17 @@ footer div p {
     justify-content: space-around;
     margin-top: 100px;
   }
-  .menu ul li {
+  .spmenu ul li {
     height: 50px 0px;
     margin: 0;
     font-size: 0.8em;
     text-align: right;
   }
-  nav .menu li:nth-child(1) a {
+  nav .spmenu li:nth-child(1) a {
     text-align: left;
     font-size: 2em;
-    display: inline;
   }
-  nav .menu li:nth-child(6) a {
+  nav .spmenu li:nth-child(6) a {
     text-align: left;
     font-size: 2em;
   }
@@ -361,7 +213,6 @@ footer div p {
     font-size: 3em;
   }
 }
-
 @media screen and (min-width: 1130px) {
   .menubtn {
     right: 7%;
@@ -467,16 +318,84 @@ footer div p {
       transform: rotate(360deg); /* 360度回転 */
     }
   }
+}
+/* main */
+main {
+  width: 600px;
+  margin: auto;
+}
+@media screen and (min-width: 1200px) {
+  main {
+    width: 1200px;
+  }
+}
+/* view */
+#view-container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 50px 50px 0px;
+  position: relative;
+}
+#view-container img {
+  object-fit: cover;
+  order: 1;
+}
+#view-container div {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 12.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  order: 2;
+}
+#view {
+  text-align: right;
+}
+@media screen and (min-width: 1200px) {
   #view-container div {
     bottom: 220px;
   }
   #view-container {
-    width: 60%;
-    display: flex;
-    justify-content: center;
     gap: 10px;
     padding: 200px 0px;
   }
+}
+/* room */
+#room div img,
+#dinner div img,
+.breakfast div img,
+.coffee div img,
+#price div img {
+  border: 10px solid rgba(255, 255, 255, 0.393);
+  border-radius: 8px;
+  height: fit-content;
+}
+
+#roomfood-container {
+  padding: 50px;
+}
+#room {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 50px;
+}
+#room img {
+  width: 250px;
+  height: fit-content;
+}
+
+#room div {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+@media screen and (min-width: 1200px) {
   #roomfood-container {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -497,6 +416,68 @@ footer div p {
   #room p {
     position: static;
   }
+  #room img {
+    width: 500px;
+  }
+  #room div {
+    width: 400px;
+  }
+}
+/* food */
+#food {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+#food div {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 5px;
+}
+#food img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.breakfast {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+.breakfast div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 5px;
+}
+.breakfast img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+.breakfast div {
+  width: 150px;
+}
+
+.coffee {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+.coffee div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 5px;
+  width: 150px;
+}
+.coffee img {
+  width: 150px;
+}
+@media screen and (min-width: 1200px) {
   #food {
     grid-column: 3/5;
     grid-row: 1/2;
@@ -531,4 +512,64 @@ footer div p {
     display: flex;
     gap: 10px;
   }
+}
+/* price */
+#price {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  padding: 50px;
+  gap: 10px;
+}
+#price img {
+  width: 150px;
+}
+table tr th {
+  width: 100px;
+}
+table tr td {
+  width: 300px;
+}
+table {
+  position: relative;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+caption {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (min-width: 1200px) {
+#price {
+  padding: 100px;
+  gap: 20px;
+}
+#price img {
+  width: 300px;
+}
+table tr th {
+  width: 200px;
+}
+table tr td {
+  width: 600px;
+}
+caption {
+  top: 20px;
+}
+}
+/* footer */
+footer div {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+footer div p {
+  color: white;
+}
+@media screen and (min-width: 1200px) {
+  footer div {
+  width: 1200px;
+}
 }

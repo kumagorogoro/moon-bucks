@@ -12,22 +12,19 @@ img {
   vertical-align: bottom;
 }
 .wrapper {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   position: relative;
   z-index: 2;
 }
 /* menu */
-menu {
-  width: 1130px;
-  margin: auto;
-}
 .menubtn {
   z-index: 999;
-  width: 180px;
-  height: 180px;
+  width: 90px;
+  height: 90px;
   position: fixed;
-  top: 54px;
-  right: 6%;
+  top: 27px;
+  right: 3%;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -40,8 +37,8 @@ menu {
   font-size: 1.6em;
 }
 .menubeans {
-  width: 180px;
-  height: 180px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
@@ -60,12 +57,12 @@ menu {
   }
 }
 /* メニューが表示されるときのアニメーション */
-#menu.show {
+#spmenu.show {
   display: flex;
 }
 
 /* リストアイテムがアニメーションで表示されるように */
-#menu.show ul li {
+#spmenu.show ul li {
   opacity: 1;
   transform: translateY(0);
   animation: typing 2s forwards; /* タイピングアニメーション */
@@ -81,26 +78,26 @@ menu {
 }
 
 /* メニューリンクのタイピングを制御 */
-#menu ul li a {
+#spmenu ul li a {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  padding-right: 5px;
+  padding-right: 2.5px;
   animation: typing 2s forwards;
 }
-.menu {
+.spmenu {
   display: none;
   list-style-type: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.menu ul {
-  width: 600px;
+.spmenu ul {
+  width: 300px;
 }
-nav .menu li {
-  margin: 100px 0px;
-  height: 100px;
+nav .spmenu li {
+  margin: 50px 0px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,26 +106,26 @@ nav .menu li {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-nav .menu li a {
+nav .spmenu li a {
   color: white;
   text-decoration: none;
   font-size: 2em;
   text-align: center;
 }
-nav .menu li:nth-child(1) a {
+nav .spmenu li:nth-child(1) a {
   text-align: left;
   font-size: 3em;
 }
-nav .menu li:nth-child(6) a {
+nav .spmenu li:nth-child(6) a {
   text-align: left;
   font-size: 3em;
 }
 
-nav .menu li a:hover {
+nav .spmenu li a:hover {
   text-decoration: underline;
 }
-nav .menu li {
-  padding: 20px;
+nav .spmenu li {
+  padding: 10px;
 }
 .pc,
 .pc2 {
@@ -138,7 +135,7 @@ nav .menu li {
 .pcmenu {
   display: none;
 }
-nav .menu {
+nav .spmenu {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -148,7 +145,7 @@ nav .menu {
   justify-content: center;
   align-content: space-around;
   display: none;
-  padding: 10px 0;
+  padding: 5px 0;
   z-index: 9999;
   position: fixed;
   top: 0;
@@ -157,8 +154,8 @@ nav .menu {
 
 .close {
   position: absolute;
-  top: 55px;
-  right: 75px;
+  top: 27.5px;
+  right: 37.5px;
   color: #fff;
   font-size: 100px;
   font-weight: bold;
@@ -180,324 +177,13 @@ nav .menu {
   color: white;
   z-index: 1;
 }
-
-/* スライドショー */
-.main .active {
-  opacity: 1;
-}
-#size {
-  object-position: 0px -200px;
-}
-/* main */
-main {
-  width: 1130px;
-  margin: auto;
-}
-.hero {
-  position: relative;
-  width: 1130px;
-}
-.logo {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  position: absolute;
-  z-index: 10;
-  top: 52%;
-  left: 50px;
-  transform: translateY(-50%);
-}
-h1 {
-  writing-mode: vertical-rl;
-  position: absolute;
-  bottom: 60px;
-  left: 35px;
-  color: #fff;
-  padding: 20px;
-}
-h2 {
-  text-align: left;
-  color: #fff;
-  font-size: 2.5em;
-  position: absolute;
-  top: -70px;
-}
-.main {
-  position: relative;
-  width: 1130px;
-  height: 280px;
-  overflow: hidden;
-  margin-bottom: 200px;
-}
-.main img {
-  border-radius: 8px;
-  object-fit: cover;
-  width: 1130px;
-  height: 280px;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-/* info */
-#info {
-  width: 1030px;
-  margin: auto;
-  margin-bottom: 150px;
-  padding-top: 200px;
-  position: relative;
-}
-.border {
-  border-bottom: 1px dashed white;
-}
-#info .border {
-  position: absolute;
-  top: 50px;
-  left: 2%;
-  width: 500px;
-  margin-top: 100px;
-}
-.info-container {
-  width: 600px;
-  margin-left: 300px;
-}
-#info .info-new {
-  width: 700px;
-  height: fit-content;
-  text-align: left;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-}
-#info .info-old {
-  width: 700px;
-  height: fit-content;
-  display: none;
-  text-align: left;
-  border-bottom: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-}
-#info div p {
-  color: #fff;
-  padding: 10px;
-}
-#info div p span {
-  padding-left: 20px;
-}
-.btn {
-  position: absolute;
-  top: 105px;
-  left: 40%;
-  cursor: pointer;
-  width: 120px;
-  height: 120px;
-  font-size: 1.2em;
-  color: white;
-  border: white 1px solid;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0);
-  position: absolute;
-  top: 210px;
-  left: 120px;
-}
-/* drink */
-#drink {
-  width: 1130px;
-  margin: auto;
-  margin-bottom: 150px;
-  padding-top: 150px;
-  position: relative;
-}
-#drink .border {
-  position: absolute;
-  top: 50px;
-  left: 2%;
-  width: 500px;
-  margin-top: 100px;
-}
-.drink-menu {
-  margin: auto;
-  margin-top: 50px;
-  padding: 0 100px;
-}
-.drink-menu .container .square {
-  width: 200px;
-  height: 200px;
-  color: white;
-  border: white 1px solid;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 145px;
-}
-
-.drink-menu .container {
-  margin: auto;
-  margin-top: 100px;
-  width: 900px;
-  height: 550px;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-}
-.drink-menu .container::before {
-  width: 580px;
-  height: 380px;
-  z-index: -1;
-  content: "";
-  position: absolute;
-  bottom: 125px;
-  right: 330px;
-  background: rgba(255, 255, 255, 0.643);
-}
-.drink-menu .container:after {
-  width: 1100px;
-  height: 10px;
-  content: "";
-  position: absolute;
-  bottom: 70px;
-  left: -100px;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0),
-    white,
-    rgba(255, 255, 255, 0)
-  );
-}
-.drink-menu .container img {
-  width: 600px;
-  height: 400px;
-  object-fit: cover;
-  margin-bottom: 135px;
-  margin-right: 100px;
-}
-
-/* food */
-#food {
-  width: 1130px;
-  margin-bottom: 150px;
-  padding-top: 150px;
-  position: relative;
-  margin: auto;
-}
-#food .border {
-  width: 500px;
-  margin-top: 100px;
-  border-bottom: 1px dashed white;
-  position: absolute;
-  top: 50px;
-  left: 2%;
-  display: flex;
-}
-.food-menu {
-  margin: auto;
-  margin-bottom: 150px;
-  padding: 0 100px;
-}
-.food-menu .container .square {
-  width: 200px;
-  height: 200px;
-  color: white;
-  border: white 1px solid;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 145px;
-}
-.food-menu .container {
-  margin: auto;
-  margin-top: 100px;
-  width: 900px;
-  height: 550px;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-}
-.food-menu .container::before {
-  width: 580px;
-  height: 380px;
-  z-index: -1;
-  content: "";
-  position: absolute;
-  bottom: 125px;
-  left: 330px;
-  background: rgba(255, 255, 255, 0.643);
-}
-.food-menu .container::after {
-  width: 1100px;
-  height: 10px;
-  content: "";
-  position: absolute;
-  bottom: 70px;
-  left: -100px;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0),
-    white,
-    rgba(255, 255, 255, 0)
-  );
-}
-.food-menu .container img {
-  width: 600px;
-  height: 400px;
-  object-fit: cover;
-  margin-bottom: 135px;
-  margin-left: 100px;
-}
-/* access */
-#access {
-  width: 1130px;
-  margin-bottom: 50px;
-  padding-top: 150px;
-  position: relative;
-  margin: auto;
-}
-#access .border {
-  position: absolute;
-  top: 50px;
-  left: 2%;
-  width: 500px;
-  margin-top: 100px;
-}
-#access .container div a {
-  text-decoration: none;
-  color: white;
-}
-#map-sepia {
-  filter: sepia(100%);
-}
-
-.container {
-  width: 1130px;
-  margin-top: 100px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  line-height: 35px;
-}
-/* footer */
-footer div {
-  width: 1130px;
-  margin: auto;
-  text-align: center;
-}
-footer div p {
-  color: white;
-}
-/* メディアクエリ */
 @media screen and (min-width: 768px) {
-  nav .menu {
+  nav .spmenu {
     width: 30%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
   }
-  .menu ul {
+  .spmenu ul {
     width: 90%;
     height: 100%;
     display: flex;
@@ -505,17 +191,17 @@ footer div p {
     justify-content: space-around;
     margin-top: 100px;
   }
-  .menu ul li {
+  .spmenu ul li {
     height: 50px 0px;
     margin: 0;
     font-size: 0.8em;
     text-align: right;
   }
-  nav .menu li:nth-child(1) a {
+  nav .spmenu li:nth-child(1) a {
     text-align: left;
     font-size: 2em;
   }
-  nav .menu li:nth-child(6) a {
+  nav .spmenu li:nth-child(6) a {
     text-align: left;
     font-size: 2em;
   }
@@ -531,12 +217,6 @@ footer div p {
   }
 }
 @media screen and (min-width: 1200px) {
-  .hero {
-    padding-top: 240px;
-  }
-  .logo {
-    top: 380px;
-  }
   .menubtn {
     display: none;
   }
@@ -636,7 +316,259 @@ footer div p {
       transform: rotate(360deg); /* 360度回転 */
     }
   }
+}
+/* スライドショー */
+/* main */
+.border {
+  border-bottom: 1px dashed white;
+}
+/* hero*/
+.hero {
+  position: relative;
+}
+.logo {
+  width: 100px;
+  position: absolute;
+  z-index: 1;
+  top: 20%;
+  left: 25px;
+  transform: translateY(-50%);
+}
+.slide-container .active {
+  opacity: 1;
+}
+.slide-container {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+.slide-container img {
+  border-radius: 4px;
+  object-fit: cover;
+  width: 100%;
+  height: 140px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    top: 28%;
+  }
+  .slide-container img {
+    height: 200px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding-top: 240px;
+  }
+  .logo {
+    top: 380px;
+  }
+  h2 {
+    top: -70px;
+  }
+  .slide-container {
+    width: 1200px;
+    height: 280px;
+    margin-bottom: 200px;
+  }
+  .slide-container img {
+    border-radius: 8px;
+    width: 1200px;
+    height: 280px;
+  }
+}
 
+/* info */
+#info {
+  margin-bottom: 75px;
+  padding-top: 100px;
+  position: relative;
+}
+h2 {
+  text-align: left;
+  color: #fff;
+  font-size: 2.5em;
+  position: absolute;
+  top: -35px;
+}
+
+#info .border {
+  position: absolute;
+  top: 25px;
+  left: 2%;
+  width: 250px;
+  margin-top: 50px;
+}
+.info-container {
+  width: 300px;
+  margin-left: 150px;
+}
+#info .info-new {
+  width: 350px;
+  height: fit-content;
+  text-align: left;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+#info .info-old {
+  width: 350px;
+  height: fit-content;
+  display: none;
+  text-align: left;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+#info div p {
+  color: #fff;
+  padding: 5px;
+}
+#info div p span {
+  padding-left: 10px;
+}
+.more-btn {
+  position: absolute;
+  top: 52.5px;
+  left: 40%;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  font-size: 1.2em;
+  color: white;
+  border: white 1px solid;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 105px;
+  left: 60px;
+}
+@media screen and (min-width: 1200px) {
+  #info {
+    width: 1200px;
+    margin-bottom: 150px;
+    padding-top: 200px;
+  }
+  #info .border {
+    top: 50px;
+    width: 500px;
+    margin-top: 100px;
+  }
+  .info-container {
+    width: 600px;
+    margin-left: 300px;
+  }
+  #info .info-new {
+    width: 700px;
+  }
+  #info .info-old {
+    width: 700px;
+  }
+  #info div p {
+    padding: 10px;
+  }
+  #info div p span {
+    padding-left: 20px;
+  }
+  .more-btn {
+    top: 105px;
+    width: 120px;
+    height: 120px;
+    top: 210px;
+    left: 120px;
+  }
+}
+/* drink */
+#drink {
+  width: 600px;
+  margin: auto;
+  margin-bottom: 75px;
+  padding-top: 75px;
+  position: relative;
+}
+#drink .border {
+  position: absolute;
+  top: 25px;
+  left: 2%;
+  width: 250px;
+  margin-top: 50px;
+}
+.drink-menu {
+  margin: auto;
+  margin-top: 25px;
+  padding: 0 50px;
+}
+.drink-menu .container .square {
+  width: 100px;
+  height: 100px;
+  color: white;
+  border: white 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.drink-menu .container {
+  margin: auto;
+  margin-top: 50px;
+  width: 450px;
+  height: 275px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.drink-menu .container::before {
+  width: 290px;
+  height: 165px;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  bottom: 62.5px;
+  right: 165px;
+  background: rgba(255, 255, 255, 0.643);
+}
+.drink-menu .container:after {
+  width: 500px;
+  height: 5px;
+  content: "";
+  position: absolute;
+  bottom: 35px;
+  left: -50px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    white,
+    rgba(255, 255, 255, 0)
+  );
+}
+.drink-menu .container img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 65px;
+  margin-right: 50px;
+}
+
+@media screen and (min-width: 1200px) {
+  #drink {
+    width: 1200px;
+    margin-bottom: 150px;
+    padding-top: 150px;
+  }
+  #drink .border {
+    top: 50px;
+    width: 500px;
+    margin-top: 100px;
+  }
   .square {
     border-radius: 50%;
     font-size: 0.5em;
@@ -681,7 +613,92 @@ footer div p {
   .drink-menu .container:nth-of-type(even)::after {
     display: none;
   }
-
+}
+/* food */
+#food {
+  width: 600px;
+  margin-bottom: 75px;
+  padding-top: 75px;
+  position: relative;
+  margin: auto;
+}
+#food .border {
+  width: 250px;
+  margin-top: 50px;
+  border-bottom: 1px dashed white;
+  position: absolute;
+  top: 25px;
+  left: 2%;
+  display: flex;
+}
+.food-menu {
+  margin: auto;
+  margin-bottom: 75px;
+  padding: 0 50px;
+}
+.food-menu .container .square {
+  width: 100px;
+  height: 100px;
+  color: white;
+  border: white 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 75px;
+}
+.food-menu .container {
+  margin: auto;
+  margin-top: 50px;
+  width: 450px;
+  height: 275px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.food-menu .container::before {
+  width: 300px;
+  height: 165px;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  bottom: 60px;
+  left: 165px;
+  background: rgba(255, 255, 255, 0.643);
+}
+.food-menu .container::after {
+  width: 500px;
+  height: 5px;
+  content: "";
+  position: absolute;
+  bottom: 35px;
+  left: -50px;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    white,
+    rgba(255, 255, 255, 0)
+  );
+}
+.food-menu .container img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 65px;
+  margin-left: 50px;
+}
+@media screen and (min-width: 1200px) {
+  #food {
+    width: 1200px;
+    margin-bottom: 150px;
+    padding-top: 150px;
+  }
+  #food .border {
+    width: 500px;
+    margin-top: 100px;
+    top: 50px;
+  }
   .food-menu .container {
     width: 80%;
     height: 100%;
@@ -722,62 +739,177 @@ footer div p {
     display: none;
   }
 }
+/* access */
+#access {
+  width: 600px;
+  margin-bottom: 25px;
+  padding-top: 75px;
+  position: relative;
+  margin: auto;
+}
+#access .border {
+  position: absolute;
+  top: 25px;
+  left: 2%;
+  width: 250px;
+  margin-top: 50px;
+}
+#access .container div a {
+  text-decoration: none;
+  color: white;
+}
+#map-sepia {
+  filter: sepia(100%);
+}
 
+#access .container {
+  width: 600px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  line-height: 17.5px;
+}
 .concept {
   width: 100%;
-  height: 800px;
+  height: 400px;
+}
+@media screen and (min-width: 1200px) {
+  #access {
+    width: 1200px;
+    margin-bottom: 50px;
+    padding-top: 150px;
+  }
+  #access .border {
+    top: 50px;
+    width: 500px;
+    margin-top: 100px;
+  }
+  #access .container {
+    width: 1200px;
+    margin-top: 100px;
+    line-height: 35px;
+  }
+  .concept {
+    height: 800px;
+  }
 }
 /* flipbook */
 .flipbook {
   position: relative;
   width: 100%; /* 画像の横幅 */
-  height: 700px;
+  height: 350px;
   overflow: hidden;
 }
 
 .flipbook img {
   position: absolute;
-  top: 150px;
-  left: 100px;
-  width: 400px;
-  height: 400px;
+  top: 75px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
   display: none; /* 最初は全て非表示 */
   z-index: 999;
 }
+@media screen and (min-width: 1200px) {
+  .flipbook {
+    height: 350px;
+  }
+
+  .flipbook img {
+    top: 75px;
+    left: 50px;
+    width: 200px;
+    height: 200px;
+    z-index: 999;
+  }
+}
 /* steam */
 .concept {
-  height: 700px;
+  height: 350px;
   position: relative;
 }
 .concept p {
   display: block;
   position: absolute;
-  width: 600px;
+  width: 300px;
   font-size: 1.5em;
-  top: 50px;
-  left: 512px;
+  top: 25px;
+  left: 256px;
   color: white;
 }
 .steam {
   position: absolute;
   z-index: -1;
-  width: 750px;
+  width: 375px;
   opacity: 0.3;
   animation: rise 5.4s infinite linear;
 }
 
 @keyframes rise {
   0% {
-    top: -30px;
-    left: 300px;
+    top: -15px;
+    left: 150px;
     opacity: 0;
   }
   50% {
     opacity: 0.2;
   }
   100% {
-    top: -90px;
-    left: 350px;
+    top: -45px;
+    left: 175px;
     opacity: 0;
+  }
+}
+iframe {
+  width: 300px;
+  height: 150px;
+}
+@media screen and (min-width: 1200px) {
+  .concept {
+    height: 350px;
+  }
+  .concept p {
+    width: 300px;
+    top: 25px;
+    left: 256px;
+  }
+  .steam {
+    width: 375px;
+  }
+
+  @keyframes rise {
+    0% {
+      top: -15px;
+      left: 150px;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      top: -45px;
+      left: 175px;
+      opacity: 0;
+    }
+  }
+  iframe {
+    width: 600px;
+    height: 150px;
+  }
+}
+/* footer */
+footer div {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+footer div p {
+  color: white;
+}
+@media screen and (min-width: 1200px) {
+  footer div {
+    width: 1200px;
   }
 }

@@ -1,9 +1,9 @@
 const hamburger = document.querySelector("#menubtn");
 const menubeans = document.querySelector(".menubeans");
-const menu = document.querySelector("#menu");
+const menu = document.querySelector("#spmenu");
 const closeBtn = document.getElementById("close");
 const menutext = document.querySelector("#menutext");
-const links = document.querySelectorAll("#menu li a");
+const links = document.querySelectorAll("#spmenu li a");
 
 // ハンバーガーメニューアイコン（menubeans）クリック時にもメニューを表示
 menubeans.addEventListener("click", function () {

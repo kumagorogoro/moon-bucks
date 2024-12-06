@@ -8,7 +8,6 @@
 body {
   background: linear-gradient(#41342b, #60342e, #41342b);
   width: 100%;
-  height: 100%;
 }
 img {
   width: 100%;
@@ -18,7 +17,7 @@ ul {
   list-style: none;
 }
 .wrapper {
-  width: 1130px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -34,11 +33,11 @@ ul {
 /* menu */
 .menubtn {
   z-index: 999;
-  width: 180px;
-  height: 180px;
+  width: 90px;
+  height: 90px;
   position: fixed;
-  top: 54px;
-  right: 6%;
+  top: 27px;
+  right: 3%;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -51,8 +50,8 @@ ul {
   font-size: 1.6em;
 }
 .menubeans {
-  width: 180px;
-  height: 180px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
@@ -71,12 +70,12 @@ ul {
   }
 }
 /* メニューが表示されるときのアニメーション */
-#menu.show {
+#spmenu.show {
   display: flex;
 }
 
 /* リストアイテムがアニメーションで表示されるように */
-#menu.show ul li {
+#spmenu.show ul li {
   opacity: 1;
   transform: translateY(0);
   animation: typing 2s forwards; /* タイピングアニメーション */
@@ -92,26 +91,26 @@ ul {
 }
 
 /* メニューリンクのタイピングを制御 */
-#menu ul li a {
+#spmenu ul li a {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  padding-right: 5px;
+  padding-right: 2.5px;
   animation: typing 2s forwards;
 }
-.menu {
+.spmenu {
   display: none;
   list-style-type: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.menu ul {
-  width: 600px;
+.spmenu ul {
+  width: 300px;
 }
-nav .menu li {
-  margin: 100px 0px;
-  height: 100px;
+nav .spmenu li {
+  margin: 50px 0px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,26 +119,26 @@ nav .menu li {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-nav .menu li a {
+nav .spmenu li a {
   color: white;
   text-decoration: none;
   font-size: 2em;
   text-align: center;
 }
-nav .menu li:nth-child(1) a {
+nav .spmenu li:nth-child(1) a {
   text-align: left;
   font-size: 3em;
 }
-nav .menu li:nth-child(6) a {
+nav .spmenu li:nth-child(6) a {
   text-align: left;
   font-size: 3em;
 }
 
-nav .menu li a:hover {
+nav .spmenu li a:hover {
   text-decoration: underline;
 }
-nav .menu li {
-  padding: 20px;
+nav .spmenu li {
+  padding: 10px;
 }
 .pc,
 .pc2 {
@@ -149,7 +148,7 @@ nav .menu li {
 .pcmenu {
   display: none;
 }
-nav .menu {
+nav .spmenu {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -159,7 +158,7 @@ nav .menu {
   justify-content: center;
   align-content: space-around;
   display: none;
-  padding: 10px 0;
+  padding: 5px 0;
   z-index: 9999;
   position: fixed;
   top: 0;
@@ -168,8 +167,8 @@ nav .menu {
 
 .close {
   position: absolute;
-  top: 55px;
-  right: 75px;
+  top: 27.5px;
+  right: 37.5px;
   color: #fff;
   font-size: 100px;
   font-weight: bold;
@@ -191,56 +190,13 @@ nav .menu {
   color: white;
   z-index: 1;
 }
-
-/* main */
-main {
-  width: 1130px;
-  margin-top: 200px;
-  position: relative;
-}
-main h1 {
-  padding-top: 190px;
-}
-.white {
-  color: white;
-}
-#confirmationMessage {
-  display: none;
-  color: white;
-  font-size: 18px;
-  margin: 50px 0px;
-
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-/* footer */
-footer div {
-  width: 1130px;
-  margin: auto;
-  text-align: center;
-}
-footer div p {
-  color: white;
-}
-fieldset {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.5em;
-  width: 50%;
-}
-fieldset label {
-  font-size: 1em;
-}
-/* メディアクエリ */
 @media screen and (min-width: 768px) {
-  nav .menu {
+  nav .spmenu {
     width: 30%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
   }
-  .menu ul {
+  .spmenu ul {
     width: 90%;
     height: 100%;
     display: flex;
@@ -248,17 +204,17 @@ fieldset label {
     justify-content: space-around;
     margin-top: 100px;
   }
-  .menu ul li {
+  .spmenu ul li {
     height: 50px 0px;
     margin: 0;
     font-size: 0.8em;
     text-align: right;
   }
-  nav .menu li:nth-child(1) a {
+  nav .spmenu li:nth-child(1) a {
     text-align: left;
     font-size: 2em;
   }
-  nav .menu li:nth-child(6) a {
+  nav .spmenu li:nth-child(6) a {
     text-align: left;
     font-size: 2em;
   }
@@ -375,9 +331,31 @@ fieldset label {
   }
 }
 /* main */
+main {
+  width: 600px;
+  margin-top: 100px;
+  position: relative;
+}
+main h1 {
+  padding-top: 80px;
+}
+.white {
+  color: white;
+}
+#confirmationMessage {
+  display: none;
+  color: white;
+  font-size: 9px;
+  margin: 25px 0px;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
 h1 {
   border-bottom: 1px dashed white;
-  width: 300px;
+  width: 150px;
 }
 main {
   margin: auto;
@@ -385,21 +363,21 @@ main {
 }
 main h1 {
   display: block;
-  margin-left: 50px;
+  margin-left: 25px;
   position: absolute;
   top: 0;
   left: 0;
 }
 .mainwrapper {
-  width: 600px;
-  padding-bottom: 150px;
-  padding-top: 300px;
+  width: 300px;
+  padding-bottom: 75px;
+  padding-top: 150px;
   margin: auto;
 }
 #name {
-  width: 400px;
-  height: 50px;
-  border-radius: 8px;
+  width: 200px;
+  height: 25px;
+  border-radius: 4px;
 }
 #name,
 #postal_code,
@@ -415,8 +393,8 @@ main h1 {
 #notes,
 .submit-btn {
   width: 100%;
-  height: 50px;
-  border-radius: 8px;
+  height: 25px;
+  border-radius: 4px;
 }
 #name,
 #postal_code,
@@ -429,8 +407,8 @@ main h1 {
 #adults,
 #children {
   width: 50%;
-  height: 50px;
-  border-radius: 8px;
+  height: 25px;
+  border-radius: 4px;
 }
 /*標準表示のチェックボックスを非表示にする*/
 #agree {
@@ -441,10 +419,10 @@ main h1 {
 .label_test:after {
   position: absolute;
   display: block;
-  top: 150px;
-  left: 15px;
-  width: 50px;
-  height: 50px;
+  top: 75px;
+  left: 7.5px;
+  width: 25px;
+  height: 25px;
   border: 1px solid white;
   border-radius: 50%;
 }
@@ -456,8 +434,8 @@ main h1 {
 .label_test:hover:after {
   border: 5px double white;
   position: absolute;
-  top: 35px;
-  left: 41px;
+  top: 17.5px;
+  left: 20.5px;
   transform: translate(-50%, -50%);
 }
 .label_test:after,
@@ -468,17 +446,17 @@ main h1 {
   top: 50%;
 }
 .agreebtn {
-  height: 100px;
+  height: 50px;
 }
 .white {
-  margin-left: 200px;
+  margin-left: 100px;
 }
 /*チェックマークの追加*/
 .label_test:before {
-  left: 35px;
-  top: 20px;
-  width: 9px; /* チェックマークの幅 */
-  height: 18px; /* チェックマークの高さ */
+  left: 17.5px;
+  top: 10px;
+  width: 4.5px; /* チェックマークの幅 */
+  height: 9px; /* チェックマークの高さ */
   border: solid white;
   border-width: 0 1px 1px 0; /* チェックマークの線を作成 */
   transform: rotate(45deg);
@@ -500,10 +478,115 @@ input[type="checkbox"]:checked + .label_test:before {
   color: #fff;
   background-color: #3abec1;
   cursor: pointer; /* ポインターカーソルを表示 */
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .submit-btn[disabled] {
   background-color: #ccc;
   cursor: not-allowed; /* クリック不可のカーソルを表示 */
+}
+
+@media screen and (min-width: 1200px) {
+main {
+  width: 1200px;
+  margin-top: 200px;
+}
+main h1 {
+  padding-top: 190px;
+}
+#confirmationMessage {
+  font-size: 18px;
+  margin: 50px 0px;
+}
+h1 {
+  width: 300px;
+}
+main h1 {
+  margin-left: 50px;
+}
+.mainwrapper {
+  width: 600px;
+  padding-bottom: 150px;
+  padding-top: 300px;
+}
+#name {
+  width: 400px;
+  height: 50px;
+}
+#name,
+#postal_code,
+#prefecture,
+#city,
+#address,
+#email,
+#phone,
+#checkin,
+#checkout,
+#adults,
+#children,
+#notes,
+.submit-btn {
+  height: 50px;
+}
+#name,
+#postal_code,
+#prefecture,
+#city,
+#email,
+#phone,
+#checkin,
+#checkout,
+#adults,
+#children {
+  height: 50px;
+}
+.label_test:after {
+  top: 150px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+}
+.label_test:hover:after {
+  top: 35px;
+  left: 41px;
+}
+.agreebtn {
+  height: 100px;
+}
+.white {
+  margin-left: 200px;
+}
+.label_test:before {
+  left: 35px;
+  top: 20px;
+  width: 9px; /* チェックマークの幅 */
+  height: 18px; /* チェックマークの高さ */
+}
+/* 送信ボタン */
+.submit-btn {
+  margin-top: 100px;
+}
+}
+/* footer */
+footer div {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+footer div p {
+  color: white;
+}
+fieldset {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  width: 50%;
+}
+fieldset label {
+  font-size: 1em;
+}
+@media screen and (min-width: 1200px) {
+footer div {
+  width: 1200px;
+}
 }
