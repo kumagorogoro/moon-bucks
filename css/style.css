@@ -3,6 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 body {
   background: linear-gradient(#41342b, #60342e, #41342b);
@@ -108,7 +110,6 @@ nav .spmenu li {
 
 nav .spmenu li a {
   color: white;
-  text-decoration: none;
   font-size: 2em;
   text-align: center;
 }
@@ -482,7 +483,7 @@ h2 {
 }
 /* drink */
 #drink {
-  padding-top: 75px;
+  padding-top: 150px;
 }
 .drink-menu {
   margin-top: 25px;
@@ -682,40 +683,34 @@ h2 {
 }
 /* access */
 #access {
-  width: 600px;
   margin-bottom: 25px;
-  padding-top: 75px;
-  position: relative;
-  margin: auto;
+  padding-top: 150px;
 }
-#access .border {
-  position: absolute;
-  top: 25px;
-  left: 2%;
-  width: 250px;
-  margin-top: 50px;
+#access .container div:nth-child(1) {
+  width: 90%;
+  margin: auto;
+  order: 2;
 }
 #access .container div a {
-  text-decoration: none;
   color: white;
 }
+
 #map-sepia {
+  width: 100%;
   filter: sepia(100%);
+  margin-bottom: 25px;
+  order: 1;
 }
 
 #access .container {
-  width: 600px;
+  width: 100%;
   margin-top: 50px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   color: white;
   line-height: 17.5px;
+  display: flex;
+  flex-direction: column;
 }
-.concept {
-  width: 100%;
-  height: 400px;
-}
+
 @media screen and (min-width: 1200px) {
   #access {
     width: 1200px;
@@ -732,24 +727,18 @@ h2 {
     margin-top: 100px;
     line-height: 35px;
   }
-  .concept {
-    height: 800px;
-  }
 }
 /* flipbook */
 .flipbook {
-  position: relative;
-  width: 100%; /* 画像の横幅 */
-  height: 350px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
 }
-
 .flipbook img {
   position: absolute;
-  top: 75px;
-  left: 50px;
-  width: 200px;
-  height: 200px;
+  top: 40px;
+  left: 10px;
+  width: 150px;
   display: none; /* 最初は全て非表示 */
   z-index: 999;
 }
@@ -768,22 +757,22 @@ h2 {
 }
 /* steam */
 .concept {
-  height: 350px;
   position: relative;
+  text-align: center;
 }
 .concept p {
   display: block;
   position: absolute;
-  width: 300px;
-  font-size: 1.5em;
-  top: 25px;
-  left: 256px;
+  top: 200px;
+  width: 100%;
+  font-size: 0.8em;
   color: white;
 }
 .steam {
   position: absolute;
+  transform: translate(-40%, 10%);
   z-index: -1;
-  width: 375px;
+  width: 80%;
   opacity: 0.3;
   animation: rise 5.4s infinite linear;
 }
