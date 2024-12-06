@@ -22,21 +22,20 @@ img {
 /* menu */
 .menubtn {
   z-index: 999;
-  width: 90px;
-  height: 90px;
+  width: 40px;
+  height: 40px;
   position: fixed;
   top: 27px;
-  right: 3%;
+  right: 20%;
   border-radius: 50%;
   cursor: pointer;
 }
 #menutext {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 75%;
+  left: 55%;
   color: rgb(255, 255, 255);
-  font-size: 1.6em;
+  font-size: 1em;
 }
 .menubeans {
   width: 90px;
@@ -166,7 +165,7 @@ nav .spmenu {
   position: fixed;
   bottom: 10%;
   right: 5%;
-  font-size: 2em;
+  font-size: 1em;
   color: white;
   z-index: 1;
 }
@@ -174,7 +173,7 @@ nav .spmenu {
   position: fixed;
   bottom: 5%;
   right: 5%;
-  font-size: 1.5em;
+  font-size: 1em;
   color: white;
   z-index: 1;
 }
@@ -326,13 +325,12 @@ nav .spmenu {
 /* hero*/
 .hero {
   position: relative;
-  padding-top: 50px;
 }
 .logo {
   width: 80px;
   position: absolute;
   z-index: 1;
-  top: 120px;
+  top: 75px;
   left: 20px;
   transform: translateY(-50%);
 }
@@ -396,7 +394,7 @@ nav .spmenu {
 /* info */
 #info {
   width: 100%;
-  padding-top: 100px;
+  padding-top: 60px;
   position: relative;
 }
 h2 {
@@ -483,7 +481,7 @@ h2 {
 }
 /* drink */
 #drink {
-  padding-top: 150px;
+  padding-top: 70px;
 }
 .drink-menu {
   margin-top: 25px;
@@ -586,7 +584,7 @@ h2 {
 }
 /* food */
 #food {
-  padding-top: 75px;
+  padding-top: 70px;
 }
 .food-menu {
   margin-top: 25px;
@@ -684,7 +682,7 @@ h2 {
 /* access */
 #access {
   margin-bottom: 25px;
-  padding-top: 150px;
+  padding-top: 70px;
 }
 #access .container div:nth-child(1) {
   width: 90%;
@@ -736,7 +734,7 @@ h2 {
 }
 .flipbook img {
   position: absolute;
-  top: 40px;
+  top: 25px;
   left: 10px;
   width: 150px;
   display: none; /* 最初は全て非表示 */
@@ -759,6 +757,7 @@ h2 {
 .concept {
   position: relative;
   text-align: center;
+  padding-bottom: 60px;
 }
 .concept p {
   display: block;
@@ -770,7 +769,7 @@ h2 {
 }
 .steam {
   position: absolute;
-  transform: translate(-40%, 10%);
+  transform: translate(-40%, -15%);
   z-index: -1;
   width: 80%;
   opacity: 0.3;
@@ -831,8 +830,6 @@ iframe {
 }
 /* footer */
 footer div {
-  width: 600px;
-  margin: auto;
   text-align: center;
 }
 footer div p {
