@@ -203,26 +203,29 @@ nav .spmenu {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: 100px;
+    margin-top: 10%;
   }
   .spmenu ul li {
-    height: 50px 0px;
+    height: 10px 0px;
     margin: 0;
-    font-size: 0.8em;
+    font-size: 1em;
     text-align: right;
   }
   nav .spmenu li:nth-child(1) a {
     text-align: left;
-    font-size: 2em;
+    font-size: 1em;
   }
   nav .spmenu li:nth-child(6) a {
     text-align: left;
-    font-size: 2em;
+    font-size: 1em;
+  }
+  nav .spmenu li:nth-child(9) {
+    width: 90%;
   }
   .close {
-    top: 50px;
-    right: 50px;
-    font-size: 3em;
+    top: 20px;
+    right: 20px;
+    font-size: 1em;
   }
 }
 @media screen and (min-width: 1130px) {
@@ -699,7 +702,7 @@ h2 {
   padding-top: 70px;
 }
 #access .container div:nth-child(1) {
-  width: 90%;
+  width: fit-content;
   margin: auto;
   order: 2;
 }
@@ -745,11 +748,12 @@ h2 {
   width: 300px;
   height: 300px;
   overflow: hidden;
+  position: relative;
 }
 .flipbook img {
   position: absolute;
-  top: 25px;
-  left: 10px;
+  top: 10%;
+  left: 20%;
   width: 150px;
   display: none; /* 最初は全て非表示 */
   z-index: 999;
@@ -761,7 +765,7 @@ h2 {
 
   .flipbook img {
     top: 75px;
-    left: 50px;
+    left: 15%;
     width: 200px;
     height: 200px;
     z-index: 999;
@@ -770,22 +774,25 @@ h2 {
 /* steam */
 .concept {
   position: relative;
-  text-align: center;
   padding-bottom: 60px;
 }
 .concept p {
   display: block;
   position: absolute;
+  text-align: center;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
   top: 200px;
-  width: 100%;
   font-size: 0.8em;
   color: white;
 }
 .steam {
   position: absolute;
-  transform: translate(-40%, -15%);
+  right: 10%;
+  transform: translateY(50%);
   z-index: -1;
-  width: 80%;
+  width: 40%;
   opacity: 0.3;
   animation: rise 5.4s infinite linear;
 }
