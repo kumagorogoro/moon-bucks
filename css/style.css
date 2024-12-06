@@ -325,13 +325,14 @@ nav .spmenu {
 /* hero*/
 .hero {
   position: relative;
+  padding-top: 50px;
 }
 .logo {
-  width: 100px;
+  width: 80px;
   position: absolute;
   z-index: 1;
-  top: 20%;
-  left: 25px;
+  top: 120px;
+  left: 20px;
   transform: translateY(-50%);
 }
 .slide-container .active {
@@ -340,9 +341,8 @@ nav .spmenu {
 .slide-container {
   position: relative;
   width: 100%;
-  height: 50%;
+  height: 150px;
   overflow: hidden;
-  margin-bottom: 100px;
 }
 .slide-container img {
   border-radius: 4px;
@@ -354,8 +354,16 @@ nav .spmenu {
   transition: opacity 1.5s ease-in-out;
 }
 @media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 100px;
+  }
   .logo {
-    top: 28%;
+    width: 120px;
+    top: 200px;
+    left: 50px;
+  }
+  .slide-container {
+    height: 400px;
   }
   .slide-container img {
     height: 200px;
@@ -366,7 +374,8 @@ nav .spmenu {
     padding-top: 240px;
   }
   .logo {
-    top: 380px;
+    width: 170px;
+    top: 390px;
   }
   h2 {
     top: -70px;
@@ -385,6 +394,7 @@ nav .spmenu {
 
 /* info */
 #info {
+  width: 100%;
   margin-bottom: 75px;
   padding-top: 100px;
   position: relative;
@@ -393,32 +403,25 @@ h2 {
   text-align: left;
   color: #fff;
   font-size: 2.5em;
-  position: absolute;
-  top: -35px;
 }
-
+.info-container {
+  padding-top: 20px;
+}
 #info .border {
-  position: absolute;
-  top: 25px;
-  left: 2%;
   width: 250px;
   margin-top: 50px;
 }
-.info-container {
-  width: 300px;
-  margin-left: 150px;
-}
 #info .info-new {
-  width: 350px;
   height: fit-content;
   text-align: left;
+  margin-left: 80px;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   border-left: 1px solid white;
   border-right: 1px solid white;
 }
 #info .info-old {
-  width: 350px;
+  margin-left: 80px;
   height: fit-content;
   display: none;
   text-align: left;
@@ -428,26 +431,22 @@ h2 {
 }
 #info div p {
   color: #fff;
-  padding: 5px;
 }
 #info div p span {
+  display: block;
   padding-left: 10px;
 }
 .more-btn {
-  position: absolute;
-  top: 52.5px;
-  left: 40%;
   cursor: pointer;
   width: 60px;
   height: 60px;
+  margin-top: 50px;
+  position: absolute;
   font-size: 1.2em;
   color: white;
   border: white 1px solid;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0);
-  position: absolute;
-  top: 105px;
-  left: 60px;
 }
 @media screen and (min-width: 1200px) {
   #info {
