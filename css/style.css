@@ -69,12 +69,13 @@ img {
   animation: typing 2s forwards; /* タイピングアニメーション */
 }
 /* タイピングアニメーション */
+
 @keyframes typing {
   0% {
-    width: 0;
+    clip-path: inset(0 100% 0 0);
   }
   100% {
-    width: 100%;
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -95,10 +96,13 @@ img {
 }
 .spmenu ul {
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 nav .spmenu li {
-  margin: 50px 0px;
-  height: 50px;
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,16 +113,25 @@ nav .spmenu li {
 
 nav .spmenu li a {
   color: white;
-  font-size: 2em;
+  font-size: 1em;
   text-align: center;
+  margin-top: 10px;
 }
-nav .spmenu li:nth-child(1) a {
+nav .spmenu li:nth-child(1) {
   text-align: left;
-  font-size: 3em;
+  font-size: 1.5em;
+  margin: 20px 0 5px 0;
 }
-nav .spmenu li:nth-child(6) a {
+nav .spmenu li:nth-child(6) {
   text-align: left;
-  font-size: 3em;
+  font-size: 1.5em;
+  margin: 20px 0 10px 0;
+}
+nav .spmenu li:nth-child(9) {
+  width: 70%;
+}
+nav .spmenu li:nth-child(10) {
+  margin-bottom: 10%;
 }
 
 nav .spmenu li a:hover {
@@ -137,8 +150,8 @@ nav .spmenu li {
 }
 nav .spmenu {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
   flex-direction: column;
@@ -157,9 +170,10 @@ nav .spmenu {
   top: 27.5px;
   right: 37.5px;
   color: #fff;
-  font-size: 100px;
+  font-size: 2em;
   font-weight: bold;
   cursor: pointer;
+  padding: 10px;
 }
 .topback {
   position: fixed;
