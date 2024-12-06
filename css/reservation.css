@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: nonw;
+  text-decoration: none;
 }
 body {
   background: linear-gradient(#41342b, #60342e, #41342b);
@@ -33,21 +35,20 @@ ul {
 /* menu */
 .menubtn {
   z-index: 999;
-  width: 90px;
-  height: 90px;
+  width: 40px;
+  height: 40px;
   position: fixed;
   top: 27px;
-  right: 3%;
+  right: 20%;
   border-radius: 50%;
   cursor: pointer;
 }
 #menutext {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 75%;
+  left: 55%;
   color: rgb(255, 255, 255);
-  font-size: 1.6em;
+  font-size: 1em;
 }
 .menubeans {
   width: 90px;
@@ -81,12 +82,13 @@ ul {
   animation: typing 2s forwards; /* タイピングアニメーション */
 }
 /* タイピングアニメーション */
+
 @keyframes typing {
   0% {
-    width: 0;
+    clip-path: inset(0 100% 0 0);
   }
   100% {
-    width: 100%;
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -107,10 +109,13 @@ ul {
 }
 .spmenu ul {
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 nav .spmenu li {
-  margin: 50px 0px;
-  height: 50px;
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,17 +126,25 @@ nav .spmenu li {
 
 nav .spmenu li a {
   color: white;
-  text-decoration: none;
-  font-size: 2em;
+  font-size: 1em;
   text-align: center;
+  margin-top: 10px;
 }
-nav .spmenu li:nth-child(1) a {
+nav .spmenu li:nth-child(1) {
   text-align: left;
-  font-size: 3em;
+  font-size: 1.5em;
+  margin: 20px 0 5px 0;
 }
-nav .spmenu li:nth-child(6) a {
+nav .spmenu li:nth-child(6) {
   text-align: left;
-  font-size: 3em;
+  font-size: 1.5em;
+  margin: 20px 0 10px 0;
+}
+nav .spmenu li:nth-child(9) {
+  width: 70%;
+}
+nav .spmenu li:nth-child(10) {
+  margin-bottom: 10%;
 }
 
 nav .spmenu li a:hover {
@@ -150,8 +163,8 @@ nav .spmenu li {
 }
 nav .spmenu {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
   flex-direction: column;
@@ -170,15 +183,16 @@ nav .spmenu {
   top: 27.5px;
   right: 37.5px;
   color: #fff;
-  font-size: 100px;
+  font-size: 2em;
   font-weight: bold;
   cursor: pointer;
+  padding: 10px;
 }
 .topback {
   position: fixed;
   bottom: 10%;
   right: 5%;
-  font-size: 2em;
+  font-size: 1em;
   color: white;
   z-index: 1;
 }
@@ -186,10 +200,11 @@ nav .spmenu {
   position: fixed;
   bottom: 5%;
   right: 5%;
-  font-size: 1.5em;
+  font-size: 1em;
   color: white;
   z-index: 1;
 }
+
 @media screen and (min-width: 768px) {
   nav .spmenu {
     width: 30%;
@@ -487,85 +502,85 @@ input[type="checkbox"]:checked + .label_test:before {
 }
 
 @media screen and (min-width: 1200px) {
-main {
-  width: 1200px;
-  margin-top: 200px;
-}
-main h1 {
-  padding-top: 190px;
-}
-#confirmationMessage {
-  font-size: 18px;
-  margin: 50px 0px;
-}
-h1 {
-  width: 300px;
-}
-main h1 {
-  margin-left: 50px;
-}
-.mainwrapper {
-  width: 600px;
-  padding-bottom: 150px;
-  padding-top: 300px;
-}
-#name {
-  width: 400px;
-  height: 50px;
-}
-#name,
-#postal_code,
-#prefecture,
-#city,
-#address,
-#email,
-#phone,
-#checkin,
-#checkout,
-#adults,
-#children,
-#notes,
-.submit-btn {
-  height: 50px;
-}
-#name,
-#postal_code,
-#prefecture,
-#city,
-#email,
-#phone,
-#checkin,
-#checkout,
-#adults,
-#children {
-  height: 50px;
-}
-.label_test:after {
-  top: 150px;
-  left: 15px;
-  width: 50px;
-  height: 50px;
-}
-.label_test:hover:after {
-  top: 35px;
-  left: 41px;
-}
-.agreebtn {
-  height: 100px;
-}
-.white {
-  margin-left: 200px;
-}
-.label_test:before {
-  left: 35px;
-  top: 20px;
-  width: 9px; /* チェックマークの幅 */
-  height: 18px; /* チェックマークの高さ */
-}
-/* 送信ボタン */
-.submit-btn {
-  margin-top: 100px;
-}
+  main {
+    width: 1200px;
+    margin-top: 200px;
+  }
+  main h1 {
+    padding-top: 190px;
+  }
+  #confirmationMessage {
+    font-size: 18px;
+    margin: 50px 0px;
+  }
+  h1 {
+    width: 300px;
+  }
+  main h1 {
+    margin-left: 50px;
+  }
+  .mainwrapper {
+    width: 600px;
+    padding-bottom: 150px;
+    padding-top: 300px;
+  }
+  #name {
+    width: 400px;
+    height: 50px;
+  }
+  #name,
+  #postal_code,
+  #prefecture,
+  #city,
+  #address,
+  #email,
+  #phone,
+  #checkin,
+  #checkout,
+  #adults,
+  #children,
+  #notes,
+  .submit-btn {
+    height: 50px;
+  }
+  #name,
+  #postal_code,
+  #prefecture,
+  #city,
+  #email,
+  #phone,
+  #checkin,
+  #checkout,
+  #adults,
+  #children {
+    height: 50px;
+  }
+  .label_test:after {
+    top: 150px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  .label_test:hover:after {
+    top: 35px;
+    left: 41px;
+  }
+  .agreebtn {
+    height: 100px;
+  }
+  .white {
+    margin-left: 200px;
+  }
+  .label_test:before {
+    left: 35px;
+    top: 20px;
+    width: 9px; /* チェックマークの幅 */
+    height: 18px; /* チェックマークの高さ */
+  }
+  /* 送信ボタン */
+  .submit-btn {
+    margin-top: 100px;
+  }
 }
 /* footer */
 footer div {
@@ -586,7 +601,7 @@ fieldset label {
   font-size: 1em;
 }
 @media screen and (min-width: 1200px) {
-footer div {
-  width: 1200px;
-}
+  footer div {
+    width: 1200px;
+  }
 }
