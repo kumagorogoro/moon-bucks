@@ -364,7 +364,6 @@ nav .spmenu {
   display: grid;
 }
 #room img {
-  min-width: 300px;
   margin: 0 auto;
   height: fit-content;
 }
