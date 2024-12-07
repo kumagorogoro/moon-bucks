@@ -391,6 +391,8 @@ nav .spmenu {
   #roomfood-container {
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin-top: 130px;
+    padding-top: 20px;
   }
   #room {
     display: flex;
