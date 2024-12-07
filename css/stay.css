@@ -352,6 +352,11 @@ nav .spmenu {
 #view-container {
   padding-top: 25px;
 }
+@media screen and (min-width: 1200px) {
+  #view-container {
+    padding-top: 150px;
+  }
+}
 /* room */
 
 #roomfood-container {
@@ -385,7 +390,6 @@ nav .spmenu {
 @media screen and (min-width: 1200px) {
   #roomfood-container {
     gap: 20px;
-    padding: 10%;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
   #room {
@@ -444,6 +448,11 @@ nav .spmenu {
   }
   #food div h1 {
     display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  #food {
+    padding: 0;
   }
 }
 .breakfast {
@@ -593,7 +602,7 @@ table {
 }
 @media screen and (min-width: 1200px) {
   #price {
-    padding: 10%;
+    padding: 50px 10% 10% 10%;
     gap: 20px;
   }
   #price img {
