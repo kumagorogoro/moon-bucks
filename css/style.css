@@ -22,30 +22,24 @@ img {
 /* menu */
 .menubtn {
   z-index: 999;
-  width: 40px;
-  height: 40px;
   position: fixed;
-  top: 27px;
-  right: 20%;
+  top: 30px;
+  right: 11%;
   border-radius: 50%;
   cursor: pointer;
 }
 #menutext {
   position: absolute;
-  top: 75%;
-  left: 55%;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
   color: rgb(255, 255, 255);
   font-size: 1em;
 }
 .menubeans {
   width: 90px;
   height: 90px;
-  border-radius: 50%;
   object-fit: cover;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  transform: translate(-50%, -50%);
   animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
   transform-origin: center; /* 回転の中心をdivの中央に設定 */
 }
@@ -192,6 +186,20 @@ nav .spmenu {
   z-index: 1;
 }
 @media screen and (min-width: 768px) {
+  .menubtn {
+    top: 45px;
+    right: 11%;
+  }
+  #menutext {
+    top: 45px;
+    left: 50%;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+  }
+  .menubeans {
+    width: 120px;
+    height: 120px;
+  }
   nav .spmenu {
     width: 30%;
     height: 100%;
@@ -226,11 +234,6 @@ nav .spmenu {
     top: 20px;
     right: 20px;
     font-size: 1em;
-  }
-}
-@media screen and (min-width: 1130px) {
-  .menubtn {
-    right: 7%;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -334,7 +337,6 @@ nav .spmenu {
     }
   }
 }
-/* スライドショー */
 /* main */
 .border {
   border-bottom: 1px dashed white;
@@ -370,16 +372,13 @@ nav .spmenu {
   transition: opacity 1.5s ease-in-out;
 }
 @media screen and (min-width: 768px) {
-  .hero {
-    padding-top: 100px;
-  }
   .logo {
     width: 120px;
-    top: 200px;
-    left: 50px;
+    top: 102px;
+    left: 40px;
   }
   .slide-container {
-    height: 400px;
+    height: 200px;
   }
   .slide-container img {
     height: 200px;
@@ -410,7 +409,6 @@ nav .spmenu {
 
 /* info */
 #info {
-  width: 100%;
   padding-top: 60px;
   position: relative;
 }
@@ -421,9 +419,6 @@ h2 {
 }
 .info-container {
   margin: 20px 10px 0 0;
-}
-#info .border {
-  margin-top: 50px;
 }
 #info .info-new {
   height: fit-content;
@@ -454,13 +449,54 @@ h2 {
   cursor: pointer;
   width: 60px;
   height: 60px;
-  margin-top: 50px;
+  margin: 80px 5px 0;
   position: absolute;
   font-size: 1.2em;
   color: white;
   border: white 1px solid;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0);
+}
+@media screen and (min-width: 768px) {
+  #info {
+    padding-top: 140px;
+  }
+  #info {
+    margin-top: 50px;
+  }
+  #info .info-new {
+    text-align: center;
+    margin-left: 150px;
+  }
+  #info .info-old {
+    text-align: center;
+    margin-left: 150px;
+  }
+  .info-new p span:nth-child(1),
+  .info-old p span:nth-child(1) {
+    text-align: left;
+  }
+  .info-new p:nth-child(1) {
+    padding-top: 20px;
+  }
+  .info-old p:nth-child(3) {
+    padding-bottom: 20px;
+  }
+  .info-new p:nth-child(3),
+  .info-new p:nth-child(3) {
+    padding-bottom: 20px;
+  }
+  .more-btn {
+    width: 60px;
+    height: 60px;
+    margin: 65px 40px 0;
+    position: absolute;
+    font-size: 1.2em;
+    color: white;
+    border: white 1px solid;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+  }
 }
 @media screen and (min-width: 1200px) {
   #info {
@@ -543,6 +579,18 @@ h2 {
   object-fit: cover;
 }
 
+@media screen and (min-width: 768px) {
+  #drink {
+    padding-top: 140px;
+  }
+  .drink-menu .container .square {
+    width: 150px;
+    height: 150px;
+  }
+  .drink-menu .container {
+    margin-top: 100px;
+  }
+}
 @media screen and (min-width: 1200px) {
   #drink {
     width: 1200px;
@@ -645,6 +693,18 @@ h2 {
   width: 50%;
   object-fit: cover;
 }
+@media screen and (min-width: 768px) {
+  #food {
+    padding-top: 140px;
+  }
+  .food-menu .container .square {
+    width: 150px;
+    height: 150px;
+  }
+  .food-menu .container {
+    margin-top: 100px;
+  }
+}
 @media screen and (min-width: 1200px) {
   #food {
     width: 1200px;
@@ -712,11 +772,15 @@ h2 {
 
 #map-sepia {
   width: 100%;
+  height: 200px;
   filter: sepia(100%);
   margin-bottom: 25px;
   order: 1;
 }
-
+#map-grayscale {
+  width: 99%;
+  margin: auto;
+}
 #access .container {
   width: 100%;
   margin-top: 50px;
@@ -726,6 +790,17 @@ h2 {
   flex-direction: column;
 }
 
+@media screen and (min-width: 768px) {
+  #map-grayscale {
+    width: 90%;
+  }
+  #access .container div:nth-child(1) {
+    padding-top: 25px;
+  }
+  #map-sepia {
+    height: 350px;
+  }
+}
 @media screen and (min-width: 1200px) {
   #access {
     width: 1200px;
