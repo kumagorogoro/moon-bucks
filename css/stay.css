@@ -370,10 +370,29 @@ nav .spmenu {
 /* view */
 #view-container {
   padding-top: 25px;
+  position: relative;
+}
+.logo {
+  position: absolute;
+  width: 80px;
+  z-index: 1;
+  top: 40px;
+  left: 20px;
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 120px;
+    top: 60px;
+    left: 40px;
+  }
 }
 @media screen and (min-width: 1200px) {
   #view-container {
     padding-top: 150px;
+  }
+  .logo {
+    width: 170px;
+    top: 430px;
   }
 }
 /* room */
