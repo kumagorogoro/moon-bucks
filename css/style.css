@@ -712,9 +712,6 @@ h2 {
   margin: auto;
   order: 2;
 }
-#access .container div a {
-  color: white;
-}
 
 #map-sepia {
   width: 100%;
@@ -765,104 +762,87 @@ h2 {
     width: 70%;
   }
 }
-/* flipbook */
-.flipbook {
-  width: 30%;
-  overflow: hidden;
-  position: relative;
-}
-.flipbook img {
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  width: 150px;
-  display: none; /* 最初は全て非表示 */
-  z-index: 999;
-}
-@media screen and (min-width: 1200px) {
-  .flipbook {
-    height: 350px;
-  }
-
-  .flipbook img {
-    top: 75px;
-    left: 15%;
-    width: 200px;
-    height: 200px;
-    z-index: 999;
-  }
-}
 /* steam */
 .concept {
   position: relative;
-  padding-bottom: 60px;
+  height: 10%;
+  margin-top: 80px;
 }
 .concept p {
   display: block;
-  position: absolute;
   text-align: center;
-  width: 90%;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 200px;
+  width: 70%;
+  margin: auto;
   font-size: 0.8em;
   color: white;
 }
+
 .steam {
-  position: absolute;
-  right: 10%;
-  transform: translateY(50%);
+  display: block;
   z-index: -1;
-  width: 40%;
+  width: 60%; /* 幅を画面の幅の70%に設定 */
+  margin: auto;
   opacity: 0.3;
-  animation: rise 5.4s infinite linear;
+  animation: rise 10s infinite linear;
+  position: absolute;
+  top: 50%; /* 画面の50%の位置に配置 */
+  left: 50%; /* 画面の50%の位置に配置 */
+  transform: translate(-50%, -50%); /* 位置を中央に調整 */
+}
+@media screen and (min-width: 768px) {
+  .concept {
+    margin-top: 150px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .steam {
+    width: 50%;
+  }
 }
 
+/* steamアニメーション */
 @keyframes rise {
   0% {
-    top: -15px;
-    left: 150px;
+    top: 10vh; /* 初期位置を画面の40%の高さに設定 */
+    left: 50%;
     opacity: 0;
   }
   50% {
     opacity: 0.2;
   }
   100% {
-    top: -45px;
-    left: 175px;
+    top: 0vh; /* 最終位置を画面の10%の高さに設定 */
+    left: 50%;
     opacity: 0;
   }
 }
-
-@media screen and (min-width: 1200px) {
-  .concept {
-    height: 350px;
-  }
-  .concept p {
-    width: 20%;
-    top: 25px;
-    left: 256px;
-  }
-  .steam {
-    width: 20%;
-  }
-
-  @keyframes rise {
-    0% {
-      top: -15px;
-      left: 150px;
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.2;
-    }
-    100% {
-      top: -45px;
-      left: 175px;
-      opacity: 0;
-    }
+/* flipbook */
+.flipbook {
+  width: 50%;
+  height: 10%;
+  margin: auto;
+  margin-bottom: 100px;
+  position: relative;
+}
+.flipbook img {
+  display: none; /* 最初は全て非表示 */
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 768px) {
+  .flipbook {
+    margin-bottom: 200px;
   }
 }
+@media screen and (min-width: 1200px) {
+  .flipbook {
+    width: 30%;
+  }
+}
+
 /* footer */
 footer div {
   text-align: center;
