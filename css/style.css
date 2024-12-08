@@ -183,7 +183,7 @@ nav .spmenu {
   position: fixed;
   bottom: 10%;
   right: 5%;
-  font-size: 1em;
+  font-size: 2em;
   color: white;
   z-index: 1;
 }
@@ -191,9 +191,18 @@ nav .spmenu {
   position: fixed;
   bottom: 5%;
   right: 5%;
-  font-size: 1em;
+  font-size: 2em;
   color: white;
   z-index: 1;
+  cursor: pointer;
+}
+.reservation img {
+  position: fixed;
+  width: 50%;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
   .menubtn {
@@ -798,7 +807,7 @@ h2 {
 }
 @media screen and (min-width: 768px) {
   .concept {
-    margin-top: 150px;
+    margin-top: 250px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -818,9 +827,43 @@ h2 {
     opacity: 0.2;
   }
   100% {
-    top: 0vh; /* 最終位置を画面の10%の高さに設定 */
+    top: -5vh; /* 最終位置を画面の10%の高さに設定 */
     left: 50%;
     opacity: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  @keyframes rise {
+    0% {
+      top: 5vh; /* 初期位置を画面の40%の高さに設定 */
+      left: 50%;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      top: -10vh; /* 最終位置を画面の10%の高さに設定 */
+      left: 50%;
+      opacity: 0;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  @keyframes rise {
+    0% {
+      top: 5vh; /* 初期位置を画面の40%の高さに設定 */
+      left: 50%;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      top: -20vh; /* 最終位置を画面の10%の高さに設定 */
+      left: 50%;
+      opacity: 0;
+    }
   }
 }
 /* flipbook */
