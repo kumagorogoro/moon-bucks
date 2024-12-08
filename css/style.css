@@ -445,19 +445,19 @@ h2 {
   height: fit-content;
   text-align: left;
   margin-left: 80px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
+  border-top: 0.5px solid white;
+  border-bottom: 0.5px solid white;
+  border-left: 0.5px solid white;
+  border-right: 0.5px solid white;
 }
 #info .info-old {
   margin-left: 80px;
   height: fit-content;
   display: none;
   text-align: left;
-  border-bottom: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
+  border-bottom: 0.5px solid white;
+  border-left: 0.5px solid white;
+  border-right: 0.5px solid white;
 }
 #info div p {
   color: #fff;
@@ -470,11 +470,11 @@ h2 {
   cursor: pointer;
   width: 60px;
   height: 60px;
-  margin: 80px 5px 0;
+  margin: 70px 5px 0;
   position: absolute;
-  font-size: 1.2em;
+  font-size: 1em;
   color: white;
-  border: white 1px solid;
+  border: white 0.5px solid;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0);
   font-family: "Klee One", cursive;
@@ -511,15 +511,20 @@ h2 {
     padding-bottom: 20px;
   }
   .more-btn {
-    width: 60px;
-    height: 60px;
-    margin: 65px 40px 0;
-    position: absolute;
-    font-size: 1.2em;
-    color: white;
-    border: white 1px solid;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0);
+    width: 120px;
+    height: 120px;
+    margin: 30px 10px 0;
+  }
+  #info .info-new {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+  }
+  #info .info-old {
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
   }
 }
 @media screen and (min-width: 1200px) {

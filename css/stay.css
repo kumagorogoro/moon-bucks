@@ -401,6 +401,7 @@ nav .spmenu {
     padding-top: 150px;
   }
   #room div p {
+    display: block;
     width: 90%;
     margin: auto;
   }
@@ -417,14 +418,9 @@ nav .spmenu {
     flex-direction: column;
     justify-content: center;
   }
-  #room h1 {
-    position: static;
-  }
-  #room p {
-    position: static;
-  }
   #room div {
-    width: 40%;
+    width: 90%;
+    margin: 10px auto 0px;
   }
 }
 /* food */
@@ -436,12 +432,12 @@ nav .spmenu {
   width: 90%;
   margin: auto;
   padding-top: 50px;
+  gap: 10px;
 }
 #food div {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin: 0 5px;
   order: 2;
 }
 #food div h1 {
