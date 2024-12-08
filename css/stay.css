@@ -8,6 +8,9 @@
 }
 body {
   background: linear-gradient(#41342b, #60342e, #41342b);
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
   color: white;
 }
 img {
@@ -125,11 +128,17 @@ nav .spmenu li:nth-child(1) {
   text-align: left;
   font-size: 1.5em;
   margin: 20px 0 5px 0;
+  font-family: "dolly-small-caps-new", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 nav .spmenu li:nth-child(6) {
   text-align: left;
   font-size: 1.5em;
   margin: 20px 0 10px 0;
+  font-family: "dolly-small-caps-new", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 nav .spmenu li:nth-child(9) {
   width: 70%;
@@ -232,10 +241,16 @@ nav .spmenu {
   nav .spmenu li:nth-child(1) a {
     text-align: left;
     font-size: 1em;
+    font-family: "dolly-small-caps-new", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   nav .spmenu li:nth-child(6) a {
     text-align: left;
     font-size: 1em;
+    font-family: "dolly-small-caps-new", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   nav .spmenu li:nth-child(9) {
     width: 90%;
@@ -296,6 +311,10 @@ nav .spmenu {
     text-decoration: none;
     color: white;
     font-size: 2em;
+
+    font-family: "dolly-small-caps-new", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   .pcmenu {
     display: block;
@@ -453,7 +472,7 @@ nav .spmenu {
 }
 @media screen and (min-width: 768px) {
   #food {
-    padding: 0;
+    padding-top: 100px;
   }
 }
 .breakfast {
@@ -573,10 +592,14 @@ caption {
   font-weight: bold;
 }
 table tr th {
-  width: 10%;
+  vertical-align: middle;
+  text-align: right;
+  padding-left: 2%;
 }
 table tr td {
-  width: 30%;
+  vertical-align: middle;
+  padding-left: 10%;
+  text-align: left;
 }
 #price img {
   order: 2;
@@ -586,6 +609,9 @@ table {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   order: 1;
+  width: 99%;
+  margin: auto;
+  font-size: 0.7rem;
 }
 
 @media screen and (min-width: 768px) {

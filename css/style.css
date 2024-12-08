@@ -8,7 +8,11 @@
 }
 body {
   background: linear-gradient(#41342b, #60342e, #41342b);
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
+
 img {
   width: 100%;
   vertical-align: bottom;
@@ -115,11 +119,17 @@ nav .spmenu li:nth-child(1) {
   text-align: left;
   font-size: 1.5em;
   margin: 20px 0 5px 0;
+  font-family: "dolly-small-caps-new", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 nav .spmenu li:nth-child(6) {
   text-align: left;
   font-size: 1.5em;
   margin: 20px 0 10px 0;
+  font-family: "dolly-small-caps-new", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 nav .spmenu li:nth-child(9) {
   width: 70%;
@@ -222,10 +232,16 @@ nav .spmenu {
   nav .spmenu li:nth-child(1) a {
     text-align: left;
     font-size: 1em;
+    font-family: "dolly-small-caps-new", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   nav .spmenu li:nth-child(6) a {
     text-align: left;
     font-size: 1em;
+    font-family: "dolly-small-caps-new", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   nav .spmenu li:nth-child(9) {
     width: 90%;
@@ -286,6 +302,10 @@ nav .spmenu {
     text-decoration: none;
     color: white;
     font-size: 2em;
+
+    font-family: "dolly-small-caps-new", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   .pcmenu {
     display: block;
@@ -412,7 +432,11 @@ nav .spmenu {
 h2 {
   text-align: left;
   color: #fff;
-  font-size: 2.5em;
+
+  font-family: "dolly-small-caps-new", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
 }
 .info-container {
   margin: 20px 10px 0 0;
@@ -545,7 +569,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-left: 5%;
 }
 
 .drink-menu .container {
@@ -554,7 +578,7 @@ h2 {
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .drink-menu .container:after {
@@ -654,7 +678,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-right: 5%;
 }
 
 .food-menu .container {
@@ -663,7 +687,7 @@ h2 {
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .food-menu .container:after {
