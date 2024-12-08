@@ -477,6 +477,9 @@ h2 {
   border: white 1px solid;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0);
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 @media screen and (min-width: 768px) {
   #info {
@@ -560,17 +563,6 @@ h2 {
   margin-top: 25px;
   padding: 0 10px;
 }
-.drink-menu .container .square {
-  width: 100px;
-  height: 100px;
-  color: white;
-  border: white 1px solid;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 5%;
-}
 
 .drink-menu .container {
   margin-top: 50px;
@@ -595,7 +587,6 @@ h2 {
   );
 }
 .drink-menu .container img {
-  width: 50%;
   object-fit: cover;
 }
 
@@ -603,10 +594,7 @@ h2 {
   #drink {
     padding-top: 140px;
   }
-  .drink-menu .container .square {
-    width: 150px;
-    height: 150px;
-  }
+
   .drink-menu .container {
     margin-top: 100px;
   }
@@ -618,38 +606,21 @@ h2 {
   }
   #drink .border {
     top: 50px;
-    margin-top: 0;
   }
   .drink-menu .container {
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
     justify-content: center;
+    margin: 0;
   }
   .drink-menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 600px 600px 600px;
+    grid-template-rows: 350px 350px 350px;
     gap: 50px;
+    margin-top: 100px;
   }
-  .drink-menu .container .square {
-    width: 130px;
-    height: 130px;
-    border: 10px double #41342b;
-    position: absolute;
-    top: 380px;
-    left: -5px;
-    background: white;
-    font-size: 0.5em;
-  }
+
   .square span {
     color: #41342b;
-  }
-  .drink-menu .container img {
-    width: 450px;
-    height: 300px;
-    object-fit: cover;
-    margin: 0 auto 50px;
   }
 
   .drink-menu .container:nth-of-type(odd)::after {
@@ -668,17 +639,6 @@ h2 {
 .food-menu {
   margin-top: 25px;
   padding: 0 10px;
-}
-.food-menu .container .square {
-  width: 100px;
-  height: 100px;
-  color: white;
-  border: white 1px solid;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-right: 5%;
 }
 
 .food-menu .container {
@@ -703,61 +663,34 @@ h2 {
     rgba(255, 255, 255, 0)
   );
 }
-.food-menu .container img {
-  width: 50%;
-  object-fit: cover;
-}
+
 @media screen and (min-width: 768px) {
   #food {
     padding-top: 140px;
   }
-  .food-menu .container .square {
-    width: 150px;
-    height: 150px;
-  }
+
   .food-menu .container {
     margin-top: 100px;
   }
 }
 @media screen and (min-width: 1200px) {
   #food {
-    margin-bottom: 0px;
+    margin-bottom: 150px;
     padding-top: 100px;
   }
   #food .border {
     top: 50px;
-    margin-top: 0;
   }
   .food-menu .container {
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
     justify-content: center;
+    margin: 0;
   }
   .food-menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 600px 600px;
+    grid-template-rows: 350px 350px;
     gap: 50px;
-  }
-  .food-menu .container .square {
-    width: 130px;
-    height: 130px;
-    border: 10px double #41342b;
-    position: absolute;
-    top: 380px;
-    left: -5px;
-    background: white;
-    font-size: 0.5em;
-  }
-  .square span {
-    color: #41342b;
-  }
-  .food-menu .container img {
-    width: 450px;
-    height: 300px;
-    object-fit: cover;
-    margin: 0 auto 50px;
+    margin-top: 100px;
   }
 
   .food-menu .container:nth-of-type(odd)::after {
