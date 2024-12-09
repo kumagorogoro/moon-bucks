@@ -11,6 +11,7 @@ body {
   font-family: "Klee One", cursive;
   font-weight: 400;
   font-style: normal;
+  color: white;
 }
 
 img {
@@ -23,6 +24,13 @@ img {
   position: relative;
   z-index: 2;
 }
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 1200px;
+    font-size: 1.2rem;
+  }
+}
+
 /* menu */
 .menubtn {
   z-index: 999;
@@ -180,40 +188,46 @@ nav .spmenu {
   padding: 10px;
 }
 .topback {
+  width: 30%;
+  height: 10%;
   position: fixed;
-  bottom: 10%;
-  right: 5%;
-  font-size: 2em;
+  bottom: 0%;
+  right: 0%;
+  font-size: 1.2em;
   color: white;
-  z-index: 1;
+  z-index: 10;
+  background-color: #daae8f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .reservation {
+  width: 70%;
+  height: 10%;
   position: fixed;
-  bottom: 5%;
-  right: 5%;
-  font-size: 2em;
+  bottom: 0%;
+  left: 0%;
+  font-size: 1.2em;
   color: white;
-  z-index: 1;
+  z-index: 10;
   cursor: pointer;
+  background-color: #daae8f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #41342b;
 }
-.reservation img {
-  position: fixed;
-  width: 50%;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  cursor: pointer;
-}
+
 @media screen and (min-width: 768px) {
   .menubtn {
     top: 45px;
     right: 11%;
   }
   #menutext {
-    top: 45px;
+    top: 40px;
     left: 50%;
     color: rgb(255, 255, 255);
-    font-size: 1em;
+    font-size: 1.4rem;
   }
   .menubeans {
     width: 120px;
@@ -438,7 +452,7 @@ nav .spmenu {
   padding-top: 60px;
   position: relative;
 }
-h2 {
+h1 {
   text-align: left;
   color: #fff;
 
@@ -447,22 +461,23 @@ h2 {
   font-style: normal;
   font-size: 3rem;
 }
+@media screen and (min-width: 1200px) {
+ h1{font-size: 5rem;
+}
+}
+
 .info-container {
-  margin: 20px 10px 0 0;
+  width: 80%;
+  margin: auto;
 }
 #info .info-new {
-  min-width: 210px;
-  height: fit-content;
   text-align: left;
-  margin-left: 80px;
   border-top: 0.5px solid white;
   border-bottom: 0.5px solid white;
   border-left: 0.5px solid white;
   border-right: 0.5px solid white;
 }
 #info .info-old {
-  min-width: 209px;
-  margin-left: 80px;
   height: fit-content;
   display: none;
   text-align: left;
@@ -471,22 +486,22 @@ h2 {
   border-right: 0.5px solid white;
 }
 #info div p {
-  color: #fff;
+  font-size: 1em;
 }
-#info div p span {
+#info div p span:nth-child(2) {
+  text-align: center;
   display: block;
   padding-left: 10px;
 }
 .more-btn {
+  display: block;
   cursor: pointer;
   width: 60px;
-  height: 60px;
-  margin: 45px 5px 0;
-  position: absolute;
+  height: 30px;
+  margin: 10px auto 10px;
   font-size: 1em;
   color: white;
   border: white 0.5px solid;
-  border-radius: 50%;
   background-color: rgba(0, 0, 0, 0);
   font-family: "Klee One", cursive;
   font-weight: 400;
@@ -501,11 +516,9 @@ h2 {
   }
   #info .info-new {
     text-align: center;
-    margin-left: 150px;
   }
   #info .info-old {
     text-align: center;
-    margin-left: 150px;
   }
   .info-new p span:nth-child(1),
   .info-old p span:nth-child(1) {
@@ -523,8 +536,7 @@ h2 {
   }
   .more-btn {
     width: 120px;
-    height: 120px;
-    margin: 30px 10px 0;
+    height: 60px;
   }
   #info .info-new {
     border-top: 1px solid white;
@@ -548,27 +560,15 @@ h2 {
     margin-top: 0px;
   }
   .info-container {
-    width: 600px;
-    margin-left: 260px;
-    margin-top: 50px;
+    width: 60%;
+    margin: auto;
   }
-  #info .info-new {
-    width: 700px;
-  }
-  #info .info-old {
-    width: 700px;
-  }
+
   #info div p {
     padding: 10px;
   }
   #info div p span {
     padding-left: 20px;
-  }
-  .more-btn {
-    width: 120px;
-    height: 120px;
-    top: 240px;
-    left: 130px;
   }
 }
 /* drink */
@@ -617,8 +617,7 @@ h2 {
 }
 @media screen and (min-width: 1200px) {
   #drink {
-    margin-bottom: 150px;
-    padding-top: 100px;
+    padding-top: 150px;
   }
   #drink .border {
     top: 50px;
@@ -630,7 +629,7 @@ h2 {
   .drink-menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 350px 350px 350px;
+    grid-template-rows: 300px 300px 300px;
     gap: 50px;
     margin-top: 100px;
   }
@@ -639,18 +638,18 @@ h2 {
     color: #41342b;
   }
 
-  .drink-menu .container:nth-of-type(odd)::after {
-    bottom: 0;
-    left: -70px;
-    width: 270%;
+  .drink-menu .container:last-of-type::after {
+    bottom: -20px;
+    left: 0px;
+    width: 220%;
   }
-  .drink-menu .container:nth-of-type(even)::after {
+  .drink-menu .container:nth-of-type(-n + 4)::after {
     display: none;
   }
 }
 /* food */
 #food {
-  padding-top: 70px;
+  padding-top: 140px;
 }
 .food-menu {
   margin-top: 25px;
@@ -681,18 +680,13 @@ h2 {
 }
 
 @media screen and (min-width: 768px) {
-  #food {
-    padding-top: 140px;
-  }
-
   .food-menu .container {
     margin-top: 100px;
   }
 }
 @media screen and (min-width: 1200px) {
   #food {
-    margin-bottom: 150px;
-    padding-top: 100px;
+    padding-top: 150px;
   }
   #food .border {
     top: 50px;
@@ -704,24 +698,29 @@ h2 {
   .food-menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 350px 350px;
+    grid-template-rows: 300px 300px;
     gap: 50px;
     margin-top: 100px;
   }
 
-  .food-menu .container:nth-of-type(odd)::after {
-    bottom: 0;
-    left: -70px;
-    width: 270%;
+  .square span {
+    color: #41342b;
   }
-  .food-menu .container:nth-of-type(even)::after {
+
+  .food-menu .container:last-of-type::after {
+    bottom: -20px;
+    right: 0;
+    width: 220%;
+  }
+  .food-menu .container:nth-of-type(-n + 3)::after {
     display: none;
   }
 }
+
 /* access */
 #access {
   margin-bottom: 25px;
-  padding-top: 70px;
+  padding-top: 140px;
 }
 #access .container div:nth-child(1) {
   width: fit-content;
@@ -763,7 +762,7 @@ h2 {
 @media screen and (min-width: 1200px) {
   #access {
     margin-bottom: 50px;
-    padding-top: 100px;
+    padding-top: 150px;
   }
   #access .border {
     top: 50px;
@@ -782,14 +781,14 @@ h2 {
 .concept {
   position: relative;
   height: 10%;
-  margin-top: 80px;
+  margin-top: 150px;
 }
 .concept p {
   display: block;
   text-align: center;
-  width: 70%;
+  width: 99%;
   margin: auto;
-  font-size: 0.8em;
+  font-size: 1em;
   color: white;
 }
 
@@ -807,7 +806,10 @@ h2 {
 }
 @media screen and (min-width: 768px) {
   .concept {
-    margin-top: 250px;
+    margin-top: 100px;
+  }
+  .concept p {
+    font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -819,7 +821,7 @@ h2 {
 /* steamアニメーション */
 @keyframes rise {
   0% {
-    top: 10vh; /* 初期位置を画面の40%の高さに設定 */
+    top: 20vh; /* 初期位置を画面の40%の高さに設定 */
     left: 50%;
     opacity: 0;
   }
@@ -827,7 +829,7 @@ h2 {
     opacity: 0.2;
   }
   100% {
-    top: -5vh; /* 最終位置を画面の10%の高さに設定 */
+    top: 0vh; /* 最終位置を画面の10%の高さに設定 */
     left: 50%;
     opacity: 0;
   }
@@ -835,7 +837,7 @@ h2 {
 @media screen and (min-width: 768px) {
   @keyframes rise {
     0% {
-      top: 5vh; /* 初期位置を画面の40%の高さに設定 */
+      top: 25vh; /* 初期位置を画面の40%の高さに設定 */
       left: 50%;
       opacity: 0;
     }
@@ -843,7 +845,7 @@ h2 {
       opacity: 0.2;
     }
     100% {
-      top: -10vh; /* 最終位置を画面の10%の高さに設定 */
+      top: 10vh; /* 最終位置を画面の10%の高さに設定 */
       left: 50%;
       opacity: 0;
     }
@@ -852,7 +854,7 @@ h2 {
 @media screen and (min-width: 1200px) {
   @keyframes rise {
     0% {
-      top: 5vh; /* 初期位置を画面の40%の高さに設定 */
+      top: 20vh; /* 初期位置を画面の40%の高さに設定 */
       left: 50%;
       opacity: 0;
     }
@@ -860,7 +862,7 @@ h2 {
       opacity: 0.2;
     }
     100% {
-      top: -20vh; /* 最終位置を画面の10%の高さに設定 */
+      top: 0vh; /* 最終位置を画面の10%の高さに設定 */
       left: 50%;
       opacity: 0;
     }
@@ -869,39 +871,44 @@ h2 {
 /* flipbook */
 .flipbook {
   width: 50%;
-  height: 10%;
+  height: 20%;
   margin: auto;
-  margin-bottom: 100px;
   position: relative;
 }
 .flipbook img {
   display: none; /* 最初は全て非表示 */
-  z-index: 999;
+  z-index: 2;
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 @media screen and (min-width: 768px) {
-  .flipbook {
-    margin-bottom: 200px;
+  .flipbook img {
+    top: 150%;
   }
 }
 @media screen and (min-width: 1200px) {
   .flipbook {
     width: 30%;
   }
+  .flipbook img{
+    top:70%;
+  }
 }
 
 /* footer */
+footer {
+  margin-top: 200px;
+}
 footer div {
   text-align: center;
 }
 footer div p {
   color: white;
 }
-@media screen and (min-width: 1200px) {
-  footer div {
-    width: 1200px;
+@media screen and (min-width: 768px) {
+  footer {
+    margin-top: 400px;
   }
 }

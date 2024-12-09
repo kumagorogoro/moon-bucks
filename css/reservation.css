@@ -12,6 +12,7 @@ body {
   font-family: "Klee One", cursive;
   font-weight: 400;
   font-style: normal;
+  color: white;
 }
 img {
   vertical-align: bottom;
@@ -20,11 +21,14 @@ ul {
   list-style: none;
 }
 .wrapper {
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
   color: white;
 }
+
 .topback {
   position: fixed;
   bottom: 10%;
@@ -189,20 +193,36 @@ nav .spmenu {
   padding: 10px;
 }
 .topback {
+  width: 30%;
+  height: 10%;
   position: fixed;
-  bottom: 10%;
-  right: 5%;
-  font-size: 1em;
+  bottom: 0%;
+  right: 0%;
+  font-size: 1.2em;
   color: white;
   z-index: 1;
+  background-color: #daae8f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 .reservation {
+  width: 70%;
+  height: 10%;
   position: fixed;
-  bottom: 5%;
-  right: 5%;
-  font-size: 1em;
+  bottom: 0%;
+  left: 0%;
+  font-size: 1.2em;
   color: white;
   z-index: 1;
+  cursor: pointer;
+  background-color: #daae8f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #41342b;
+  z-index: 10;
 }
 @media screen and (min-width: 768px) {
   .menubtn {
@@ -210,10 +230,10 @@ nav .spmenu {
     right: 11%;
   }
   #menutext {
-    top: 45px;
+    top: 40px;
     left: 50%;
     color: rgb(255, 255, 255);
-    font-size: 1em;
+    font-size: 1.4rem;
   }
   .menubeans {
     width: 120px;
@@ -368,261 +388,141 @@ nav .spmenu {
 }
 /* main */
 main {
-  width: 600px;
-  margin-top: 100px;
-  position: relative;
+  width: 90%;
+  margin: auto;
 }
 main h1 {
   padding-top: 80px;
-}
-.white {
-  color: white;
-}
-#confirmationMessage {
-  display: none;
-  color: white;
-  font-size: 9px;
-  margin: 25px 0px;
-
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-h1 {
   border-bottom: 1px dashed white;
-  width: 150px;
-}
-main {
-  margin: auto;
-  position: relative;
-}
-main h1 {
+  font-size: 2em;
   display: block;
-  margin-left: 25px;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
-.mainwrapper {
-  width: 300px;
-  padding-bottom: 75px;
-  padding-top: 150px;
-  margin: auto;
+form {
+  width: 90%;
+  margin: 20px auto 100px;
 }
-#name {
-  width: 200px;
-  height: 25px;
-  border-radius: 4px;
+label {
+  margin-top: 20px;
 }
-#name,
-#postal_code,
-#prefecture,
-#city,
-#address,
-#email,
-#phone,
-#checkin,
-#checkout,
-#adults,
-#children,
-#notes,
-.submit-btn {
+
+input,
+select {
   width: 100%;
   height: 25px;
   border-radius: 4px;
 }
-#name,
-#postal_code,
-#prefecture,
-#city,
-#email,
-#phone,
-#checkin,
-#checkout,
-#adults,
-#children {
-  width: 50%;
+textarea {
   height: 25px;
   border-radius: 4px;
 }
-/*標準表示のチェックボックスを非表示にする*/
-#agree {
-  display: none;
-}
 
-/*ボックス枠のCSS*/
-.label_test:after {
-  position: absolute;
+#submit-btn {
   display: block;
-  top: 75px;
-  left: 7.5px;
-  width: 25px;
-  height: 25px;
-  border: 1px solid white;
-  border-radius: 50%;
+  width: 90%;
+  margin: 10px auto;
 }
-
-.label_test {
-  position: relative;
-}
-
-.label_test:hover:after {
-  border: 5px double white;
-  position: absolute;
-  top: 17.5px;
-  left: 20.5px;
-  transform: translate(-50%, -50%);
-}
-.label_test:after,
-.label_test:before {
-  position: absolute;
-  content: "";
-  display: block;
-  top: 50%;
-}
-.agreebtn {
-  height: 50px;
+textarea {
+  width: 100%;
 }
 .white {
-  margin-left: 100px;
+  color: white;
+  text-decoration: underline;
 }
-/*チェックマークの追加*/
-.label_test:before {
-  left: 17.5px;
-  top: 10px;
-  width: 4.5px; /* チェックマークの幅 */
-  height: 9px; /* チェックマークの高さ */
-  border: solid white;
-  border-width: 0 1px 1px 0; /* チェックマークの線を作成 */
-  transform: rotate(45deg);
-  opacity: 0;
-}
-/*チェックボックスがチェックされた時に動作する内容*/
-input[type="checkbox"]:checked + .label_test:before {
-  opacity: 1;
-}
-/* 送信ボタン */
-.submit-btn {
-  /* buttonタグのリセットCSS */
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  appearance: none;
-
-  color: #fff;
-  background-color: #3abec1;
-  cursor: pointer; /* ポインターカーソルを表示 */
-  margin-top: 50px;
+fieldset {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  margin: 20px 0;
 }
 
-.submit-btn[disabled] {
-  background-color: #ccc;
-  cursor: not-allowed; /* クリック不可のカーソルを表示 */
+fieldset label {
+  font-size: 1rem;
+  width: 200px;
 }
-
-@media screen and (min-width: 1200px) {
-  main {
-    width: 1200px;
-    margin-top: 200px;
-  }
+form div {
+  margin-top: 20px;
+}
+.error-mark {
+  font-size: 0.8rem;
+  display: block;
+}
+@media screen and (min-width: 768px) {
   main h1 {
-    padding-top: 190px;
+    padding-top: 140px;
+  }
+  main {
+    font-size: 1.5rem;
+  }
+  input,
+  select,
+  textarea {
+    height: 50px;
+  }
+  fieldset {
+    font-size: 1.5rem;
+  }
+  form div {
+    margin-top: 40px;
+  }
+  fieldset {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+fieldset label {
+  width: 20%;
+}
+@media screen and (min-width: 1200px) {
+  main h1 {
+    padding-top: 250px;
+    margin-left: 50px;
   }
   #confirmationMessage {
     font-size: 18px;
     margin: 50px 0px;
   }
-  h1 {
-    width: 300px;
-  }
-  main h1 {
-    margin-left: 50px;
-  }
   .mainwrapper {
-    width: 600px;
     padding-bottom: 150px;
-    padding-top: 300px;
+    padding-top: 50px;
   }
-  #name {
-    width: 400px;
-    height: 50px;
+form{
+  display: flex;
+}
+  input,
+  select {
+    height: 40px;
   }
-  #name,
-  #postal_code,
-  #prefecture,
-  #city,
-  #address,
-  #email,
-  #phone,
-  #checkin,
-  #checkout,
-  #adults,
-  #children,
-  #notes,
-  .submit-btn {
-    height: 50px;
+  textarea {
+    height: 200px;
   }
-  #name,
-  #postal_code,
-  #prefecture,
-  #city,
-  #email,
-  #phone,
-  #checkin,
-  #checkout,
-  #adults,
-  #children {
-    height: 50px;
-  }
-  .label_test:after {
-    top: 150px;
-    left: 15px;
-    width: 50px;
-    height: 50px;
-  }
-  .label_test:hover:after {
-    top: 35px;
-    left: 41px;
-  }
-  .agreebtn {
-    height: 100px;
-  }
-  .white {
-    margin-left: 200px;
-  }
-  .label_test:before {
-    left: 35px;
-    top: 20px;
-    width: 9px; /* チェックマークの幅 */
-    height: 18px; /* チェックマークの高さ */
+form div{
+  display: flex;
+  justify-content: center;
+}
+form div label{
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+  #agree {
+    width: 10%;
   }
   /* 送信ボタン */
   .submit-btn {
     margin-top: 100px;
   }
+  fieldset label {
+    width: 30%;
+  }
+
+
 }
+
 /* footer */
 footer div {
-  width: 600px;
   margin: auto;
   text-align: center;
 }
 footer div p {
   color: white;
-}
-fieldset {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.5em;
-  width: 50%;
-}
-fieldset label {
-  font-size: 1em;
-}
-@media screen and (min-width: 1200px) {
-  footer div {
-    width: 1200px;
-  }
 }

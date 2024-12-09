@@ -99,12 +99,12 @@
               name="name"
               placeholder="名前を入力してください"
             />
-            <span id="nameError" class="error-mark"></span><br /><br />
+            <span id="nameError" class="error-mark"></span><br />
 
             <!-- 住所 -->
             <label for="name">住所</label><label class="required">*</label
             ><br />
-            <label for="postal_code">郵便番号</label><br />
+            <label for="postal_code">〒</label><br />
             <input
               type="text"
               id="postal_code"
@@ -112,7 +112,7 @@
               placeholder="例: 123-4567"
               oninput="fetchAddressFromPostalCode()"
             />
-            <span id="postalCodeError" class="error-mark"></span><br /><br />
+            <span id="postalCodeError" class="error-mark"></span><br />
 
             <label for="prefecture">都道府県</label><br />
             <select id="prefecture" name="prefecture" required>
@@ -165,19 +165,19 @@
               <option value="鹿児島県">鹿児島県</option>
               <option value="沖縄県">沖縄県</option>
             </select>
-            <span id="prefectureError" class="error-mark"></span><br /><br />
+            <span id="prefectureError" class="error-mark"></span><br />
             <label for="city" class="required">市区町村</label><br />
             <input type="text" id="city" name="city" />
-            <span id="cityError" class="error-mark"></span><br /><br />
+            <span id="cityError" class="error-mark"></span><br />
 
-            <label for="address" class="required">番地・建物名:</label>
+            <label for="address" class="required">番地・建物名:</label><br />
             <input
               type="text"
               id="address"
               name="address"
               placeholder="例: 1-2-3 ABCビル"
             />
-            <span id="addressError" class="error-mark"></span><br /><br />
+            <span id="addressError" class="error-mark"></span><br />
 
             <!-- メールアドレス -->
             <label for="email">メールアドレス</label
@@ -188,7 +188,7 @@
               name="email"
               placeholder="example@domain.com"
             />
-            <span id="emailError" class="error-mark"></span><br /><br />
+            <span id="emailError" class="error-mark"></span><br />
 
             <!-- 電話番号 -->
             <label for="phone">電話番号</label><label class="required">*</label
@@ -199,7 +199,7 @@
               name="phone"
               placeholder="例: 090-1234-5678"
             />
-            <span id="phoneError" class="error-mark"></span><br /><br />
+            <span id="phoneError" class="error-mark"></span>
             <!--plan-->
             <fieldset>
               <legend>宿泊プラン</legend>
@@ -253,24 +253,24 @@
             <label for="checkin">チェックイン日時</label>
             <label class="required">*</label><br />
             <input type="datetime-local" id="checkin" name="checkin" />
-            <span id="checkinError" class="error-mark"></span><br /><br />
+            <span id="checkinError" class="error-mark"></span><br />
 
             <!-- チェックアウト日時 -->
             <label for="checkout">チェックアウト日時</label>
             <label class="required">*</label><br />
             <input type="datetime-local" id="checkout" name="checkout" />
-            <span id="checkoutError" class="error-mark"></span><br /><br />
+            <span id="checkoutError" class="error-mark"></span><br />
 
             <!-- 宿泊人数 -->
             <label for="adults">大人</label><label class="required">*</label
             ><br />
             <input type="number" id="adults" name="adults" min="1" />
-            <span id="adultsError" class="error-mark"></span><br /><br />
+            <span id="adultsError" class="error-mark"></span><br />
 
             <label for="children">子ども</label><label class="required">*</label
             ><br />
             <input type="number" id="children" name="children" min="0" />
-            <span id="childrenError" class="error-mark"></span><br /><br />
+            <span id="childrenError" class="error-mark"></span><br />
 
             <!-- 備考欄 -->
             <label for="notes">備考</label><br />
@@ -281,17 +281,17 @@
               cols="50"
               placeholder="ご要望などを記入してください"
             ></textarea
-            ><br /><br />
+            ><br />
             <div>
               <input type="checkbox" id="agree" />
-              <label for="agree" class="label_test"
-                ><a href="" class="white">プライバシーポリシー</a
-                >に同意する</label
-              >
+              <label for="agree">
+                <a href="" class="white">プライバシーポリシー</a>に同意する
+              </label>
             </div>
             <input
               type="submit"
               value="送信"
+              class="submit"
               onclick="validateForm(event)"
               class="submit-btn"
               id="submit-btn"
