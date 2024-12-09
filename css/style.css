@@ -449,21 +449,21 @@ nav .spmenu {
 
 /* info */
 #info {
-  padding-top: 60px;
+  padding-top: 35%;
   position: relative;
 }
 h1 {
   text-align: left;
   color: #fff;
-
   font-family: "dolly-small-caps-new", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 @media screen and (min-width: 1200px) {
- h1{font-size: 5rem;
-}
+  h1 {
+    font-size: 5rem;
+  }
 }
 
 .info-container {
@@ -573,28 +573,56 @@ h1 {
 }
 /* drink */
 #drink {
-  padding-top: 70px;
-}
-.drink-menu {
-  margin-top: 25px;
-  padding: 0 10px;
+  padding-top: 35%;
 }
 
+.drink-menu .container .square {
+  width: 40%;
+  padding-top: 29%;
+  font-size: 0.8rem;
+  color: white;
+  border: white 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  position: relative;
+}
+.drink-menu .container .square div {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.square span {
+  display: block;
+}
 .drink-menu .container {
-  margin-top: 50px;
-  padding-bottom: 30px;
+  padding-top: 18%;
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: left;
 }
-
-.drink-menu .container:after {
-  width: 100%;
-  height: 5px;
+.drink-menu .container::before {
+  width: 55%;
+  height: 55%;
+  z-index: -1;
   content: "";
   position: absolute;
   bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.643);
+}
+.drink-menu .container:after {
+  width: 110%;
+  height: 1%;
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 0),
@@ -603,7 +631,9 @@ h1 {
   );
 }
 .drink-menu .container img {
-  object-fit: cover;
+  width: 65%;
+  margin-bottom: 2%;
+  margin-left: 2%;
 }
 
 @media screen and (min-width: 768px) {
@@ -621,6 +651,24 @@ h1 {
   }
   #drink .border {
     top: 50px;
+  }
+  .square {
+    border-radius: 50%;
+    font-size: 0.5em;
+  }
+  .drink-menu .container .square {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 80px;
+    left: -10px;
+  }
+  .drink-menu .container::before {
+    width: 420px;
+    height: 270px;
+    position: absolute;
+    top: 48%;
+    left: -4%;
   }
   .drink-menu .container {
     justify-content: center;
@@ -649,34 +697,64 @@ h1 {
 }
 /* food */
 #food {
-  padding-top: 140px;
-}
-.food-menu {
-  margin-top: 25px;
-  padding: 0 10px;
+  padding-top: 35%;
 }
 
+.food-menu .container .square {
+  width: 40%;
+  padding-top: 29%;
+  font-size: 0.8rem;
+  color: white;
+  border: white 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  position: relative;
+}
+.food-menu .container .square div {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .food-menu .container {
-  margin-top: 50px;
-  padding-bottom: 30px;
+  padding-top: 18%;
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: left;
 }
-
-.food-menu .container:after {
-  width: 100%;
-  height: 5px;
+.food-menu .container::before {
+  width: 55%;
+  height: 55%;
+  z-index: -1;
   content: "";
   position: absolute;
   bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.643);
+}
+.food-menu .container:after {
+  width: 110%;
+  height: 1%;
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 0),
     white,
     rgba(255, 255, 255, 0)
   );
+}
+.food-menu .container img {
+  width: 65%;
+  margin-bottom: 2%;
+  margin-right: 2%;
 }
 
 @media screen and (min-width: 768px) {
@@ -720,7 +798,7 @@ h1 {
 /* access */
 #access {
   margin-bottom: 25px;
-  padding-top: 140px;
+  padding-top: 35%;
 }
 #access .container div:nth-child(1) {
   width: fit-content;
@@ -747,47 +825,20 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-
-@media screen and (min-width: 768px) {
-  #map-grayscale {
-    width: 90%;
-  }
-  #access .container div:nth-child(1) {
-    padding-top: 25px;
-  }
-  #map-sepia {
-    height: 350px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  #access {
-    margin-bottom: 50px;
-    padding-top: 150px;
-  }
-  #access .border {
-    top: 50px;
-    width: 500px;
-    margin-top: 100px;
-  }
-  #access .container {
-    margin-top: 100px;
-    line-height: 35px;
-  }
-  #map-grayscale {
-    width: 70%;
-  }
-}
 /* steam */
 .concept {
   position: relative;
-  height: 10%;
-  margin-top: 150px;
+  padding-top: 80%;
+  margin-top: 50px;
 }
 .concept p {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: block;
   text-align: center;
   width: 99%;
-  margin: auto;
   font-size: 1em;
   color: white;
 }
@@ -804,7 +855,49 @@ h1 {
   left: 50%; /* 画面の50%の位置に配置 */
   transform: translate(-50%, -50%); /* 位置を中央に調整 */
 }
+/* steamアニメーション */
+@keyframes rise {
+  0% {
+    top: 50%; /* 初期位置を画面の40%の高さに設定 */
+    left: 50%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    top: 0; /* 最終位置を画面の10%の高さに設定 */
+    left: 50%;
+    opacity: 0;
+  }
+}
+
+/* flipbook */
+.flipbook {
+  width: 50%;
+  margin: auto;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.flipbook img {
+  display: none; /* 最初は全て非表示 */
+  z-index: 2;
+}
 @media screen and (min-width: 768px) {
+  #map-grayscale {
+    width: 90%;
+  }
+  #access .container div:nth-child(1) {
+    padding-top: 25px;
+  }
+  #map-sepia {
+    height: 350px;
+  }
+  .container {
+    width: 50%;
+  }
   .concept {
     margin-top: 100px;
   }
@@ -813,31 +906,51 @@ h1 {
   }
 }
 @media screen and (min-width: 1200px) {
+  main section:nth-child(5) div:nth-child(2) {
+    display: flex;
+  }
+  #map-grayscale {
+    width: 100%;
+    margin: 0;
+  }
+
+  #access .container div:nth-child(1) {
+    width: 100%;
+    margin: 0;
+  }
+  #access .container div:nth-child(1) p {
+    width: 60%;
+    margin: auto;
+  }
+  .concept {
+    width: 100%;
+    padding-top: 50%;
+  }
+  .concept p {
+    top: 25%;
+  }
+  .flipbook {
+    top: 70%;
+  }
+  #access {
+    margin-bottom: 50px;
+    padding-top: 150px;
+  }
+  #access .border {
+    top: 50px;
+    width: 500px;
+    margin-top: 100px;
+  }
+  #access .container {
+    margin-top: 100px;
+    line-height: 35px;
+  }
   .steam {
     width: 50%;
   }
-}
-
-/* steamアニメーション */
-@keyframes rise {
-  0% {
-    top: 20vh; /* 初期位置を画面の40%の高さに設定 */
-    left: 50%;
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    top: 0vh; /* 最終位置を画面の10%の高さに設定 */
-    left: 50%;
-    opacity: 0;
-  }
-}
-@media screen and (min-width: 768px) {
   @keyframes rise {
     0% {
-      top: 25vh; /* 初期位置を画面の40%の高さに設定 */
+      top: 70%; /* 初期位置を画面の40%の高さに設定 */
       left: 50%;
       opacity: 0;
     }
@@ -845,55 +958,10 @@ h1 {
       opacity: 0.2;
     }
     100% {
-      top: 10vh; /* 最終位置を画面の10%の高さに設定 */
+      top: 35%; /* 最終位置を画面の10%の高さに設定 */
       left: 50%;
       opacity: 0;
     }
-  }
-}
-@media screen and (min-width: 1200px) {
-  @keyframes rise {
-    0% {
-      top: 20vh; /* 初期位置を画面の40%の高さに設定 */
-      left: 50%;
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.2;
-    }
-    100% {
-      top: 0vh; /* 最終位置を画面の10%の高さに設定 */
-      left: 50%;
-      opacity: 0;
-    }
-  }
-}
-/* flipbook */
-.flipbook {
-  width: 50%;
-  height: 20%;
-  margin: auto;
-  position: relative;
-}
-.flipbook img {
-  display: none; /* 最初は全て非表示 */
-  z-index: 2;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-@media screen and (min-width: 768px) {
-  .flipbook img {
-    top: 150%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .flipbook {
-    width: 30%;
-  }
-  .flipbook img{
-    top:70%;
   }
 }
 
