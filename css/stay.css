@@ -203,39 +203,38 @@ nav .spmenu {
   cursor: pointer;
   padding: 10px;
 }
-
 .topback {
-  width: 30%;
-  height: 10%;
+  width: 20%;
+  height: fit-content;
   position: fixed;
-  bottom: 0%;
-  right: 0%;
-  font-size: 1.2em;
+  bottom: 0vh;
+  right: 0vw;
+  font-size: 1.2rem;
   color: white;
-  z-index: 1;
+  z-index: 10;
   background-color: #daae8f;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
 }
 .reservation {
-  width: 70%;
-  height: 10%;
+  width: 80%;
+  height: fit-content;
+  padding: 0 5%;
   position: fixed;
-  bottom: 0%;
-  left: 0%;
-  font-size: 1.2em;
+  bottom: 0vh;
+  left: 0vw;
+  font-size: 1.2rem;
   color: white;
-  z-index: 1;
+  z-index: 10;
   cursor: pointer;
   background-color: #daae8f;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid #41342b;
-  z-index: 10;
+  border-right: 1px solid #ffffff;
 }
+
 @media screen and (min-width: 768px) {
   .menubtn {
     top: 45px;
@@ -291,6 +290,12 @@ nav .spmenu {
     top: 20px;
     right: 20px;
     font-size: 1em;
+  }
+  .topback {
+    font-size: 2rem;
+  }
+  .reservation {
+    font-size: 2rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -397,12 +402,36 @@ nav .spmenu {
       transform: rotate(360deg); /* 360度回転 */
     }
   }
+  .topback {
+    width: 100px;
+    height: 100px;
+    bottom: 13vh;
+    right: 3vw;
+    font-size: 1.2em;
+    border-radius: 50%;
+  }
+  .reservation {
+    padding: 0 1%;
+    width: 25%;
+    height: 5%;
+    display: flex;
+    bottom: 5vh;
+    left: 72vw;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+  }
 }
+
 /* main */
 /* view */
 #view-container {
   padding-top: 25px;
   position: relative;
+}
+.view {
+  opacity: 0;
+  transition: opacity 5s, transform 5s; /* フェードインとスライドのアニメーション */
 }
 .logo {
   position: absolute;
@@ -411,20 +440,36 @@ nav .spmenu {
   top: 40px;
   left: 20px;
 }
+#view-container p {
+  width: 40%;
+  text-align: center;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+}
 @media screen and (min-width: 768px) {
   .logo {
     width: 120px;
     top: 60px;
     left: 40px;
   }
+  #view-container p {
+    font-size: 2.5rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   #view-container {
-    padding-top: 150px;
+    margin-top: 150px;
   }
   .logo {
     width: 170px;
     top: 430px;
+  }
+  #view-container p {
+    top: 10%;
+    left: 75%;
   }
 }
 /* room */
@@ -434,8 +479,20 @@ nav .spmenu {
   display: grid;
 }
 #room img {
+  width: 100%;
   margin: 0 auto;
-  height: fit-content;
+}
+/* 最初に非表示の状態 */
+.hidden {
+  opacity: 0;
+  transform: translateY(30%); /* 下に少し移動 */
+  transition: opacity 3s, transform 3s; /* フェードインとスライドのアニメーション */
+}
+
+/* "visible" クラスが追加されたときの表示状態 */
+.visible {
+  opacity: 1;
+  transform: translateY(0); /* 元の位置に戻る */
 }
 
 #room div {
@@ -641,10 +698,8 @@ caption {
   font-size: 3rem;
   text-align: left;
 }
-@media screen and (min-width: 1200px) {
-  caption {
-    font-size: 3.5rem;
-  }
+caption {
+  font-size: 3.5rem;
 }
 table tr th {
   vertical-align: middle;
@@ -670,7 +725,9 @@ table {
   font-size: 0.7rem;
   border-spacing: 0 20px;
 }
-
+table {
+  font-size: 1.2rem;
+}
 @media screen and (min-width: 768px) {
   #price {
     padding-top: 150px;
@@ -682,6 +739,12 @@ table {
   }
   caption {
     font-size: 2.5rem;
+  }
+  table tr th {
+    font-size: 1.5rem;
+  }
+  table tr td {
+    font-size: 1.2rem;
   }
 }
 @media screen and (min-width: 1200px) {

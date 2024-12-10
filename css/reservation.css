@@ -193,37 +193,37 @@ nav .spmenu {
   padding: 10px;
 }
 .topback {
-  width: 30%;
-  height: 10%;
+  width: 20%;
+  height: fit-content;
   position: fixed;
-  bottom: 0%;
-  right: 0%;
-  font-size: 1.2em;
+  bottom: 0vh;
+  right: 0vw;
+  font-size: 1.2rem;
   color: white;
-  z-index: 1;
+  z-index: 10;
   background-color: #daae8f;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
 }
 .reservation {
-  width: 70%;
-  height: 10%;
+  width: 80%;
+  height: fit-content;
+  padding: 0 5%;
   position: fixed;
-  bottom: 0%;
-  left: 0%;
-  font-size: 1.2em;
+  bottom: 0vh;
+  left: 0vw;
+  font-size: 1.2rem;
   color: white;
-  z-index: 1;
+  z-index: 10;
   cursor: pointer;
   background-color: #daae8f;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid #41342b;
-  z-index: 10;
+  border-right: 1px solid #ffffff;
 }
+
 @media screen and (min-width: 768px) {
   .menubtn {
     top: 45px;
@@ -279,6 +279,12 @@ nav .spmenu {
     top: 20px;
     right: 20px;
     font-size: 1em;
+  }
+  .topback {
+    font-size: 2rem;
+  }
+  .reservation {
+    font-size: 2rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -385,7 +391,28 @@ nav .spmenu {
       transform: rotate(360deg); /* 360度回転 */
     }
   }
+  .topback {
+    width: 100px;
+    height: 100px;
+    bottom: 13vh;
+    right: 3vw;
+    font-size: 1.2em;
+    border-radius: 50%;
+    padding: 0;
+  }
+  .reservation {
+    display: none;
+    padding: 0 1%;
+    width: 25%;
+    height: 5%;
+    bottom: 5vh;
+    left: 72vw;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+  }
 }
+
 /* main */
 main {
   width: 90%;
@@ -421,6 +448,12 @@ textarea {
   width: 90%;
   margin: 10px auto;
 }
+.agree-container label {
+  display: block;
+  width: fit-content;
+  margin: auto;
+  font-size: 0.8rem;
+}
 textarea {
   width: 100%;
 }
@@ -446,6 +479,14 @@ form div {
   font-size: 0.8rem;
   display: block;
 }
+#agree {
+  display: block;
+  width: 10%;
+  margin: auto;
+}
+fieldset label {
+  width: 20%;
+}
 @media screen and (min-width: 768px) {
   main h1 {
     padding-top: 140px;
@@ -468,10 +509,11 @@ form div {
     justify-content: center;
     gap: 20px;
   }
+  .agree-container label {
+    font-size: 1.5rem;
+  }
 }
-fieldset label {
-  width: 20%;
-}
+
 @media screen and (min-width: 1200px) {
   main h1 {
     padding-top: 250px;
@@ -485,9 +527,7 @@ fieldset label {
     padding-bottom: 150px;
     padding-top: 50px;
   }
-form{
-  display: flex;
-}
+
   input,
   select {
     height: 40px;
@@ -495,15 +535,12 @@ form{
   textarea {
     height: 200px;
   }
-form div{
-  display: flex;
-  justify-content: center;
-}
-form div label{
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
+
+  form div label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
   #agree {
     width: 10%;
   }
@@ -514,8 +551,6 @@ form div label{
   fieldset label {
     width: 30%;
   }
-
-
 }
 
 /* footer */

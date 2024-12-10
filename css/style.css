@@ -24,6 +24,11 @@ img {
   position: relative;
   z-index: 2;
 }
+@media screen and (min-width: 768px) {
+  .wrapper {
+    font-size: 1.5rem;
+  }
+}
 @media screen and (min-width: 1200px) {
   .wrapper {
     max-width: 1200px;
@@ -188,12 +193,13 @@ nav .spmenu {
   padding: 10px;
 }
 .topback {
-  width: 30%;
-  height: 10%;
+  width: 20%;
+  height: fit-content;
   position: fixed;
-  bottom: 0%;
-  right: 0%;
-  font-size: 1.2em;
+  bottom: 0vh;
+  right: 0vw;
+  padding: 5% 0;
+  font-size: 1.2rem;
   color: white;
   z-index: 10;
   background-color: #daae8f;
@@ -202,12 +208,13 @@ nav .spmenu {
   align-items: center;
 }
 .reservation {
-  width: 70%;
-  height: 10%;
+  width: 80%;
+  height: fit-content;
   position: fixed;
-  bottom: 0%;
-  left: 0%;
-  font-size: 1.2em;
+  bottom: 0vh;
+  left: 0vw;
+  padding: 5% 0;
+  font-size: 1.2rem;
   color: white;
   z-index: 10;
   cursor: pointer;
@@ -215,7 +222,7 @@ nav .spmenu {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid #41342b;
+  border-right: 1px solid #ffffff;
 }
 
 @media screen and (min-width: 768px) {
@@ -273,6 +280,12 @@ nav .spmenu {
     top: 20px;
     right: 20px;
     font-size: 1em;
+  }
+  .topback {
+    font-size: 2rem;
+  }
+  .reservation {
+    font-size: 2rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -378,6 +391,26 @@ nav .spmenu {
     100% {
       transform: rotate(360deg); /* 360度回転 */
     }
+  }
+  .topback {
+    width: 100px;
+    height: 100px;
+    bottom: 13vh;
+    right: 3vw;
+    font-size: 1.2em;
+    border-radius: 50%;
+    padding: 0;
+  }
+  .reservation {
+    padding: 0 1%;
+    width: 25%;
+    height: 5%;
+    display: flex;
+    bottom: 5vh;
+    left: 72vw;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
   }
 }
 
@@ -496,8 +529,8 @@ h1 {
 .more-btn {
   display: block;
   cursor: pointer;
-  width: 60px;
-  height: 30px;
+  width: 20%;
+  padding: 5% 0;
   margin: 10px auto 10px;
   font-size: 1em;
   color: white;
@@ -534,10 +567,7 @@ h1 {
   .info-new p:nth-child(3) {
     padding-bottom: 20px;
   }
-  .more-btn {
-    width: 120px;
-    height: 60px;
-  }
+
   #info .info-new {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
@@ -570,6 +600,10 @@ h1 {
   #info div p span {
     padding-left: 20px;
   }
+  .more-btn {
+    width: 10%;
+    padding: 3% 0;
+  }
 }
 /* drink */
 #drink {
@@ -579,7 +613,6 @@ h1 {
 .drink-menu .container .square {
   width: 40%;
   padding-top: 29%;
-  font-size: 0.8rem;
   color: white;
   border: white 1px solid;
   display: flex;
@@ -598,8 +631,10 @@ h1 {
 }
 .square span {
   display: block;
+  text-align: center;
 }
 .drink-menu .container {
+  width: 100%;
   padding-top: 18%;
   position: relative;
   display: flex;
@@ -652,38 +687,16 @@ h1 {
   #drink .border {
     top: 50px;
   }
-  .square {
-    border-radius: 50%;
-    font-size: 0.5em;
-  }
-  .drink-menu .container .square {
-    width: 130px;
-    height: 130px;
-    position: absolute;
-    top: 80px;
-    left: -10px;
-  }
-  .drink-menu .container::before {
-    width: 420px;
-    height: 270px;
-    position: absolute;
-    top: 48%;
-    left: -4%;
-  }
   .drink-menu .container {
-    justify-content: center;
     margin: 0;
   }
+
   .drink-menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 300px 300px 300px;
     gap: 50px;
     margin-top: 100px;
-  }
-
-  .square span {
-    color: #41342b;
   }
 
   .drink-menu .container:last-of-type::after {
@@ -703,7 +716,6 @@ h1 {
 .food-menu .container .square {
   width: 40%;
   padding-top: 29%;
-  font-size: 0.8rem;
   color: white;
   border: white 1px solid;
   display: flex;
@@ -721,6 +733,7 @@ h1 {
   transform: translate(-50%, -50%);
 }
 .food-menu .container {
+  width: 100%;
   padding-top: 18%;
   position: relative;
   display: flex;
@@ -781,16 +794,13 @@ h1 {
     margin-top: 100px;
   }
 
-  .square span {
-    color: #41342b;
-  }
-
-  .food-menu .container:last-of-type::after {
+  .food-menu .container:nth-of-type(3)::after {
     bottom: -20px;
-    right: 0;
+    left: 0%;
     width: 220%;
   }
-  .food-menu .container:nth-of-type(-n + 3)::after {
+  .food-menu .container:nth-of-type(-n + 2)::after,
+  .food-menu .container:nth-of-type(4)::after {
     display: none;
   }
 }
@@ -838,7 +848,7 @@ h1 {
   transform: translateX(-50%);
   display: block;
   text-align: center;
-  width: 99%;
+  width: 100%;
   font-size: 1em;
   color: white;
 }
@@ -887,27 +897,61 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   #map-grayscale {
-    width: 90%;
-  }
-  #access .container div:nth-child(1) {
-    padding-top: 25px;
+    width: 100%;
+    margin-bottom: 0;
   }
   #map-sepia {
     height: 350px;
   }
   .container {
-    width: 50%;
+    width: 65%;
+    margin: auto;
+  }
+  .container div:nth-child(1) {
+    width: fit-content;
+    margin: auto;
+  }
+  .container div:nth-child(1) p {
+    width: fit-content;
+    font-size: 1rem;
   }
   .concept {
+    width: 90%;
     margin-top: 100px;
+    padding-top: 50%;
   }
+  main section:nth-child(5) div:nth-child(2) {
+    display: flex;
+  }
+
   .concept p {
-    font-size: 1.5rem;
+    top: 40%;
+    left: 55%;
+    font-size: 1.2rem;
+  }
+  .flipbook {
+    top: 80%;
+  }
+  @keyframes rise {
+    0% {
+      top: 80%; /* 初期位置を画面の40%の高さに設定 */
+      left: 50%;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      top: 45%; /* 最終位置を画面の10%の高さに設定 */
+      left: 50%;
+      opacity: 0;
+    }
   }
 }
 @media screen and (min-width: 1200px) {
   main section:nth-child(5) div:nth-child(2) {
     display: flex;
+    gap: 4%;
   }
   #map-grayscale {
     width: 100%;
@@ -923,11 +967,12 @@ h1 {
     margin: auto;
   }
   .concept {
-    width: 100%;
+    width: 55%;
     padding-top: 50%;
   }
   .concept p {
     top: 25%;
+    font-size: 1.5rem;
   }
   .flipbook {
     top: 70%;
