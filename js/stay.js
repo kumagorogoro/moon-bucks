@@ -105,61 +105,58 @@ window.addEventListener("scroll", function () {
   }
 });
 
-window.addEventListener('load', function() {
+window.addEventListener("load", function () {
   // 画像を選択
-  const image = document.querySelector('.view');
+  const image = document.querySelector(".view");
 
   // "visible" クラスを追加して画像を表示
-  image.classList.add('visible');
+  image.classList.add("visible");
 });
 
-
-window.addEventListener('scroll', function() {
-  const room = document.getElementById('room'); // id を使って要素を取得
+window.addEventListener("scroll", function () {
+  const room = document.getElementById("room"); // id を使って要素を取得
   const roomPosition = room.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
   // スクロールして要素が画面に表示されたとき
   if (roomPosition < windowHeight) {
-    room.classList.add('visible'); // visible クラスを追加して表示
+    room.classList.add("visible"); // visible クラスを追加して表示
   } else {
-    room.classList.add('visible'); // visible クラスを削除して非表示
+    room.classList.add("visible"); // visible クラスを削除して非表示
   }
 });
 
 // 初期状態でスクロール位置をチェックして、最初に表示すべきかを判断
-window.addEventListener('load', function() {
-  const room = document.getElementById('room'); // id を使って要素を取得
+window.addEventListener("load", function () {
+  const room = document.getElementById("room"); // id を使って要素を取得
   const roomPosition = room.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
   if (roomPosition < windowHeight) {
-    room.classList.add('visible'); // ページ読み込み時にすぐ表示する場合
+    room.classList.add("visible"); // ページ読み込み時にすぐ表示する場合
   }
 });
 
-
-
-window.addEventListener('scroll', function() {
-  const food = document.getElementById('food-container'); // id を使って要素を取得
+window.addEventListener("scroll", function () {
+  const food = document.getElementById("food-container"); // id を使って要素を取得
   const foodPosition = food.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
   // スクロールして要素が画面に表示されたとき
   if (foodPosition < windowHeight) {
-    food.classList.add('visible'); // visible クラスを追加して表示
+    food.classList.add("visible"); // visible クラスを追加して表示
   } else {
-    food.classList.add('visible'); // visible クラスを削除して非表示
+    food.classList.add("visible"); // visible クラスを削除して非表示
   }
 });
 
 // 初期状態でスクロール位置をチェックして、最初に表示すべきかを判断
-window.addEventListener('load', function() {
-  const food = document.getElementById('food-container'); // id を使って要素を取得
+window.addEventListener("load", function () {
+  const food = document.getElementById("food-container"); // id を使って要素を取得
   const foodPosition = food.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
   if (foodPosition < windowHeight) {
-    food.classList.add('visible'); // ページ読み込み時にすぐ表示する場合
+    food.classList.add("visible"); // ページ読み込み時にすぐ表示する場合
   }
 });
