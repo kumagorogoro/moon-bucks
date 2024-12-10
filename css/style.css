@@ -112,6 +112,11 @@ img {
   justify-content: center;
   align-items: center;
 }
+nav {
+  position: relative;
+  top: 1px;
+  margin-top: -1px;
+}
 nav .spmenu li {
   width: 40%;
   display: flex;
@@ -198,7 +203,6 @@ nav .spmenu {
   position: fixed;
   bottom: 0vh;
   right: 0vw;
-  padding: 5% 0;
   font-size: 1.2rem;
   color: white;
   z-index: 10;
@@ -206,13 +210,14 @@ nav .spmenu {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5% 0;
 }
 .reservation {
   width: 80%;
   height: fit-content;
   position: fixed;
   bottom: 0vh;
-  left: 0vw;
+  right: 20vw;
   padding: 5% 0;
   font-size: 1.2rem;
   color: white;
@@ -396,18 +401,19 @@ nav .spmenu {
     width: 100px;
     height: 100px;
     bottom: 13vh;
-    right: 3vw;
+    right: 5vw;
+    margin-left: 10%;
     font-size: 1.2em;
     border-radius: 50%;
     padding: 0;
   }
   .reservation {
     padding: 0 1%;
-    width: 25%;
+    width: fit-content;
     height: 5%;
     display: flex;
     bottom: 5vh;
-    left: 72vw;
+    right: 5vw;
     font-size: 1.2em;
     border: none;
     border-radius: 8px;

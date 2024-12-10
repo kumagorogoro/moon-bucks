@@ -198,6 +198,7 @@ nav .spmenu {
   position: fixed;
   bottom: 0vh;
   right: 0vw;
+  padding: 5% 0;
   font-size: 1.2rem;
   color: white;
   z-index: 10;
@@ -213,6 +214,7 @@ nav .spmenu {
   position: fixed;
   bottom: 0vh;
   left: 0vw;
+  padding: 5% 0;
   font-size: 1.2rem;
   color: white;
   z-index: 10;
