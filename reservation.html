@@ -247,13 +247,16 @@
                   checked
                 />
                 朝食 </label
-              ><br />
+              >
+            <span id="mealError" class="error-mark"></span><br />
             </fieldset>
+
 
             <label for="checkin">チェックイン日時</label>
             <label class="required">*</label><br />
             <input type="datetime-local" id="checkin" name="checkin" />
             <span id="checkinError" class="error-mark"></span><br />
+            <span id="todayError" class="error-mark"></span><br />
 
             <!-- チェックアウト日時 -->
             <label for="checkout">チェックアウト日時</label>
@@ -297,18 +300,20 @@
               id="submit-btn"
               disabled
             />
+            <div id="confirmationMessage">ご予約が完了しました！</div>
           </form>
 
           <div id="errorMessages" class="error"></div>
         </div>
-        <div id="confirmationMessage">ご予約が完了しました！</div>
+        
       </main>
-      <footer>
+             <footer>
         <div>
+          <div><a href="#">お祝いホールケーキ注文</a><a href="">よくある質問</a><a href="">個人情報の取り扱いについて</a></div>
           <p>All Rights Reserved 2024 &copy; Copyright Mayumi Kuwana</p>
         </div>
       </footer>
-      <div class="page-bg"></div>
+           <div class="page-bg"></div>
       <div class="animation-wrapper">
         <div class="particle particle-1"></div>
         <div class="particle particle-2"></div>

@@ -93,6 +93,17 @@ window.addEventListener("mousemove", function (event) {
     navbar.style.top = "0"; // 上部200px以内に入ったらナビゲーションを表示
   }
 });
+// 画面スクロールしたときの処理（マウスが画面上部200px以内にいる場合）
+window.addEventListener("scroll", function () {
+  const currentScroll =
+    window.pageYOffset || document.documentElement.scrollTop;
+
+  // もしスクロール位置が200px以下で、マウスが上部200px以内にいない場合、ナビゲーションバーを表示
+  if (currentScroll <= 50) {
+    navbar.style.top = "0"; // スクロールが上部200px以内に戻ったら表示
+  }
+});
+
 // 「同意する」のチェックボックスを取得
 const agreeCheckbox = document.getElementById("agree");
 // 送信ボタンを取得
@@ -112,17 +123,6 @@ agreeCheckbox.addEventListener("change", () => {
 if (!agreeCheckbox.checked) {
   submitBtn.disabled = true; // 初期状態で送信ボタンを無効にする
 }
-
-// 画面スクロールしたときの処理（マウスが画面上部200px以内にいる場合）
-window.addEventListener("scroll", function () {
-  const currentScroll =
-    window.pageYOffset || document.documentElement.scrollTop;
-
-  // もしスクロール位置が200px以下で、マウスが上部200px以内にいない場合、ナビゲーションバーを表示
-  if (currentScroll <= 50) {
-    navbar.style.top = "0"; // スクロールが上部200px以内に戻ったら表示
-  }
-});
 
 // フォームの変更時に食事の選択肢を有効化/無効化する関数
 function toggleMealOptions() {
@@ -153,7 +153,7 @@ document
       span.textContent = ""; // エラーメッセージをクリア
     });
 
-    var errors = []; // エラーメッセージを格納する配列
+    const errors = []; // エラーメッセージを格納する配列
 
     // 必須項目のバリデーション
     var name = document.getElementById("name").value;
@@ -211,47 +211,28 @@ document
       document.getElementById("phoneError").textContent =
         "電話番号は必須です。";
       errors.push("電話番号は必須です。");
-    } else if (!/^\d{3}-\d{4}-\d{4}$/.test(phone)) {
-      document.getElementById("phoneError").textContent =
-        "電話番号は正しい形式で入力してください（例: 090-1234-5678）。";
-      errors.push(
-        "電話番号は正しい形式で入力してください（例: 090-1234-5678）。"
-      );
-    }
-
-    // チェックイン日時のバリデーション
-    var checkin = document.getElementById("checkin").value;
-    if (!checkin) {
-      document.getElementById("checkinError").textContent =
-        "チェックイン日時は必須です。";
-      errors.push("チェックイン日時は必須です。");
-    } else {
-      var checkinDate = new Date(checkin);
-      var checkinHour = checkinDate.getHours();
-
-      // チェックインは15:00〜19:00の間
-      if (checkinHour < 15 || checkinHour > 19) {
-        document.getElementById("checkinError").textContent =
-          "チェックインは15:00〜19:00です。";
-        errors.push("チェックインは15:00〜19:00です。");
-      }
-    }
+    } 
 
     // チェックアウト日時のバリデーション
-    var checkout = document.getElementById("checkout").value;
+    var checkout = document.getElementById("checkout").value; // チェックアウト日時の入力値を取得
     if (!checkout) {
       document.getElementById("checkoutError").textContent =
         "チェックアウト日時は必須です。";
       errors.push("チェックアウト日時は必須です。");
     } else {
-      var checkinDate = new Date(document.getElementById("checkin").value);
-      var checkoutDate = new Date(checkout);
+      var checkinDate = new Date(document.getElementById("checkin").value); // チェックイン日時を取得
+      var checkoutDate = new Date(checkout); // チェックアウト日時をDateオブジェクトに変換
 
       // チェックアウトはチェックイン後、翌日10:00まで
-      if (
-        checkoutDate.getTime() <= checkinDate.getTime() ||
-        checkoutDate.getHours() > 10
-      ) {
+      if (checkoutDate.getTime() <= checkinDate.getTime()) {
+        // チェックアウトがチェックイン時間よりも前、または同じ場合
+        document.getElementById("checkoutError").textContent =
+          "チェックアウト日時はチェックイン日時以降をご指定ください。";
+        errors.push(
+          "チェックアウト日時はチェックイン日時以降をご指定ください。"
+        );
+      } else if (checkoutDate.getHours() > 10) {
+        // チェックアウト時間が10時を過ぎている場合
         document.getElementById("checkoutError").textContent =
           "チェックアウトは～10:00までです。";
         errors.push("チェックアウトは～10:00までです。");
@@ -272,30 +253,58 @@ document
       errors.push("子どもの人数は必須です。");
     }
 
-    var mealType = document.querySelector('input[name="meal_type"]:checked');
-    if (!mealType) {
-      document.getElementById("mealError").textContent =
-        "食事タイプは必須です。";
-      errors.push("食事タイプは必須です。");
-    }
+    // 食事オプションのチェックボックスの有効/無効を切り替える
+    function toggleMealOptions() {
+      const plan = document.querySelector('input[name="plan"]:checked').value;
+      const dinnerCheckbox = document.getElementById("dinner");
+      const breakfastCheckbox = document.getElementById("breakfast");
 
-    // 食事付きプランの場合、食事内容が選択されているかを確認
-    if (
-      document.querySelector('input[name="plan"]:checked').value === "with_meal"
-    ) {
-      const mealCheckboxes = document.querySelectorAll(
-        'input[name="meal[]"]:checked'
-      );
-      if (mealCheckboxes.length === 0) {
-        document.getElementById("mealError").textContent =
-          "食事内容（夕食または朝食）を選択してください。";
-        errors.push("食事内容（夕食または朝食）を選択してください。");
+      if (plan === "with_meal") {
+        // 食事付きの場合はチェックボックスを有効にする
+        dinnerCheckbox.disabled = false;
+        breakfastCheckbox.disabled = false;
+      } else {
+        // 素泊まりの場合はチェックボックスを無効にする
+        dinnerCheckbox.disabled = true;
+        breakfastCheckbox.disabled = true;
+        dinnerCheckbox.checked = false;
+        breakfastCheckbox.checked = false;
       }
     }
 
+    // チェックボックスの選択内容を確認するバリデーション
+    function validateMealSelection() {
+      const plan = document.querySelector('input[name="plan"]:checked').value;
+
+      // 食事付きプランが選ばれている場合
+      if (plan === "with_meal") {
+        const mealCheckboxes = document.querySelectorAll(
+          'input[name="meal[]"]:checked'
+        );
+
+        // 夕食または朝食のいずれかが選択されていない場合
+        if (mealCheckboxes.length === 0) {
+          document.getElementById("mealError").textContent =
+            "食事内容（夕食または朝食）を選択してください。";
+          return false; // エラーがあれば送信を中止
+        } else {
+          document.getElementById("mealError").textContent = ""; // エラーメッセージをクリア
+          return true; // 正常
+        }
+      }
+
+      return true; // 食事なしの場合はチェック不要
+    }
+
+    // ページが読み込まれた時に食事オプションを設定
+    window.addEventListener("load", function () {
+      toggleMealOptions(); // 初期状態で、食事オプションの有効/無効を設定
+    });
+
     // エラーがない場合は送信
+    const confirmationMessage = document.getElementById("confirmationMessage"); // 修正: getElementByIdの使い方
     if (errors.length === 0) {
-      alert("フォームは正常に送信されました！");
+      confirmationMessage.style.display = "block"; // 修正: 'block' を文字列で指定
       // ここでフォーム送信の処理を行います
       // document.getElementById("reservationForm").submit();
     }
@@ -329,5 +338,14 @@ function fetchAddressFromPostalCode() {
     .catch((error) => {
       console.error("住所の取得エラー:", error);
       alert("住所情報の取得に失敗しました。");
+      // エラーがない場合は送信
+      const confirmationMessage = document.getElementById(
+        "confirmationMessage"
+      ); // 修正: getElementByIdの使い方
+      if (errors.length === 0) {
+        confirmationMessage.style.display = "block"; // 修正: 'block' を文字列で指定
+        // ここでフォーム送信の処理を行います
+        // document.getElementById("reservationForm").submit();
+      }
     });
 }

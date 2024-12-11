@@ -20,6 +20,7 @@ img {
 }
 .wrapper {
   width: 90%;
+  max-width: 1200px;
   margin: auto;
   position: relative;
   z-index: 2;
@@ -29,9 +30,9 @@ img {
     font-size: 1.5rem;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .wrapper {
-    max-width: 1200px;
+    width: 90%;
     font-size: 1.2rem;
   }
 }
@@ -213,11 +214,11 @@ nav .spmenu {
   padding: 5% 0;
 }
 .reservation {
-  width: 80%;
+  width: 81%;
   height: fit-content;
   position: fixed;
   bottom: 0vh;
-  right: 20vw;
+  right: 19vw;
   padding: 5% 0;
   font-size: 1.2rem;
   color: white;
@@ -293,7 +294,7 @@ nav .spmenu {
     font-size: 2rem;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .menubtn {
     display: none;
   }
@@ -400,7 +401,7 @@ nav .spmenu {
   .topback {
     width: 100px;
     height: 100px;
-    bottom: 13vh;
+    bottom: 15vh;
     right: 5vw;
     margin-left: 10%;
     font-size: 1.2em;
@@ -410,7 +411,7 @@ nav .spmenu {
   .reservation {
     padding: 0 1%;
     width: fit-content;
-    height: 5%;
+    height: 8%;
     display: flex;
     bottom: 5vh;
     right: 5vw;
@@ -467,7 +468,7 @@ nav .spmenu {
     height: 200px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .hero {
     padding-top: 220px;
   }
@@ -499,7 +500,7 @@ h1 {
   font-style: normal;
   font-size: 2.5rem;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   h1 {
     font-size: 5rem;
   }
@@ -540,8 +541,8 @@ h1 {
   margin: 10px auto 10px;
   font-size: 1em;
   color: white;
-  border: white 0.5px solid;
-  background-color: rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  background: #daae8f;
   font-family: "Klee One", cursive;
   font-weight: 400;
   font-style: normal;
@@ -586,7 +587,7 @@ h1 {
     border-right: 1px solid white;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   #info {
     margin-top: 0;
     padding-top: 150px;
@@ -607,8 +608,8 @@ h1 {
     padding-left: 20px;
   }
   .more-btn {
-    width: 10%;
-    padding: 3% 0;
+    width: 9%;
+    padding: 2% 0;
   }
 }
 /* drink */
@@ -686,7 +687,7 @@ h1 {
     margin-top: 100px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   #drink {
     padding-top: 150px;
   }
@@ -781,7 +782,7 @@ h1 {
     margin-top: 100px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   #food {
     padding-top: 150px;
   }
@@ -954,7 +955,7 @@ h1 {
     }
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   main section:nth-child(5) div:nth-child(2) {
     display: flex;
     gap: 4%;
@@ -1018,10 +1019,25 @@ h1 {
 
 /* footer */
 footer {
-  margin-top: 200px;
+  margin-top: 5%;
+  margin-bottom: 20%;
 }
 footer div {
   text-align: center;
+}
+footer div div {
+  margin-bottom: 7%;
+}
+footer div div a {
+  display: block;
+  width:80%;
+  margin: auto;
+  margin-bottom: 5%;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid white;
+  padding: 1%;
+  border-radius: 8px;
 }
 footer div p {
   color: white;
