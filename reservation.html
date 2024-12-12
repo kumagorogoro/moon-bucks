@@ -203,53 +203,59 @@
             <!--plan-->
             <fieldset>
               <legend>宿泊プラン</legend>
-              <label>
-                <input
-                  type="radio"
-                  name="plan"
-                  value="no_meal"
-                  onclick="toggleMealOptions()"
-                  checked
-                />
-                素泊まり </label
-              ><br />
-              <label>
-                <input
-                  type="radio"
-                  name="plan"
-                  value="with_meal"
-                  onclick="toggleMealOptions()"
-                />
-                食事付き </label
-              ><br />
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="plan"
+                    value="no_meal"
+                    onclick="toggleMealOptions()"
+                    checked
+                  />
+                </label>
+                <p class="pwidth">素泊まり</p>
+              </div>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="plan"
+                    value="with_meal"
+                    onclick="toggleMealOptions()"
+                  />
+                </label>
+                <p class="pwidth">食事付き</p>
+              </div>
             </fieldset>
 
             <fieldset>
               <legend>食事内容</legend>
-              <label>
-                <input
-                  type="checkbox"
-                  name="meal[]"
-                  id="dinner"
-                  value="dinner"
-                  disabled
-                  checked
-                />
-                夕食 </label
-              ><br />
-              <label>
-                <input
-                  type="checkbox"
-                  name="meal[]"
-                  id="breakfast"
-                  value="breakfast"
-                  disabled
-                  checked
-                />
-                朝食
-              </label>
-              <span id="mealError" class="error-mark"></span><br />
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="meal[]"
+                    id="dinner"
+                    value="dinner"
+                    disabled
+                    checked
+                /></label>
+                <p class="pwidth">夕食</p>
+              </div>
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="meal[]"
+                    id="breakfast"
+                    value="breakfast"
+                    disabled
+                    checked
+                /></label>
+                <p class="pwidth">朝食</p>
+              </div>
             </fieldset>
+            <span id="mealError" class="error-mark"></span><br />
 
             <label for="checkin">チェックイン日時</label>
             <label class="required">*</label><br />
