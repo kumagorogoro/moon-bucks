@@ -419,6 +419,7 @@ nav .spmenu {
 main {
   width: 90%;
   margin: auto;
+  padding-bottom: 80px;
 }
 main h1 {
   padding-top: 80px;
@@ -428,7 +429,7 @@ main h1 {
 }
 form {
   width: 90%;
-  margin: 20px auto 100px;
+  margin: 20px auto 0px;
 }
 label {
   margin-top: 8px;

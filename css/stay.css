@@ -16,7 +16,6 @@ body {
 img {
   width: 100%;
   vertical-align: bottom;
-  border-radius: 8px;
 }
 h1 {
   font-family: "dolly-small-caps-new", sans-serif;
@@ -424,7 +423,6 @@ nav .spmenu {
     right: 5vw;
     font-size: 1.2em;
     border: none;
-    border-radius: 8px;
   }
 }
 

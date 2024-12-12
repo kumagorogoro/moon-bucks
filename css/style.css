@@ -422,6 +422,9 @@ nav .spmenu {
 }
 
 /* main */
+main {
+  padding-bottom: 80px;
+}
 .border {
   border-bottom: 1px dashed white;
 }

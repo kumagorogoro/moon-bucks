@@ -38,16 +38,42 @@ links.forEach(function (link) {
     menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
   });
 });
-// スライドショー
 let index = 0;
 const images = document.querySelectorAll(".slide-container img");
 
+// スライドショーを制御する関数
 function change() {
+  // 現在の画像から 'active' クラスを削除してフェードアウト
   images[index].classList.remove("active");
+
+  // 次の画像のインデックスを計算
   index = (index + 1) % images.length;
+
+  // 新しい画像に 'active' クラスを追加してフェードイン
   images[index].classList.add("active");
 }
+
+// 初期ロード時に画像の差し替えを実行
+adjustImagesBasedOnWidth();
+
+// リサイズ時に画像の差し替えを実行
+window.addEventListener("resize", adjustImagesBasedOnWidth);
+
+// 5秒ごとに画像を切り替え
 setInterval(change, 5000);
+
+// 画面幅に基づいて画像を変更する関数
+function adjustImagesBasedOnWidth() {
+  const cafeImg = images[0]; // 1番目の画像（cafe.jpg）
+
+  if (window.innerWidth <= 767) {
+    // 767px以下の場合、1番目の画像をcafe2.jpgに変更
+    cafeImg.src = "img/cafe2.jpg";
+  } else {
+    // 767px以上の場合、元のcafe.jpgに戻す
+    cafeImg.src = "img/cafe.jpg";
+  }
+}
 
 // moreボタンクリック時の動作
 const btn = document.querySelector(".more-btn");
