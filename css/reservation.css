@@ -440,6 +440,7 @@ select {
   height: 25px;
   border-radius: 4px;
 }
+
 textarea {
   height: 25px;
   border-radius: 4px;
@@ -486,18 +487,12 @@ form div {
   width: 10%;
   margin: auto;
 }
-fieldset label {
-  width: 20%;
-}
 #confirmationMessage {
   display: none;
   text-align: center;
   font-size: 1.5rem;
 }
-fieldset label {
-  text-align: center;
-  width: 30%;
-}
+
 @media screen and (min-width: 768px) {
   main h1 {
     padding-top: 140px;
@@ -518,7 +513,6 @@ fieldset label {
   }
   fieldset {
     justify-content: center;
-    gap: 20px;
   }
   .agree-container label {
     font-size: 1.5rem;
@@ -556,8 +550,8 @@ fieldset label {
     margin-top: 100px;
   }
   #confirmationMessage {
-  font-size: 2rem;
-}
+    font-size: 2rem;
+  }
 }
 /* footer */
 footer {
@@ -572,7 +566,7 @@ footer div div {
 }
 footer div div a {
   display: block;
-  width:80%;
+  width: 80%;
   margin: auto;
   margin-bottom: 5%;
   text-decoration: none;
@@ -583,10 +577,5 @@ footer div div a {
 }
 footer div p {
   color: white;
+  font-size: 0.5rem;
 }
-@media screen and (min-width: 768px) {
-  footer {
-    margin-top: 400px;
-  }
-}
-

@@ -794,7 +794,7 @@ footer div div {
 }
 footer div div a {
   display: block;
-  width:80%;
+  width: 80%;
   margin: auto;
   margin-bottom: 5%;
   text-decoration: none;
@@ -805,10 +805,10 @@ footer div div a {
 }
 footer div p {
   color: white;
+  font-size: 0.5rem;
 }
 @media screen and (min-width: 768px) {
   footer {
     margin-top: 400px;
   }
 }
-
