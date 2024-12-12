@@ -490,8 +490,8 @@ nav .spmenu {
   position: absolute;
   width: 80px;
   z-index: 1;
-  top: 30px;
-  left: 15px;
+  top: 31px;
+  left: 20px;
 }
 #view-container p {
   width: 50%;
@@ -505,7 +505,7 @@ nav .spmenu {
 @media screen and (min-width: 768px) {
   .logo {
     width: 120px;
-    top: 50px;
+    top: 48px;
     left: 70px;
   }
   #view-container p {

@@ -455,8 +455,8 @@ main {
   width: 20%;
   position: absolute;
   z-index: 1;
-  top: 73px;
-  left: 15px;
+  top: 74px;
+  left: 23px;
   transform: translateY(-50%);
 }
 .slide-container .active {
@@ -483,7 +483,7 @@ main {
   }
   .logo {
     width: 120px;
-    top: 102px;
+    top: 105px;
     left: 40px;
   }
   .slide-container {
