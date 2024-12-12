@@ -57,15 +57,15 @@ h1 {
 }
 #menutext {
   position: absolute;
-  top: 25px;
+  top: 28px;
   left: 50%;
   transform: translateX(-50%);
   color: rgb(255, 255, 255);
   font-size: 0.8rem;
 }
 .menubeans {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
   transform-origin: center; /* 回転の中心をdivの中央に設定 */
@@ -455,10 +455,9 @@ nav .spmenu {
   left: 0;
   object-fit: cover;
   z-index: 100;
-  opacity: 0; /* 初期状態で完全に表示 */
+  opacity: 1; /* 初期状態で完全に表示 */
   animation: fadeOut 3s ease-in-out; /* アニメーションを適用（5秒で終了） */
 }
-
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -504,8 +503,8 @@ nav .spmenu {
 @media screen and (min-width: 768px) {
   .logo {
     width: 120px;
-    top: 60px;
-    left: 40px;
+    top: 50px;
+    left: 70px;
   }
   #view-container p {
     font-size: 2.5rem;
@@ -613,7 +612,6 @@ nav .spmenu {
 }
 #stayfood img {
   min-width: 200px;
-  height: fit-content;
   order: 1;
 }
 
@@ -696,9 +694,6 @@ nav .spmenu {
 .coffee div h1 {
   display: none;
 }
-.coffee img {
-  height: fit-content;
-}
 @media screen and (min-width: 768px) {
   #stayfood {
     padding-top: 10%;
@@ -737,8 +732,6 @@ nav .spmenu {
   }
   .breakfast img {
     width: 50%;
-    height: fit-content;
-    object-fit: cover;
   }
   .breakfast img::after {
     background: rgba(255, 255, 255, 0.643);

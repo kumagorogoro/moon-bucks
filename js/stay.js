@@ -1,3 +1,19 @@
+// .steaml と .steamr がアニメーション終了後に display: none を設定するための処理
+document.addEventListener("DOMContentLoaded", function () {
+  const steamLeft = document.querySelector(".steaml");
+  const steamRight = document.querySelector(".steamr");
+  const white = document.querySelector(".white");
+
+  // アニメーションが終了したときに display: none を適用
+  steamLeft.addEventListener("animationend", function () {
+    steamLeft.style.display = "none";
+  });
+
+  steamRight.addEventListener("animationend", function () {
+    steamRight.style.display = "none";
+  });
+});
+
 const hamburger = document.querySelector("#menubtn");
 const menubeans = document.querySelector(".menubeans");
 const menu = document.querySelector("#spmenu");
@@ -243,21 +259,3 @@ if (urlHash) {
     });
   }
 }
-// .steaml と .steamr がアニメーション終了後に display: none を設定するための処理
-document.addEventListener("DOMContentLoaded", function () {
-  const steamLeft = document.querySelector(".steaml");
-  const steamRight = document.querySelector(".steamr");
-  const white = document.querySelector(".white");
-
-  // アニメーションが終了したときに display: none を適用
-  steamLeft.addEventListener("animationend", function () {
-    steamLeft.style.display = "none";
-  });
-
-  steamRight.addEventListener("animationend", function () {
-    steamRight.style.display = "none";
-  });
-  white.addEventListener("animationend", function () {
-    white.style.display = "none";
-  });
-});

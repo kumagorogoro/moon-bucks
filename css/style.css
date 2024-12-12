@@ -48,15 +48,15 @@ img {
 }
 #menutext {
   position: absolute;
-  top: 25px;
+  top: 28px;
   left: 50%;
   transform: translateX(-50%);
   color: rgb(255, 255, 255);
   font-size: 0.8rem;
 }
 .menubeans {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
   transform-origin: center; /* 回転の中心をdivの中央に設定 */
 }
@@ -275,7 +275,7 @@ nav .spmenu {
     font-style: normal;
   }
   nav .spmenu li:nth-child(9) {
-    width: 90%;
+    width: 100%;
   }
   nav .spmenu li:nth-child(2) {
     width: 80%;
@@ -449,7 +449,7 @@ main {
   position: relative;
 }
 .logo {
-  width: 25%;
+  width: 20%;
   position: absolute;
   z-index: 1;
   top: 73px;
@@ -578,6 +578,7 @@ h1 {
 @media screen and (min-width: 768px) {
   #info {
     padding-top: 15%;
+    margin-top: 5%;
   }
   #info .info-new {
     text-align: center;
@@ -709,6 +710,8 @@ h1 {
 @media screen and (min-width: 768px) {
   #drink {
     padding-top: 15%;
+    padding-bottom: 10%;
+    margin-top: 5%;
   }
   .drink-menu .container .square div {
     font-size: 1.5rem;
@@ -811,7 +814,9 @@ h1 {
 
 @media screen and (min-width: 768px) {
   #food {
-    padding-top: 22%;
+    padding-top: 15%;
+    padding-bottom: 10%;
+    margin: 0 5% 0 5%;
   }
   .food-menu .container .square div {
     font-size: 1.5rem;
@@ -942,7 +947,8 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   #access {
-    padding-top: 22%;
+    padding-top: 15%;
+    margin: 0 5%;
   }
   #access .container {
     width: 120%;
