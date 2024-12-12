@@ -220,6 +220,9 @@ nav .spmenu {
 .reservation {
   display: none;
 }
+.navlh {
+  line-height: 90%;
+}
 
 @media screen and (min-width: 768px) {
   .menubtn {
@@ -492,7 +495,7 @@ fieldset:nth-of-type(2) div {
 }
 fieldset div label {
   margin: 0;
-  width: fit-content;
+  width: 30%;
   position: relative;
 }
 
