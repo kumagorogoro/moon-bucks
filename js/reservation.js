@@ -212,7 +212,23 @@ document
         "電話番号は必須です。";
       errors.push("電話番号は必須です。");
     }
+    // チェックイン日時のバリデーション
+    var checkin = document.getElementById("checkin").value;
+    if (!checkin) {
+      document.getElementById("checkinError").textContent =
+        "チェックイン日時は必須です。";
+      errors.push("チェックイン日時は必須です。");
+    } else {
+      var checkinDate = new Date(checkin);
+      var checkinHour = checkinDate.getHours();
 
+      // チェックインは15:00〜19:00の間
+      if (checkinHour < 15 || checkinHour > 19) {
+        document.getElementById("checkinError").textContent =
+          "チェックインは15:00〜19:00です。";
+        errors.push("チェックインは15:00〜19:00です。");
+      }
+    }
     // チェックアウト日時のバリデーション
     var checkout = document.getElementById("checkout").value; // チェックアウト日時の入力値を取得
     if (!checkout) {
