@@ -306,7 +306,7 @@ nav .spmenu {
   }
   nav {
     position: fixed;
-    z-index: 99999;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 100%;
@@ -315,14 +315,13 @@ nav .spmenu {
     transition: top 0.3s; /* スムーズなアニメーション */
     display: flex;
     justify-content: center;
+    gap: 2%;
   }
   .cafemenu {
-    width: 30%;
-    margin-right: 50px;
+    width: 40%;
   }
   .staymenu {
-    width: 30%;
-    margin-left: 50px;
+    width: 40%;
   }
   .pc {
     display: block;
@@ -427,6 +426,37 @@ nav .spmenu {
 }
 
 /* main */
+.steaml,
+.steamr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 100;
+  opacity: 0; /* 初期状態で完全に表示 */
+  animation: fadeOut 3s ease-in-out; /* アニメーションを適用（5秒で終了） */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(2.5); /* 最初は通常サイズ */
+  }
+  25% {
+    transform: scale(3); /* 中間で少し大きくなって広がる */
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(4); /* 中間で少し大きくなって広がる */
+  }
+  75% {
+    transform: scale(4.5); /* 完全に透明になり、さらに拡大して消える */
+  }
+  100% {
+    opacity: 0;
+    transform: scale(5); /* 完全に透明になり、さらに拡大して消える */
+  }
+}
 /* view */
 #view-container {
   padding-top: 25px;
@@ -462,7 +492,6 @@ nav .spmenu {
 @media screen and (min-width: 1024px) {
   #view-container {
     margin-top: 150px;
-    margin-bottom: 10%;
   }
   #view-container img:nth-child(2) {
     height: 400px;
@@ -512,7 +541,7 @@ nav .spmenu {
   #roomfood-container {
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    padding-top: 5%;
+    padding-top: 10%;
   }
   #room {
     display: flex;
@@ -763,7 +792,7 @@ table {
 }
 @media screen and (min-width: 1024px) {
   #price {
-    padding: 50px 10% 10% 10%;
+    padding: 10%;
     gap: 20px;
   }
   #price img {

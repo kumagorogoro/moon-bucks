@@ -117,6 +117,36 @@ window.addEventListener("scroll", function () {
     });
   }
 });
+// ページが読み込まれた時にも実行する関数
+function handleScroll() {
+  // 画面幅が2048px以上（大きなディスプレイサイズ）の場合のみ処理を実行
+  if (window.innerWidth >= 2048) {
+    // スクロール時の処理をまとめて実行
+    const elements = [
+      { id: "room", elementClass: "visible" },
+      { id: "food-container", elementClass: "visible" },
+    ];
+
+    elements.forEach(function ({ id, elementClass }) {
+      const element = document.getElementById(id);
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementPosition < windowHeight) {
+          element.classList.add(elementClass);
+        } else {
+          element.classList.remove(elementClass);
+        }
+      }
+    });
+  }
+}
+
+// ページ読み込み時に実行
+document.addEventListener("DOMContentLoaded", handleScroll);
+
+// スクロール時にも実行
+window.addEventListener("scroll", handleScroll);
 
 // ヘッダー情報
 const header = document.querySelector(".fixed-header");
@@ -213,3 +243,21 @@ if (urlHash) {
     });
   }
 }
+// .steaml と .steamr がアニメーション終了後に display: none を設定するための処理
+document.addEventListener("DOMContentLoaded", function () {
+  const steamLeft = document.querySelector(".steaml");
+  const steamRight = document.querySelector(".steamr");
+  const white = document.querySelector(".white");
+
+  // アニメーションが終了したときに display: none を適用
+  steamLeft.addEventListener("animationend", function () {
+    steamLeft.style.display = "none";
+  });
+
+  steamRight.addEventListener("animationend", function () {
+    steamRight.style.display = "none";
+  });
+  white.addEventListener("animationend", function () {
+    white.style.display = "none";
+  });
+});
