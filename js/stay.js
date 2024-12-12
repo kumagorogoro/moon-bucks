@@ -1,3 +1,13 @@
+// ページが読み込まれた時の処理
+window.addEventListener("load", function () {
+  // ロード画面を非表示
+  const loadingScreen = document.getElementById("loading-screen");
+  const content = document.getElementById("content");
+
+  loadingScreen.style.display = "none"; // ロード画面を非表示
+  content.style.display = "block"; // コンテンツを表示
+});
+
 // .steaml と .steamr がアニメーション終了後に display: none を設定するための処理
 document.addEventListener("DOMContentLoaded", function () {
   const steamLeft = document.querySelector(".steaml");
