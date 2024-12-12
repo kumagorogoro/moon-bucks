@@ -36,12 +36,12 @@ h1 {
     width: 95%;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .wrapper {
-    width: 90%;
+    width: 95%;
     font-size: 1.2rem;
   }
 }
@@ -568,6 +568,7 @@ nav .spmenu {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 5%;
   }
   #room div {
     width: 90%;
@@ -596,7 +597,6 @@ nav .spmenu {
   flex-direction: column;
   justify-content: center;
   margin: 15px 0;
-  width: 90%;
   margin: auto;
   padding-top: 50px;
   gap: 10px;
@@ -643,7 +643,6 @@ nav .spmenu {
   flex-direction: column;
   justify-content: center;
   padding-top: 50px;
-  width: 95%;
   margin: auto;
 }
 .breakfast div {
@@ -680,7 +679,6 @@ nav .spmenu {
   flex-direction: column;
   justify-content: center;
   margin: 15px 0;
-  width: 90%;
   padding-top: 50px;
   margin: auto;
 }
@@ -719,6 +717,7 @@ nav .spmenu {
 @media screen and (min-width: 1024px) {
   #stayfood {
     display: flex;
+    gap: 10px;
   }
   #stayfood img {
     width: 50%;
@@ -728,10 +727,11 @@ nav .spmenu {
   .breakfast {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
   }
   .breakfast img {
-    width: 50%;
+    width: 45%;
+    object-fit: cover;
   }
   .breakfast img::after {
     background: rgba(255, 255, 255, 0.643);
