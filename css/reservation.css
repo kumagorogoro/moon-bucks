@@ -12,7 +12,6 @@ body {
   font-family: "Klee One", cursive;
   font-weight: 400;
   font-style: normal;
-  color: white;
 }
 img {
   vertical-align: bottom;
@@ -27,6 +26,17 @@ ul {
   position: relative;
   z-index: 2;
   color: white;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    width: 90%;
+    font-size: 1.2rem;
+  }
 }
 
 .topback {
@@ -208,21 +218,6 @@ nav .spmenu {
   align-items: center;
 }
 .reservation {
-  width: 80%;
-  height: fit-content;
-  position: fixed;
-  bottom: 0vh;
-  left: 0vw;
-  padding: 5% 0;
-  font-size: 1.2rem;
-  color: white;
-  z-index: 10;
-  cursor: pointer;
-  background-color: #daae8f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid #ffffff;
   display: none;
 }
 
@@ -277,15 +272,21 @@ nav .spmenu {
   nav .spmenu li:nth-child(9) {
     width: 90%;
   }
+  nav .spmenu li:nth-child(2) {
+    width: 80%;
+  }
+  nav .spmenu li:nth-child(1) {
+    width: 60%;
+  }
+  nav .spmenu li:nth-child(6) {
+    width: 60%;
+  }
   .close {
     top: 20px;
     right: 20px;
     font-size: 1em;
   }
   .topback {
-    font-size: 2rem;
-  }
-  .reservation {
     font-size: 2rem;
   }
 }
@@ -295,7 +296,7 @@ nav .spmenu {
   }
   nav {
     position: fixed;
-    z-index: 99999;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 100%;
@@ -304,14 +305,13 @@ nav .spmenu {
     transition: top 0.3s; /* スムーズなアニメーション */
     display: flex;
     justify-content: center;
+    gap: 2%;
   }
   .cafemenu {
-    width: 30%;
-    margin-right: 50px;
+    width: 40%;
   }
   .staymenu {
-    width: 30%;
-    margin-left: 50px;
+    width: 40%;
   }
   .pc {
     display: block;
@@ -398,20 +398,10 @@ nav .spmenu {
     height: 100px;
     bottom: 15vh;
     right: 5vw;
+    padding: 0;
+    margin-left: 10%;
     font-size: 1.2em;
     border-radius: 50%;
-    padding: 0;
-  }
-  .reservation {
-    display: none;
-    padding: 0 1%;
-    width: 25%;
-    height: 5%;
-    bottom: 5vh;
-    left: 72vw;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 8px;
   }
 }
 
@@ -419,7 +409,7 @@ nav .spmenu {
 main {
   width: 90%;
   margin: auto;
-  padding-bottom: 80px;
+  padding-bottom: 15%;
 }
 main h1 {
   padding-top: 80px;
@@ -515,10 +505,11 @@ form div {
 
 @media screen and (min-width: 768px) {
   main h1 {
-    padding-top: 140px;
+    padding-top: 20%;
   }
   main {
     font-size: 1.5rem;
+    padding-bottom: 0;
   }
   input,
   select,
@@ -527,12 +518,22 @@ form div {
   }
   fieldset {
     font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
   }
   form div {
-    margin-top: 40px;
+    margin-top: 0;
   }
   fieldset {
     justify-content: center;
+  }
+
+  .pwidth {
+    font-size: 1.5rem;
+    width: 50%;
+  }
+  #agree {
+    height: 30px;
   }
   .agree-container label {
     font-size: 1.5rem;
@@ -545,7 +546,6 @@ form div {
     margin-left: 50px;
   }
   .mainwrapper {
-    padding-bottom: 150px;
     padding-top: 50px;
   }
 
@@ -561,6 +561,9 @@ form div {
     display: flex;
     align-items: center;
     margin: 0;
+  }
+  .pwidth {
+    width: 40%;
   }
   #agree {
     width: 10%;
@@ -598,4 +601,10 @@ footer div div a {
 footer div p {
   color: white;
   font-size: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    margin-top: 0;
+    padding-top: 10%;
+  }
 }

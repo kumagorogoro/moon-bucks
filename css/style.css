@@ -11,7 +11,6 @@ body {
   font-family: "Klee One", cursive;
   font-weight: 400;
   font-style: normal;
-  color: white;
 }
 
 img {
@@ -24,6 +23,7 @@ img {
   margin: auto;
   position: relative;
   z-index: 2;
+  color: white;
 }
 @media screen and (min-width: 768px) {
   .wrapper {
@@ -32,7 +32,7 @@ img {
 }
 @media screen and (min-width: 1024px) {
   .wrapper {
-    width: 90%;
+    width: 95%;
     font-size: 1.2rem;
   }
 }
@@ -112,11 +112,7 @@ img {
   justify-content: center;
   align-items: center;
 }
-nav {
-  position: relative;
-  top: 1px;
-  margin-top: -1px;
-}
+
 nav .spmenu li {
   width: 40%;
   display: flex;
@@ -281,6 +277,15 @@ nav .spmenu {
   nav .spmenu li:nth-child(9) {
     width: 90%;
   }
+  nav .spmenu li:nth-child(2) {
+    width: 80%;
+  }
+  nav .spmenu li:nth-child(1) {
+    width: 60%;
+  }
+  nav .spmenu li:nth-child(6) {
+    width: 60%;
+  }
   .close {
     top: 20px;
     right: 20px;
@@ -299,7 +304,7 @@ nav .spmenu {
   }
   nav {
     position: fixed;
-    z-index: 99999;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 100%;
@@ -308,14 +313,13 @@ nav .spmenu {
     transition: top 0.3s; /* スムーズなアニメーション */
     display: flex;
     justify-content: center;
+    gap: 2%;
   }
   .cafemenu {
-    width: 30%;
-    margin-right: 50px;
+    width: 40%;
   }
   .staymenu {
-    width: 30%;
-    margin-left: 50px;
+    width: 40%;
   }
   .pc {
     display: block;
@@ -402,10 +406,10 @@ nav .spmenu {
     height: 100px;
     bottom: 15vh;
     right: 5vw;
+    padding: 0;
     margin-left: 10%;
     font-size: 1.2em;
     border-radius: 50%;
-    padding: 0;
   }
   .reservation {
     padding: 0 1%;
@@ -422,7 +426,7 @@ nav .spmenu {
 
 /* main */
 main {
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 .border {
   border-bottom: 1px dashed white;
@@ -435,7 +439,7 @@ main {
   width: 25%;
   position: absolute;
   z-index: 1;
-  top: 75px;
+  top: 73px;
   left: 15px;
   transform: translateY(-50%);
 }
@@ -458,6 +462,9 @@ main {
   transition: opacity 1.5s ease-in-out;
 }
 @media screen and (min-width: 768px) {
+  main {
+    padding-bottom: 0;
+  }
   .logo {
     width: 120px;
     top: 102px;
@@ -501,6 +508,11 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   h1 {
@@ -552,10 +564,7 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   #info {
-    padding-top: 140px;
-  }
-  #info {
-    margin-top: 50px;
+    padding-top: 15%;
   }
   #info .info-new {
     text-align: center;
@@ -593,7 +602,7 @@ h1 {
 @media screen and (min-width: 1024px) {
   #info {
     margin-top: 0;
-    padding-top: 150px;
+    padding-top: 10%;
   }
   #info .border {
     top: 50px;
@@ -618,7 +627,8 @@ h1 {
 }
 /* drink */
 #drink {
-  padding-top: 25%;
+  padding-top: 20%;
+  margin: 5%;
 }
 
 .drink-menu .container .square {
@@ -639,6 +649,7 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 0.8rem;
 }
 .square span {
   display: block;
@@ -646,11 +657,11 @@ h1 {
 }
 .drink-menu .container {
   width: 100%;
-  padding-top: 18%;
   position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: left;
+  padding-top: 20%;
 }
 .drink-menu .container::before {
   width: 55%;
@@ -684,16 +695,16 @@ h1 {
 
 @media screen and (min-width: 768px) {
   #drink {
-    padding-top: 140px;
+    padding-top: 15%;
   }
-
-  .drink-menu .container {
-    margin-top: 100px;
+  .drink-menu .container .square div {
+    font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 1024px) {
   #drink {
-    padding-top: 150px;
+    padding-top: 10%;
+    margin: 0;
   }
   #drink .border {
     top: 50px;
@@ -706,14 +717,16 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 300px 300px 300px;
-    gap: 50px;
-    margin-top: 100px;
+    gap: 2%;
+  }
+  .drink-menu .container .square div {
+    font-size: 1.2rem;
   }
 
   .drink-menu .container:last-of-type::after {
     bottom: -20px;
     left: 0px;
-    width: 220%;
+    width: 200%;
   }
   .drink-menu .container:nth-of-type(-n + 4)::after {
     display: none;
@@ -721,7 +734,8 @@ h1 {
 }
 /* food */
 #food {
-  padding-top: 30%;
+  padding-top: 20%;
+  margin: 5%;
 }
 
 .food-menu .container .square {
@@ -742,14 +756,15 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 0.8rem;
 }
 .food-menu .container {
   width: 100%;
-  padding-top: 18%;
   position: relative;
   display: flex;
   align-items: flex-end;
   justify-content: left;
+  padding-top: 20%;
 }
 .food-menu .container::before {
   width: 55%;
@@ -782,13 +797,17 @@ h1 {
 }
 
 @media screen and (min-width: 768px) {
-  .food-menu .container {
-    margin-top: 100px;
+  #food {
+    padding-top: 22%;
+  }
+  .food-menu .container .square div {
+    font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 1024px) {
   #food {
-    padding-top: 150px;
+    padding-top: 10%;
+    margin: 6% 0 0 0;
   }
   #food .border {
     top: 50px;
@@ -801,14 +820,17 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 300px 300px;
-    gap: 50px;
-    margin-top: 100px;
+    gap: 2%;
+    margin-top: 5%;
   }
 
+  .food-menu .container .square div {
+    font-size: 1.2rem;
+  }
   .food-menu .container:nth-of-type(3)::after {
     bottom: -20px;
     left: 0%;
-    width: 220%;
+    width: 200%;
   }
   .food-menu .container:nth-of-type(-n + 2)::after,
   .food-menu .container:nth-of-type(4)::after {
@@ -818,7 +840,8 @@ h1 {
 
 /* access */
 #access {
-  padding-top: 35%;
+  padding-top: 20%;
+  margin: 5%;
 }
 #access .container div:nth-child(1) {
   width: fit-content;
@@ -905,6 +928,12 @@ h1 {
   z-index: 2;
 }
 @media screen and (min-width: 768px) {
+  #access {
+    padding-top: 22%;
+  }
+  #access .container {
+    width: 120%;
+  }
   #map-grayscale {
     width: 100%;
     margin-bottom: 0;
@@ -925,7 +954,7 @@ h1 {
     font-size: 1rem;
   }
   .concept {
-    width: 90%;
+    width: 80%;
     margin-top: 100px;
     padding-top: 50%;
   }
@@ -935,16 +964,22 @@ h1 {
 
   .concept p {
     top: 40%;
-    left: 55%;
-    font-size: 1.2rem;
+    left: 60%;
+    font-size: 1rem;
+    width: 110%;
   }
   .flipbook {
+    width: 70%;
     top: 80%;
+    left: 55%;
+  }
+  .steam {
+    width: 70%;
   }
   @keyframes rise {
     0% {
       top: 80%; /* 初期位置を画面の40%の高さに設定 */
-      left: 50%;
+      left: 55%;
       opacity: 0;
     }
     50% {
@@ -952,7 +987,7 @@ h1 {
     }
     100% {
       top: 45%; /* 最終位置を画面の10%の高さに設定 */
-      left: 50%;
+      left: 55%;
       opacity: 0;
     }
   }
@@ -960,7 +995,7 @@ h1 {
 @media screen and (min-width: 1024px) {
   main section:nth-child(5) div:nth-child(2) {
     display: flex;
-    gap: 4%;
+    gap: 3%;
   }
   #map-grayscale {
     width: 100%;
@@ -972,35 +1007,38 @@ h1 {
     margin: 0;
   }
   #access .container div:nth-child(1) p {
-    width: 60%;
+    width: 55%;
     margin: auto;
   }
   .concept {
-    width: 55%;
+    width: 60%;
     padding-top: 50%;
   }
   .concept p {
-    top: 25%;
-    font-size: 1.5rem;
+    top: 30%;
+    left: 48%;
+    width: 100%;
+    font-size: 1.2rem;
   }
   .flipbook {
     top: 70%;
+    left: 50%;
+    width: 80%;
   }
   #access {
-    margin-bottom: 50px;
-    padding-top: 150px;
+    padding-top: 10%;
+    margin: 3% 0 0 0;
   }
   #access .border {
     top: 50px;
     width: 500px;
-    margin-top: 100px;
   }
   #access .container {
     margin-top: 100px;
-    line-height: 35px;
+    margin-left: 2%;
   }
   .steam {
-    width: 50%;
+    width: 70%;
   }
   @keyframes rise {
     0% {
@@ -1058,6 +1096,13 @@ footer div p {
 }
 @media screen and (min-width: 768px) {
   footer {
-    margin-top: 400px;
+    margin-top: 0;
+    padding-top: 10%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  footer {
+    margin-top: 0;
+    padding-top: 10%;
   }
 }
