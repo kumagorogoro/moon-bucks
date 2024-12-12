@@ -47,15 +47,15 @@ ul {
 }
 #menutext {
   position: absolute;
-  top: 32px;
+  top: 25px;
   left: 50%;
   transform: translateX(-50%);
   color: rgb(255, 255, 255);
-  font-size: 1em;
+  font-size: 0.8rem;
 }
 .menubeans {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
   animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
   transform-origin: center; /* 回転の中心をdivの中央に設定 */

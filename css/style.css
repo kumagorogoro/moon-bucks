@@ -41,23 +41,22 @@ img {
 .menubtn {
   z-index: 999;
   position: fixed;
-  top: 30px;
+  top: 35px;
   right: 11%;
   border-radius: 50%;
   cursor: pointer;
 }
 #menutext {
   position: absolute;
-  top: 32px;
+  top: 25px;
   left: 50%;
   transform: translateX(-50%);
   color: rgb(255, 255, 255);
-  font-size: 1em;
+  font-size: 0.8rem;
 }
 .menubeans {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
+  width: 70px;
+  height: 70px;
   animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
   transform-origin: center; /* 回転の中心をdivの中央に設定 */
 }
@@ -437,7 +436,7 @@ main {
   position: absolute;
   z-index: 1;
   top: 75px;
-  left: 20px;
+  left: 15px;
   transform: translateY(-50%);
 }
 .slide-container .active {
