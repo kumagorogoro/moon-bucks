@@ -425,7 +425,6 @@ select {
   width: 50%;
   margin-right: 50%;
 }
-
 .white {
   color: white;
   text-decoration: underline;
@@ -475,6 +474,13 @@ fieldset div label input {
   text-align: center;
 }
 
+textarea {
+  height: 25px;
+  border-radius: 4px;
+}
+textarea {
+  width: 100%;
+}
 .error-mark {
   font-size: 0.8rem;
   display: block;
@@ -483,19 +489,6 @@ fieldset div label input {
   display: block;
   width: 10%;
   margin: 0 auto 2%;
-}
-#confirmationMessage {
-  display: none;
-  text-align: center;
-  font-size: 1.5rem;
-}
-textarea {
-  height: 25px;
-  border-radius: 4px;
-}
-
-textarea {
-  width: 100%;
 }
 .agree-container {
   margin-top: 10%;
@@ -506,10 +499,16 @@ textarea {
   margin: auto;
   font-size: 0.8rem;
 }
+
 #submit-btn {
   display: block;
   width: 90%;
   margin: 5% auto 0;
+}
+#confirmationMessage {
+  display: none;
+  text-align: center;
+  font-size: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   main h1 {
@@ -532,14 +531,12 @@ textarea {
     justify-content: center;
     align-items: center;
   }
-
   fieldset {
     justify-content: center;
   }
   fieldset:nth-of-type(1) div {
     text-align: center;
   }
-
   .pwidth {
     font-size: 1.5rem;
     width: 50%;
@@ -560,14 +557,9 @@ textarea {
   .mainwrapper {
     padding-top: 50px;
   }
-
   input,
   select {
     height: 40px;
-  }
-  textarea {
-    height: 200px;
-    margin-top: 1%;
   }
 
   form div label {
@@ -587,15 +579,19 @@ textarea {
   .pwidth {
     width: 40%;
   }
+  textarea {
+    height: 200px;
+    margin-top: 1%;
+  }
   #agree {
     width: 10%;
   }
-  /* 送信ボタン */
-  .submit-btn {
-    margin-top: 100px;
-  }
+
   #confirmationMessage {
     font-size: 2rem;
+  }
+  .submit-btn {
+    margin-top: 100px;
   }
 }
 /* footer */
