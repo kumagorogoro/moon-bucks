@@ -474,6 +474,7 @@ nav .spmenu li:nth-child(10) {
   border-bottom: 0.5px solid white;
   border-left: 0.5px solid white;
   border-right: 0.5px solid white;
+  margin-top: 0;
 }
 #info div p a:nth-child(2) {
   text-align: center;
@@ -482,6 +483,7 @@ nav .spmenu li:nth-child(10) {
   color: white;
   text-decoration: underline;
 }
+
 .more-btn {
   display: block;
   cursor: pointer;
@@ -509,17 +511,6 @@ nav .spmenu li:nth-child(10) {
   .info-old p span:nth-child(1) {
     text-align: left;
   }
-  .info-new p:nth-child(1) {
-    padding-top: 20px;
-  }
-  .info-old p:nth-child(3) {
-    padding-bottom: 20px;
-  }
-  .info-new p:nth-child(3),
-  .info-new p:nth-child(3) {
-    padding-bottom: 20px;
-  }
-
   #info .info-new {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
@@ -802,7 +793,7 @@ nav .spmenu li:nth-child(10) {
 }
 #access .container {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 20%;
   color: white;
   line-height: 17.5px;
   display: flex;

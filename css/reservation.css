@@ -177,21 +177,7 @@ nav .spmenu li:nth-child(10) {
   padding: 5% 0;
 }
 .reservation {
-  width: 81%;
-  height: fit-content;
-  position: fixed;
-  bottom: 0vh;
-  right: 19vw;
-  padding: 5% 0;
-  font-size: 1.2rem;
-  color: white;
-  z-index: 10;
-  cursor: pointer;
-  background-color: #daae8f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid #ffffff;
+  display: none;
 }
 .spdbine-height {
   line-height: 90%;
@@ -371,16 +357,6 @@ nav .spmenu li:nth-child(10) {
     padding: 0;
     margin-left: 10%;
     border-radius: 50%;
-  }
-  .reservation {
-    padding: 0 1%;
-    width: fit-content;
-    height: 8%;
-    bottom: 5vh;
-    right: 5vw;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 8px;
   }
 }
 /* main */
