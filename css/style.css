@@ -877,10 +877,12 @@ nav .spmenu li:nth-child(10) {
   }
   #map-grayscale {
     width: 100%;
+    height: 30%;
     margin-bottom: 0;
   }
   #map-sepia {
-    height: 350px;
+    height: 340px;
+    margin-bottom: 10px;
   }
   .container {
     width: 65%;
