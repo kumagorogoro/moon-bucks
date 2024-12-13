@@ -34,6 +34,24 @@ img {
     width: 95%;
   }
 }
+h1 {
+  text-align: left;
+  color: #fff;
+  font-family: "dolly-small-caps-new", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
 
 /* menu */
 .menubtn {
@@ -375,7 +393,6 @@ nav .spmenu li:nth-child(10) {
 }
 
 /* main */
-
 .border {
   border-bottom: 1px dashed white;
 }
@@ -401,8 +418,6 @@ nav .spmenu li:nth-child(10) {
   overflow: hidden;
 }
 .slide-container img {
-  border-radius: 4px;
-  object-fit: cover;
   width: 100%;
   height: 140px;
   position: absolute;
@@ -410,9 +425,6 @@ nav .spmenu li:nth-child(10) {
   transition: opacity 1.5s ease-in-out;
 }
 @media screen and (min-width: 768px) {
-  main {
-    padding-bottom: 0;
-  }
   .logo {
     width: 120px;
     top: 105px;
@@ -433,9 +445,6 @@ nav .spmenu li:nth-child(10) {
     width: 170px;
     top: 410px;
   }
-  h2 {
-    top: -70px;
-  }
   .slide-container {
     height: 350px;
   }
@@ -449,24 +458,6 @@ nav .spmenu li:nth-child(10) {
   padding-top: 20%;
   position: relative;
 }
-h1 {
-  text-align: left;
-  color: #fff;
-  font-family: "dolly-small-caps-new", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2.5rem;
-}
-@media screen and (min-width: 768px) {
-  h1 {
-    font-size: 4rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  h1 {
-    font-size: 5rem;
-  }
-}
 
 .info-container {
   width: 95%;
@@ -474,10 +465,7 @@ h1 {
 }
 #info .info-new {
   text-align: left;
-  border-top: 0.5px solid white;
-  border-bottom: 0.5px solid white;
-  border-left: 0.5px solid white;
-  border-right: 0.5px solid white;
+  border: 0.5px solid white;
 }
 #info .info-old {
   height: fit-content;
@@ -486,9 +474,6 @@ h1 {
   border-bottom: 0.5px solid white;
   border-left: 0.5px solid white;
   border-right: 0.5px solid white;
-}
-#info div p {
-  font-size: 1em;
 }
 #info div p a:nth-child(2) {
   text-align: center;
@@ -503,7 +488,6 @@ h1 {
   width: 20%;
   padding: 5% 0;
   margin: 10px auto 10px;
-  font-size: 1em;
   color: white;
   background: #daae8f;
   font-family: "Klee One", cursive;
@@ -547,6 +531,9 @@ h1 {
     border-left: 1px solid white;
     border-right: 1px solid white;
   }
+  .more-btn {
+    font-size: 1.5rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   #info {
@@ -561,7 +548,6 @@ h1 {
     width: 60%;
     margin: auto;
   }
-
   #info div p {
     padding: 10px;
   }
@@ -579,7 +565,6 @@ h1 {
   padding-top: 20%;
   margin: 5%;
 }
-
 .drink-menu .container .square {
   width: 40%;
   padding-top: 29%;
@@ -655,6 +640,7 @@ h1 {
 @media screen and (min-width: 1024px) {
   #drink {
     padding-top: 10%;
+    padding-bottom: 0;
     margin: 0;
   }
   #drink .border {
@@ -760,6 +746,7 @@ h1 {
 @media screen and (min-width: 1024px) {
   #food {
     padding-top: 10%;
+    padding-bottom: 0;
     margin: 6% 0 0 0;
   }
   #food .border {
@@ -821,7 +808,6 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-/* steam */
 .concept {
   position: relative;
   padding-top: 80%;
@@ -842,23 +828,21 @@ h1 {
   color: white;
   line-height: 28px;
 }
-
 .steam {
   display: block;
   z-index: -1;
-  width: 60%; /* 幅を画面の幅の70%に設定 */
+  width: 60%;
   margin: auto;
   opacity: 0.3;
   animation: rise 10s infinite linear;
   position: absolute;
-  top: 50%; /* 画面の50%の位置に配置 */
-  left: 50%; /* 画面の50%の位置に配置 */
-  transform: translate(-50%, -50%); /* 位置を中央に調整 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-/* steamアニメーション */
 @keyframes rise {
   0% {
-    top: 50%; /* 初期位置を画面の40%の高さに設定 */
+    top: 50%;
     left: 50%;
     opacity: 0;
   }
@@ -866,13 +850,11 @@ h1 {
     opacity: 0.2;
   }
   100% {
-    top: 0; /* 最終位置を画面の10%の高さに設定 */
+    top: 0;
     left: 50%;
     opacity: 0;
   }
 }
-
-/* flipbook */
 .flipbook {
   width: 50%;
   margin: auto;
@@ -882,7 +864,7 @@ h1 {
   transform: translate(-50%, -50%);
 }
 .flipbook img {
-  display: none; /* 最初は全て非表示 */
+  display: none;
   z-index: 2;
 }
 @media screen and (min-width: 768px) {
@@ -920,9 +902,8 @@ h1 {
   main section:nth-child(5) div:nth-child(2) {
     display: flex;
   }
-
   .concept p {
-    top: 40%;
+    top: 30%;
     left: 60%;
     font-size: 1rem;
     width: 110%;
@@ -937,7 +918,7 @@ h1 {
   }
   @keyframes rise {
     0% {
-      top: 80%; /* 初期位置を画面の40%の高さに設定 */
+      top: 80%;
       left: 55%;
       opacity: 0;
     }
@@ -945,7 +926,7 @@ h1 {
       opacity: 0.2;
     }
     100% {
-      top: 45%; /* 最終位置を画面の10%の高さに設定 */
+      top: 45%;
       left: 55%;
       opacity: 0;
     }
@@ -964,17 +945,28 @@ h1 {
     height: 360px;
     margin: 0;
   }
-
   #access .container div:nth-child(1) {
     width: 100%;
     margin: 0;
   }
-
   #access .container div:nth-child(1) p {
     width: 62%;
     line-height: 120%;
     margin: auto;
     font-size: 1.2rem;
+  }
+
+  #access {
+    padding-top: 10%;
+    margin: 3% 0 0 0;
+  }
+  #access .border {
+    top: 50px;
+    width: 500px;
+  }
+  #access .container {
+    margin-top: 100px;
+    margin-left: 2%;
   }
   .concept {
     width: 60%;
@@ -990,18 +982,6 @@ h1 {
     top: 70%;
     left: 50%;
     width: 80%;
-  }
-  #access {
-    padding-top: 10%;
-    margin: 3% 0 0 0;
-  }
-  #access .border {
-    top: 50px;
-    width: 500px;
-  }
-  #access .container {
-    margin-top: 100px;
-    margin-left: 2%;
   }
   .steam {
     width: 70%;
@@ -1051,7 +1031,7 @@ footer div div a {
   margin: auto;
   margin-bottom: 1%;
   text-decoration: none;
-  color: #fff;
+  color: white;
   border: 1px solid white;
   padding: 1%;
   border-radius: 8px;
