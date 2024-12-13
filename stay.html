@@ -18,6 +18,12 @@
   </head>
   <body>
     <div class="wrapper" id="top">
+      <div class="steaml" id="loading-screen" class="loading">
+        <img src="img/steam3.png" />
+      </div>
+      <div class="steamr" id="loading-screen" class="loading">
+        <img src="img/steam4.png" />
+      </div>
       <div id="fog-overlay"></div>
       <header>
         <!-- メニューボタン -->
@@ -72,8 +78,10 @@
             <ul class="pc2">
               <li><a href="stay.html">View</a></li>
               <li><a href="stay.html#roomfood-container">Room</a></li>
-              <li>
-                <a href="stay.html#roomfood-container">Dinner&Breakfast</a>
+              <li class="dbheight">
+                <a href="stay.html#roomfood-container"
+                  >Dinner<br />&<br />Breakfast</a
+                >
               </li>
               <li><a href="stay.html#price">Price</a></li>
             </ul>
@@ -85,13 +93,7 @@
           >
         </nav>
       </header>
-      <main>
-        <div class="steaml" id="loading-screen" class="loading">
-          <img src="img/steam3.png" />
-        </div>
-        <div class="steamr" id="loading-screen" class="loading">
-          <img src="img/steam4.png" />
-        </div>
+      <main id="content">
         <section id="view-container" class="view">
           <a href="index.html"><img class="logo" src="img/moon bucks.svg" /></a>
           <img src="img/view.jpg" />

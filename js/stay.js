@@ -12,7 +12,6 @@ window.addEventListener("load", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const steamLeft = document.querySelector(".steaml");
   const steamRight = document.querySelector(".steamr");
-  const white = document.querySelector(".white");
 
   // アニメーションが終了したときに display: none を適用
   steamLeft.addEventListener("animationend", function () {
