@@ -356,10 +356,10 @@ nav .spmenu li:nth-child(10) {
   }
   @keyframes rotateAnimation {
     0% {
-      transform: rotate(0deg); /* 開始時の角度 */
+      transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg); /* 360度回転 */
+      transform: rotate(360deg);
     }
   }
   .topback {
@@ -382,7 +382,6 @@ nav .spmenu li:nth-child(10) {
     border-radius: 8px;
   }
 }
-
 /* main */
 .steaml,
 .steamr {
@@ -391,27 +390,27 @@ nav .spmenu li:nth-child(10) {
   left: 0;
   object-fit: cover;
   z-index: 100;
-  opacity: 1; /* 初期状態で完全に表示 */
-  animation: fadeOut 3s ease-in-out; /* アニメーションを適用（5秒で終了） */
+  opacity: 1;
+  animation: fadeOut 3s ease-in-out;
 }
 @keyframes fadeOut {
   0% {
     opacity: 1;
-    transform: scale(2.5); /* 最初は通常サイズ */
+    transform: scale(2.5);
   }
   25% {
-    transform: scale(3); /* 中間で少し大きくなって広がる */
+    transform: scale(3);
   }
   50% {
     opacity: 0.5;
-    transform: scale(4); /* 中間で少し大きくなって広がる */
+    transform: scale(4);
   }
   75% {
-    transform: scale(4.5); /* 完全に透明になり、さらに拡大して消える */
+    transform: scale(4.5);
   }
   100% {
     opacity: 0;
-    transform: scale(5); /* 完全に透明になり、さらに拡大して消える */
+    transform: scale(5);
   }
 }
 /* view */
@@ -419,7 +418,6 @@ nav .spmenu li:nth-child(10) {
   padding-top: 25px;
   position: relative;
 }
-
 .logo {
   position: absolute;
   width: 80px;
@@ -465,7 +463,6 @@ nav .spmenu li:nth-child(10) {
   }
 }
 /* room */
-
 #roomfood-container {
   padding-top: 50px;
   display: grid;
@@ -474,7 +471,6 @@ nav .spmenu li:nth-child(10) {
   width: 100%;
   margin: 0 auto;
 }
-
 #room div {
   min-width: 300px;
   display: flex;
@@ -496,7 +492,7 @@ nav .spmenu li:nth-child(10) {
 }
 @media screen and (min-width: 1024px) {
   #roomfood-container {
-    gap: 20px;
+    gap: 1%;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     padding-top: 10%;
   }
@@ -509,21 +505,19 @@ nav .spmenu li:nth-child(10) {
     width: 90%;
     margin: 10px auto 0px;
   }
-  /* 最初に非表示の状態 */
   .hiddenleft {
     opacity: 0;
-    transform: translateX(-30%); /* 下に少し移動 */
-    transition: opacity 3s, transform 3s; /* フェードインとスライドのアニメーション */
+    transform: translateX(-30%);
+    transition: opacity 3s, transform 3s;
   }
   .hiddenright {
     opacity: 0;
-    transform: translateX(30%); /* 下に少し移動 */
-    transition: opacity 3s, transform 3s; /* フェードインとスライドのアニメーション */
+    transform: translateX(30%);
+    transition: opacity 3s, transform 3s;
   }
-  /* "visible" クラスが追加されたときの表示状態 */
   .visible {
     opacity: 1;
-    transform: translateY(0); /* 元の位置に戻る */
+    transform: translateY(0);
   }
 }
 /* food */
@@ -552,8 +546,11 @@ nav .spmenu li:nth-child(10) {
 
 @media screen and (min-width: 768px) {
   #stayfood {
+    width: 95%;
     flex-direction: row;
     padding-top: 100px;
+    padding-top: 10%;
+    gap: 1%;
   }
   #stayfood div {
     width: 50%;
@@ -569,9 +566,17 @@ nav .spmenu li:nth-child(10) {
   }
 }
 @media screen and (min-width: 1024px) {
+  #food-container {
+    width: 100%;
+  }
   #stayfood {
     padding-top: 0;
+    display: flex;
+    gap: 1%;
   }
+}
+#stayfood img {
+  object-fit: cover;
 }
 .breakfast {
   display: flex;
@@ -592,21 +597,33 @@ nav .spmenu li:nth-child(10) {
 @media screen and (min-width: 768px) {
   .breakfast {
     flex-direction: row;
-    gap: 1%;
+    gap: 0.2%;
+    display: flex;
+    justify-content: space-between;
   }
   .breakfast div {
     width: 50%;
     order: 1;
   }
   .breakfast img {
-    width: 50%;
     order: 2;
+    width: 50%;
+    object-fit: cover;
   }
   .breakfast h1 {
     display: none;
   }
   .breakfast div h1 {
     display: block;
+  }
+  .breakfast img::after {
+    background: rgba(255, 255, 255, 0.643);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .breakfast img {
+    width: 45%;
+    height: 45%;
   }
 }
 .coffee {
@@ -628,10 +645,6 @@ nav .spmenu li:nth-child(10) {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  #stayfood {
-    padding-top: 10%;
-    gap: 1%;
-  }
   .coffee {
     flex-direction: row;
     gap: 1%;
@@ -650,31 +663,6 @@ nav .spmenu li:nth-child(10) {
   }
 }
 @media screen and (min-width: 1024px) {
-  #stayfood {
-    display: flex;
-    gap: 1%;
-  }
-  #stayfood img {
-    width: 50%;
-    object-fit: cover;
-  }
-
-  .breakfast {
-    display: flex;
-    justify-content: space-between;
-    gap: 1%;
-  }
-  .breakfast img {
-    width: 45%;
-    object-fit: cover;
-  }
-  .breakfast img::after {
-    background: rgba(255, 255, 255, 0.643);
-  }
-  .breakfast div {
-    width: 50%;
-  }
-
   .coffee {
     display: flex;
     gap: 1%;
