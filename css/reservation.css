@@ -9,9 +9,6 @@
 }
 body {
   background: linear-gradient(#41342b, #60342e, #41342b);
-  font-family: "Klee One", cursive;
-  font-weight: 400;
-  font-style: normal;
 }
 img {
   vertical-align: bottom;
@@ -26,16 +23,18 @@ ul {
   position: relative;
   z-index: 2;
   color: white;
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 @media screen and (min-width: 768px) {
   .wrapper {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .wrapper {
     width: 90%;
-    font-size: 1.2rem;
   }
 }
 
@@ -48,11 +47,10 @@ ul {
 }
 /* menu */
 .menubtn {
-  z-index: 999;
+  z-index: 100;
   position: fixed;
-  top: 30px;
+  top: 35px;
   right: 11%;
-  border-radius: 50%;
   cursor: pointer;
 }
 #menutext {
@@ -66,31 +64,24 @@ ul {
 .menubeans {
   width: 80px;
   height: 80px;
-  object-fit: cover;
-  animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
-  transform-origin: center; /* 回転の中心をdivの中央に設定 */
+  animation: rotateAnimation 7s infinite;
 }
 @keyframes rotateAnimation {
   0% {
-    transform: rotate(0deg); /* 開始時の角度 */
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg); /* 360度回転 */
+    transform: rotate(360deg);
   }
 }
-/* メニューが表示されるときのアニメーション */
 #spmenu.show {
   display: flex;
 }
-
-/* リストアイテムがアニメーションで表示されるように */
 #spmenu.show ul li {
   opacity: 1;
   transform: translateY(0);
-  animation: typing 2s forwards; /* タイピングアニメーション */
+  animation: typing 2s forwards;
 }
-/* タイピングアニメーション */
-
 @keyframes typing {
   0% {
     clip-path: inset(0 100% 0 0);
@@ -99,83 +90,7 @@ ul {
     clip-path: inset(0 0 0 0);
   }
 }
-
-/* メニューリンクのタイピングを制御 */
-#spmenu ul li a {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  padding-right: 2.5px;
-  animation: typing 2s forwards;
-}
 .spmenu {
-  display: none;
-  list-style-type: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.spmenu ul {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-nav .spmenu li {
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0; /* 初めは非表示 */
-  transform: translateY(0px); /* 少し下にずらしてスタート */
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-nav .spmenu li a {
-  color: white;
-  font-size: 1em;
-  text-align: center;
-  margin-top: 10px;
-}
-nav .spmenu li:nth-child(1) {
-  text-align: left;
-  font-size: 2em;
-  margin: 20px 0 5px 0;
-  font-family: "dolly-small-caps-new", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-nav .spmenu li:nth-child(6) {
-  text-align: left;
-  font-size: 2em;
-  margin: 20px 0 10px 0;
-  font-family: "dolly-small-caps-new", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-nav .spmenu li:nth-child(9) {
-  width: 70%;
-}
-nav .spmenu li:nth-child(10) {
-  margin-bottom: 10%;
-}
-
-nav .spmenu li a:hover {
-  text-decoration: underline;
-}
-nav .spmenu li {
-  padding: 10px;
-}
-.pc,
-.pc2 {
-  display: none;
-}
-
-.pcmenu {
-  display: none;
-}
-nav .spmenu {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -184,14 +99,51 @@ nav .spmenu {
   flex-direction: column;
   justify-content: center;
   align-content: space-around;
-  display: none;
   padding: 5px 0;
-  z-index: 9999;
-  position: fixed;
+  z-index: 100;
   top: 0;
   right: 0;
 }
+.spmenu ul {
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.spmenu ul li {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.spmenu li a {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+  animation: typing 2s forwards;
+}
+.spmenu li:nth-child(1),
+.spmenu li:nth-child(6) {
+  font-size: 2em;
+  font-family: "dolly-small-caps-new", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 5%;
+}
+nav .spmenu li:nth-child(9) {
+  width: 70%;
+}
+nav .spmenu li:nth-child(10) {
+  margin-bottom: 10%;
+}
 .close {
   position: absolute;
   top: 27.5px;
@@ -202,13 +154,19 @@ nav .spmenu {
   cursor: pointer;
   padding: 10px;
 }
+.pc,
+.pc2 {
+  display: none;
+}
+.pcmenu {
+  display: none;
+}
 .topback {
   width: 20%;
   height: fit-content;
   position: fixed;
   bottom: 0vh;
   right: 0vw;
-  padding: 5% 0;
   font-size: 1.2rem;
   color: white;
   z-index: 10;
@@ -216,14 +174,28 @@ nav .spmenu {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5% 0;
 }
 .reservation {
-  display: none;
+  width: 81%;
+  height: fit-content;
+  position: fixed;
+  bottom: 0vh;
+  right: 19vw;
+  padding: 5% 0;
+  font-size: 1.2rem;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  background-color: #daae8f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #ffffff;
 }
-.navlh {
+.spdbine-height {
   line-height: 90%;
 }
-
 @media screen and (min-width: 768px) {
   .menubtn {
     top: 45px;
@@ -232,64 +204,44 @@ nav .spmenu {
   #menutext {
     top: 40px;
     left: 50%;
-    color: rgb(255, 255, 255);
     font-size: 1.4rem;
   }
   .menubeans {
     width: 120px;
     height: 120px;
   }
-  nav .spmenu {
+  .spmenu {
     width: 30%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
   }
   .spmenu ul {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: space-around;
     margin-top: 10%;
   }
   .spmenu ul li {
     height: 10px 0px;
-    margin: 0;
-    font-size: 1em;
-    text-align: right;
   }
-  nav .spmenu li:nth-child(1) a {
-    text-align: left;
-    font-size: 1em;
-    font-family: "dolly-small-caps-new", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+
+  .spmenu li:nth-child(9) {
+    width: 100%;
   }
-  nav .spmenu li:nth-child(6) a {
-    text-align: left;
-    font-size: 1em;
-    font-family: "dolly-small-caps-new", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  nav .spmenu li:nth-child(9) {
-    width: 90%;
-  }
-  nav .spmenu li:nth-child(2) {
+  .spmenu li:nth-child(2) {
     width: 80%;
   }
-  nav .spmenu li:nth-child(1) {
+  .spmenu li:nth-child(1) {
     width: 60%;
   }
-  nav .spmenu li:nth-child(6) {
+  .spmenu li:nth-child(6) {
     width: 60%;
   }
   .close {
     top: 20px;
     right: 20px;
-    font-size: 1em;
   }
   .topback {
+    font-size: 2rem;
+  }
+  .reservation {
     font-size: 2rem;
   }
 }
@@ -305,13 +257,16 @@ nav .spmenu {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     height: 10%;
-    transition: top 0.3s; /* スムーズなアニメーション */
+    transition: top 0.3s;
     display: flex;
     justify-content: center;
     gap: 2%;
   }
   .cafemenu {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
   .staymenu {
     width: 40%;
@@ -327,7 +282,6 @@ nav .spmenu {
     position: relative;
   }
   .cafemenu .pc {
-    display: flex;
     justify-content: flex-end;
   }
   .pc li {
@@ -341,37 +295,9 @@ nav .spmenu {
     text-decoration: none;
     color: white;
     font-size: 2em;
-
     font-family: "dolly-small-caps-new", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-  .pcmenu {
-    display: block;
-    width: 100px;
-    height: 100px;
-    position: relative;
-  }
-  .pcbeans {
-    position: absolute;
-    top: 15%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    animation: rotateAnimation 7s infinite; /* 2秒で1回転、無限ループ */
-  }
-  #pctext {
-    text-align: center;
-    margin-top: 50px;
-    color: white;
-  }
-  .cafemenu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
   }
   .cafemenu .pc2 {
     width: 95%;
@@ -395,7 +321,7 @@ nav .spmenu {
     margin-left: 0;
   }
   .dbheight {
-    height: 260%;
+    height: 254%;
     text-align: center;
     line-height: 130%;
   }
@@ -404,15 +330,31 @@ nav .spmenu {
   }
   .staymenu .pc2 li {
     margin-right: 5%;
-    position: relative;
   }
-
   .pc2 li a {
     color: white;
     text-decoration: none;
     font-size: 1.2em;
   }
-
+  .pcmenu {
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+  }
+  .pcbeans {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    animation: rotateAnimation 7s infinite;
+  }
+  #pctext {
+    text-align: center;
+    margin-top: 50px;
+  }
   @keyframes rotateAnimation {
     0% {
       transform: rotate(0deg); /* 開始時の角度 */
@@ -428,11 +370,19 @@ nav .spmenu {
     right: 5vw;
     padding: 0;
     margin-left: 10%;
-    font-size: 1.2em;
     border-radius: 50%;
   }
+  .reservation {
+    padding: 0 1%;
+    width: fit-content;
+    height: 8%;
+    bottom: 5vh;
+    right: 5vw;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+  }
 }
-
 /* main */
 main {
   width: 90%;
