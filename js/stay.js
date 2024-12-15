@@ -7,6 +7,13 @@ window.onload = function () {
   }, 4000); // 3秒後に実行
 };
 
+const loadingLoadup = document.getElementById("loading");
+loadingLoadup.addEventListener("click", function () {
+  const steamDiv = document.querySelector("#steam");
+  loadingLoadup.classList.add("display-none");
+  steamDiv.classList.remove("display-none"); // ここで非表示を解除
+});
+
 // .steaml と .steamr がアニメーション終了後に display: none を設定するための処理
 document.addEventListener("DOMContentLoaded", function () {
   const steam = document.querySelector("#steam");
