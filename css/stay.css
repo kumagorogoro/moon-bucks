@@ -399,13 +399,7 @@ nav .spmenu li:nth-child(10) {
 .loading-set.hidden {
   opacity: 0; /* 非表示 */
 }
-.loading-set img {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-}
+
 .display-none {
   display: none;
 }
