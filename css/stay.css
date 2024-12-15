@@ -383,7 +383,13 @@ nav .spmenu li:nth-child(10) {
   }
 }
 /* main */
-
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
 /* .loading-setの非表示処理 */
 .loading-set {
   font-size: 16px;
@@ -426,11 +432,22 @@ nav .spmenu li:nth-child(10) {
 }
 /*エフェクト*/
 .loading-anime {
-  position: relative;
-  left: 2em;
   color: black;
 }
-
+.loading-anime img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.loading-anime p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2rem;
+}
 @keyframes loadingset {
   0% {
     transform: translateX(-2em);
