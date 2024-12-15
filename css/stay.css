@@ -448,6 +448,7 @@ nav .spmenu li:nth-child(10) {
   color: white;
   font-size: 1.2rem;
 }
+
 @keyframes loadingset {
   0% {
     transform: translateX(-2em);
@@ -479,6 +480,177 @@ nav .spmenu li:nth-child(10) {
   100% {
     opacity: 0;
     transform: scale(5);
+  }
+}
+:root {
+  --duration-base: 0.15s;
+}
+
+ruby,
+rt {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.cursor {
+  font-size: 0;
+}
+
+.cursor::after {
+  display: inline-block;
+  width: 1px;
+  height: 1.2rem;
+  background: white;
+  content: "";
+  animation: caret calc(var(--duration-base) * 2) step-end infinite;
+}
+@media screen and (min-width: 768px) {
+  ruby,
+  rt {
+    font-size: 2rem;
+  }
+  .cursor::after {
+    height: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  ruby,
+  rt {
+    font-size: 2.5rem;
+  }
+  .cursir::after {
+    height: 2rem;
+  }
+}
+.text {
+  overflow: hidden;
+}
+.text > span {
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.text rt {
+  width: 0;
+  height: 1em;
+  line-height: 1;
+  overflow: hidden;
+  vertical-align: middle;
+  text-decoration: underline;
+}
+
+.moji > span {
+  width: 2em;
+  animation: henkan step-end;
+  animation-duration: calc((2 + 1) * var(--duration-base));
+}
+
+.moji rt {
+  animation: moji steps(2), moji-hide step-end;
+  animation-duration: calc((2 + 1) * var(--duration-base)), var(--duration-base);
+  animation-delay: 0s, calc(2 * var(--duration-base));
+}
+
+.nyuryoku > span {
+  width: 6em;
+  animation: henkan step-end;
+  animation-duration: calc((6 + 1 + 2 + 1) * var(--duration-base));
+}
+
+.nyuryoku rt {
+  animation: nyuryoku steps(6), nyuryoku-hide step-end;
+  animation-duration: calc((6 + 1) * var(--duration-base)), var(--duration-base);
+  animation-delay: calc((2 + 1) * var(--duration-base)),
+    calc((6 + 2 + 1) * var(--duration-base));
+}
+
+.fu > span {
+  width: 2em;
+  animation: henkan step-end;
+  animation-duration: calc((2 + 1 + 6 + 1 + 2 + 1) * var(--duration-base));
+}
+
+.fu rt {
+  animation: fu steps(2), fu-hide step-end;
+  animation-duration: calc((2 + 1) * var(--duration-base)), var(--duration-base);
+  animation-delay: calc((6 + 1 + 2 + 1) * var(--duration-base)),
+    calc((2 + 6 + 1 + 2 + 1) * var(--duration-base));
+}
+
+.animation > span {
+  width: 7em;
+  animation: henkan step-end;
+  animation-duration: calc(
+    (7 + 1 + 2 + 1 + 6 + 1 + 2 + 1) * var(--duration-base)
+  );
+}
+
+.animation rt {
+  animation: animation steps(7), animation-hide step-end;
+  animation-duration: calc((7 + 1) * var(--duration-base)), var(--duration-base);
+  animation-delay: calc((2 + 1 + 6 + 1 + 2 + 1) * var(--duration-base)),
+    calc((7 + 2 + 1 + 6 + 1 + 2 + 1) * var(--duration-base));
+}
+
+@keyframes moji {
+  to {
+    width: 2em;
+  }
+}
+
+@keyframes moji-hide {
+  from {
+    width: 2em;
+  }
+}
+
+@keyframes nyuryoku {
+  to {
+    width: 6em;
+  }
+}
+
+@keyframes nyuryoku-hide {
+  from {
+    width: 6em;
+  }
+}
+
+@keyframes fu {
+  to {
+    width: 2em;
+  }
+}
+
+@keyframes fu-hide {
+  from {
+    width: 2em;
+  }
+}
+
+@keyframes animation {
+  to {
+    width: 7em;
+  }
+}
+
+@keyframes animation-hide {
+  from {
+    width: 7em;
+  }
+}
+
+@keyframes henkan {
+  from {
+    position: absolute;
+    left: -10000px;
+  }
+}
+
+@keyframes caret {
+  50% {
+    background: transparent;
   }
 }
 
