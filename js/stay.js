@@ -1,25 +1,17 @@
-// ページが読み込まれた時の処理
-window.addEventListener("load", function () {
-  // ロード画面を非表示
-  const loadingScreen = document.getElementById("loading-screen");
-  const content = document.getElementById("content");
-
-  loadingScreen.style.display = "none"; // ロード画面を非表示
-  content.style.display = "block"; // コンテンツを表示
-});
+window.onload = function () {
+  const loadingLoadup = document.getElementById("loading");
+  loadingLoadup.classList.add("loading-loadup");
+  const steamDiv = document.querySelector("#steam");
+  steamDiv.classList.remove("display-none");
+};
 
 // .steaml と .steamr がアニメーション終了後に display: none を設定するための処理
 document.addEventListener("DOMContentLoaded", function () {
-  const steamLeft = document.querySelector(".steaml");
-  const steamRight = document.querySelector(".steamr");
+  const steam = document.querySelector("#steam");
 
   // アニメーションが終了したときに display: none を適用
-  steamLeft.addEventListener("animationend", function () {
-    steamLeft.style.display = "none";
-  });
-
-  steamRight.addEventListener("animationend", function () {
-    steamRight.style.display = "none";
+  steam.addEventListener("animationend", function () {
+    steam.style.display = "none";
   });
 });
 
