@@ -2,6 +2,7 @@ window.onload = function () {
   setTimeout(function () {
     const loadingLoadup = document.getElementById("loading");
     loadingLoadup.classList.add("loading-loadup");
+    loadingLoadup.classList.add("loading-set");
     const steamDiv = document.querySelector("#steam");
     steamDiv.classList.remove("display-none");
   }, 4000); // 3秒後に実行
@@ -17,7 +18,6 @@ loadingLoadup.addEventListener("click", function () {
 // .steaml と .steamr がアニメーション終了後に display: none を設定するための処理
 document.addEventListener("DOMContentLoaded", function () {
   const steam = document.querySelector("#steam");
-
   // アニメーションが終了したときに display: none を適用
   steam.addEventListener("animationend", function () {
     steam.style.display = "none";

@@ -395,15 +395,9 @@ nav .spmenu li:nth-child(10) {
   font-size: 16px;
   text-align: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  transition: opacity 1s ease-out;
 }
-
-.loading-set.hidden {
-  opacity: 0; /* 非表示 */
+.cloud {
+  filter: sepia(70%);
 }
 
 .display-none {
@@ -417,26 +411,27 @@ nav .spmenu li:nth-child(10) {
   top: 0;
   left: 0;
   z-index: 100;
-  animation: fadeOut 3s ease-in-out;
+  animation: fadeOut2 3s ease-in-out;
 }
-@keyframes fadeOut {
+
+@keyframes fadeOut2 {
   0% {
     opacity: 1;
-    transform: scale(2.5);
+    transform: scale(5);
   }
   25% {
-    transform: scale(3);
+    transform: scale(6);
   }
   50% {
     opacity: 0.5;
-    transform: scale(4);
+    transform: scale(7);
   }
   75% {
-    transform: scale(4.5);
+    transform: scale(8);
   }
   100% {
     opacity: 0;
-    transform: scale(5);
+    transform: scale(9);
   }
 }
 #loading {
@@ -470,18 +465,21 @@ nav .spmenu li:nth-child(10) {
   font-size: 1.2rem;
 }
 
-@keyframes loadingset {
-  0% {
-    transform: translateX(-2em);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 /*ローディング完了後に非表示にする*/
 .loading-loadup {
   opacity: 0;
   visibility: hidden;
+  animation: fadeOut1 0.5s ease-in-out;
+}
+@keyframes fadeOut1 {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 :root {
