@@ -999,6 +999,9 @@ footer {
   margin-bottom: 20%;
 }
 footer div {
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
   text-align: center;
 }
 footer div div {
