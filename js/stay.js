@@ -64,6 +64,7 @@ links.forEach(function (link) {
     menu.classList.remove("show"); // メニューから 'show' クラスを削除して非表示
   });
 });
+
 let lastScrollTop = 0; // 最後にスクロールした位置
 const navbar = document.querySelector("nav");
 let isScrollEnabled = true; // スクロールが有効かどうかを示すフラグ
@@ -90,7 +91,7 @@ const navLinks = document.querySelectorAll("nav ul li a");
 navLinks.forEach((link) => {
   link.addEventListener("click", function (event) {
     // "Top"リンクがクリックされた場合はナビゲーションを表示したまま
-    if (link.textContent === "ご宿泊") {
+    if (link.textContent === "Stay") {
       // 何もしない、ナビゲーションは表示のまま
       return;
     }

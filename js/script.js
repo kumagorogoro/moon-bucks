@@ -119,7 +119,7 @@ const navLinks = document.querySelectorAll("nav ul li a");
 navLinks.forEach((link) => {
   link.addEventListener("click", function (event) {
     // "Top"リンクがクリックされた場合はナビゲーションを表示したまま
-    if (link.textContent === "カフェ") {
+    if (link.textContent === "Cafe") {
       // 何もしない、ナビゲーションは表示のまま
       return;
     }
