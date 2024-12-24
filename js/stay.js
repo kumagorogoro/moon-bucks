@@ -94,6 +94,8 @@ navLinks.forEach((link) => {
     if (link.textContent === "Stay") {
       // 何もしない、ナビゲーションは表示のまま
       return;
+    } else if (link.textContent === "Cafe") {
+      return;
     }
 
     // "Top"以外のリンクがクリックされた場合はナビゲーションを非表示にする
