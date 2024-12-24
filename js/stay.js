@@ -11,7 +11,7 @@ window.onload = function () {
 const loadingLoadup = document.getElementById("loading");
 loadingLoadup.addEventListener("click", function () {
   const steamDiv = document.querySelector("#steam");
-  loadingLoadup.classList.add("display-none");
+  loadingLoadup.classList.add("loading-loadup");
   steamDiv.classList.remove("display-none"); // ここで非表示を解除
 });
 
