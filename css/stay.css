@@ -168,7 +168,7 @@ nav .spmenu li:nth-child(10) {
   right: 0vw;
   font-size: 1.2rem;
   color: white;
-  z-index: 10;
+  z-index: 100;
   background-color: #daae8f;
   display: flex;
   justify-content: center;
@@ -184,7 +184,7 @@ nav .spmenu li:nth-child(10) {
   padding: 5% 0;
   font-size: 1.2rem;
   color: white;
-  z-index: 10;
+  z-index: 100;
   cursor: pointer;
   background-color: #daae8f;
   display: flex;
@@ -250,7 +250,7 @@ nav .spmenu li:nth-child(10) {
   }
   nav {
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
@@ -410,7 +410,7 @@ nav .spmenu li:nth-child(10) {
   height: 200%;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 10;
   animation: fadeOut2 3s ease-in-out;
 }
 
