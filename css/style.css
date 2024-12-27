@@ -52,7 +52,10 @@ h1 {
     font-size: 5rem;
   }
 }
-
+#loading {
+  background: white;
+  display: none;
+}
 /* menu */
 .menubtn {
   z-index: 100;

@@ -100,7 +100,7 @@ body {
   justify-content: center;
   align-content: space-around;
   padding: 5px 0;
-  z-index: 100;
+  z-index: 9999;
   top: 0;
   right: 0;
 }
@@ -406,7 +406,7 @@ nav .spmenu li:nth-child(10) {
 .steam {
   position: fixed;
   width: 100vw;
-  height: 300%;
+  height: 150%;
   top: 0;
   left: 0;
   z-index: 10;
@@ -503,6 +503,9 @@ rt {
   animation: caret calc(var(--duration-base) * 2) step-end infinite;
 }
 @media screen and (min-width: 768px) {
+  .steam {
+    height: 400%;
+  }
   ruby,
   rt {
     font-size: 2rem;
@@ -512,6 +515,9 @@ rt {
   }
 }
 @media screen and (min-width: 1024px) {
+  .steam {
+    height: 500%;
+  }
   ruby,
   rt {
     font-size: 2.5rem;
