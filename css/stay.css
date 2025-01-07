@@ -435,7 +435,7 @@ nav .spmenu li:nth-child(10) {
   transition: all 0.5s;
   z-index: 999;
   opacity: 1;
-  transition: opacity 1s ease-out; 
+  transition: opacity 1s ease-out;
 }
 .loading-anime {
   color: black;
@@ -975,7 +975,6 @@ footer {
 footer div {
   display: flex;
   flex-direction: column;
-  z-index: 100;
   text-align: center;
 }
 footer div div {

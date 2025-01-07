@@ -371,7 +371,7 @@ form {
   margin: 20px auto 0px;
 }
 label {
-  margin-top: 8px;
+  margin-top: 3%;
   font-family: "fot-klee-pro", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -530,7 +530,6 @@ textarea {
   form div label {
     display: flex;
     align-items: center;
-    margin: 0;
     line-height: 100%;
   }
 
