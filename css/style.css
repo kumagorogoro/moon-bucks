@@ -1,4 +1,4 @@
-/* reset */
+@charset "utf-8";
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,6 @@
 body {
   background: linear-gradient(#41342b, #60342e, #41342b);
 }
-
 img {
   width: 100%;
   vertical-align: bottom;
@@ -56,6 +55,7 @@ h1 {
   background: white;
   display: none;
 }
+
 /* menu */
 .menubtn {
   z-index: 100;
@@ -124,7 +124,6 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
 .spmenu ul li {
   width: 40%;
   display: flex;
@@ -133,7 +132,6 @@ h1 {
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 .spmenu li a {
   color: white;
   text-align: center;
@@ -232,7 +230,6 @@ nav .spmenu li:nth-child(10) {
   .spmenu ul li {
     height: 10px 0px;
   }
-
   .spmenu li:nth-child(9) {
     width: 100%;
   }
@@ -397,6 +394,7 @@ nav .spmenu li:nth-child(10) {
 .border {
   border-bottom: 1px dashed white;
 }
+
 /* hero*/
 .hero {
   position: relative;
@@ -460,7 +458,6 @@ nav .spmenu li:nth-child(10) {
   padding-top: 20%;
   position: relative;
 }
-
 .info-container {
   width: 95%;
   margin: auto;
@@ -553,6 +550,7 @@ nav .spmenu li:nth-child(10) {
     border-radius: 8px;
   }
 }
+
 /* drink */
 #drink {
   padding-top: 20%;
@@ -619,7 +617,6 @@ nav .spmenu li:nth-child(10) {
   margin-bottom: 2%;
   margin-left: 2%;
 }
-
 @media screen and (min-width: 768px) {
   #drink {
     padding-top: 15%;
@@ -642,7 +639,6 @@ nav .spmenu li:nth-child(10) {
   .drink-menu .container {
     margin: 0;
   }
-
   .drink-menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -652,7 +648,6 @@ nav .spmenu li:nth-child(10) {
   .drink-menu .container .square div {
     font-size: 1.2rem;
   }
-
   .drink-menu .container:last-of-type::after {
     bottom: -20px;
     left: 0px;
@@ -662,12 +657,12 @@ nav .spmenu li:nth-child(10) {
     display: none;
   }
 }
+
 /* food */
 #food {
   padding-top: 20%;
   margin: 5%;
 }
-
 .food-menu .container .square {
   width: 40%;
   padding-top: 29%;
@@ -725,7 +720,6 @@ nav .spmenu li:nth-child(10) {
   margin-bottom: 2%;
   margin-right: 2%;
 }
-
 @media screen and (min-width: 768px) {
   #food {
     padding-top: 15%;
@@ -756,7 +750,6 @@ nav .spmenu li:nth-child(10) {
     gap: 2%;
     margin-top: 5%;
   }
-
   .food-menu .container .square div {
     font-size: 1.2rem;
   }
@@ -781,7 +774,6 @@ nav .spmenu li:nth-child(10) {
   margin: auto;
   order: 2;
 }
-
 #map-sepia {
   width: 100%;
   filter: sepia(100%);

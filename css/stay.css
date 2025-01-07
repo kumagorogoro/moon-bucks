@@ -1,4 +1,4 @@
-/* reset */
+@charset "utf-8";
 * {
   margin: 0;
   padding: 0;
@@ -8,28 +8,27 @@
 }
 body {
   background: linear-gradient(#41342b, #60342e, #41342b);
-
-  img {
-    width: 100%;
-    vertical-align: bottom;
-  }
-  h1 {
-    font-family: "dolly-small-caps-new", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 3rem;
-  }
-  .wrapper {
-    width: 90%;
-    margin: auto;
-    position: relative;
-    max-width: 1200px;
-    color: white;
-    font-family: "Klee One", cursive;
-    font-weight: 400;
-    font-style: normal;
-    overflow-x: hidden;
-  }
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+h1 {
+  font-family: "dolly-small-caps-new", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+}
+.wrapper {
+  width: 90%;
+  margin: auto;
+  position: relative;
+  max-width: 1200px;
+  color: white;
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
 }
 @media screen and (min-width: 768px) {
   .wrapper {
@@ -45,6 +44,7 @@ body {
     width: 95%;
   }
 }
+
 /* menu */
 .menubtn {
   z-index: 100;
@@ -113,7 +113,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .spmenu ul li {
   width: 40%;
   display: flex;
@@ -122,7 +121,6 @@ body {
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 .spmenu li a {
   color: white;
   text-align: center;
@@ -221,7 +219,6 @@ nav .spmenu li:nth-child(10) {
   .spmenu ul li {
     height: 10px 0px;
   }
-
   .spmenu li:nth-child(9) {
     width: 100%;
   }
@@ -381,6 +378,7 @@ nav .spmenu li:nth-child(10) {
     border-radius: 8px;
   }
 }
+
 /* main */
 .loading {
   position: fixed;
@@ -389,7 +387,6 @@ nav .spmenu li:nth-child(10) {
   width: 100vw;
   height: 100%;
 }
-/* .loading-setの非表示処理 */
 .loading-set {
   font-size: 16px;
   text-align: center;
@@ -398,11 +395,9 @@ nav .spmenu li:nth-child(10) {
 .cloud {
   filter: sepia(70%);
 }
-
 .display-none {
   display: none;
 }
-
 .steam {
   position: fixed;
   width: 100vw;
@@ -412,7 +407,6 @@ nav .spmenu li:nth-child(10) {
   z-index: 10;
   animation: fadeOut2 3s ease-in-out;
 }
-
 @keyframes fadeOut2 {
   0% {
     opacity: 1;
@@ -441,9 +435,8 @@ nav .spmenu li:nth-child(10) {
   transition: all 0.5s;
   z-index: 999;
   opacity: 1;
-  transition: opacity 1s ease-out; /* 透明度の変更をトランジションで制御 */
+  transition: opacity 1s ease-out; 
 }
-/*エフェクト*/
 .loading-anime {
   color: black;
 }
@@ -461,8 +454,6 @@ nav .spmenu li:nth-child(10) {
   color: white;
   font-size: 1.2rem;
 }
-
-/*ローディング完了後に非表示にする*/
 .loading-loadup {
   opacity: 0;
   visibility: hidden;
@@ -478,22 +469,18 @@ nav .spmenu li:nth-child(10) {
     visibility: hidden;
   }
 }
-
 :root {
   --duration-base: 0.15s;
 }
-
 ruby,
 rt {
   display: inline-block;
   font-size: 1.2rem;
   color: white;
 }
-
 .cursor {
   font-size: 0;
 }
-
 .cursor::after {
   display: inline-block;
   width: 1px;
@@ -533,7 +520,6 @@ rt {
   line-height: 1;
   vertical-align: middle;
 }
-
 .text rt {
   width: 0;
   height: 1em;
@@ -542,45 +528,38 @@ rt {
   vertical-align: middle;
   text-decoration: underline;
 }
-
 .moji > span {
   width: 2em;
   animation: henkan step-end;
   animation-duration: calc((2 + 1) * var(--duration-base));
 }
-
 .moji rt {
   animation: moji steps(2), moji-hide step-end;
   animation-duration: calc((2 + 1) * var(--duration-base)), var(--duration-base);
   animation-delay: 0s, calc(2 * var(--duration-base));
 }
-
 .nyuryoku > span {
   width: 6em;
   animation: henkan step-end;
   animation-duration: calc((6 + 1 + 2 + 1) * var(--duration-base));
 }
-
 .nyuryoku rt {
   animation: nyuryoku steps(6), nyuryoku-hide step-end;
   animation-duration: calc((6 + 1) * var(--duration-base)), var(--duration-base);
   animation-delay: calc((2 + 1) * var(--duration-base)),
     calc((6 + 2 + 1) * var(--duration-base));
 }
-
 .fu > span {
   width: 2em;
   animation: henkan step-end;
   animation-duration: calc((2 + 1 + 6 + 1 + 2 + 1) * var(--duration-base));
 }
-
 .fu rt {
   animation: fu steps(2), fu-hide step-end;
   animation-duration: calc((2 + 1) * var(--duration-base)), var(--duration-base);
   animation-delay: calc((6 + 1 + 2 + 1) * var(--duration-base)),
     calc((2 + 6 + 1 + 2 + 1) * var(--duration-base));
 }
-
 .animation > span {
   width: 7em;
   animation: henkan step-end;
@@ -588,69 +567,58 @@ rt {
     (7 + 1 + 2 + 1 + 6 + 1 + 2 + 1) * var(--duration-base)
   );
 }
-
 .animation rt {
   animation: animation steps(7), animation-hide step-end;
   animation-duration: calc((7 + 1) * var(--duration-base)), var(--duration-base);
   animation-delay: calc((2 + 1 + 6 + 1 + 2 + 1) * var(--duration-base)),
     calc((7 + 2 + 1 + 6 + 1 + 2 + 1) * var(--duration-base));
 }
-
 @keyframes moji {
   to {
     width: 2em;
   }
 }
-
 @keyframes moji-hide {
   from {
     width: 2em;
   }
 }
-
 @keyframes nyuryoku {
   to {
     width: 6em;
   }
 }
-
 @keyframes nyuryoku-hide {
   from {
     width: 6em;
   }
 }
-
 @keyframes fu {
   to {
     width: 2em;
   }
 }
-
 @keyframes fu-hide {
   from {
     width: 2em;
   }
 }
-
 @keyframes animation {
   to {
     width: 7em;
   }
 }
-
 @keyframes animation-hide {
   from {
     width: 7em;
   }
 }
-
 @keyframes henkan {
   from {
     position: absolute;
     left: -10000px;
   }
 }
-
 @keyframes caret {
   50% {
     background: transparent;
@@ -706,6 +674,7 @@ rt {
     left: 50%;
   }
 }
+
 /* room */
 #roomfood-container {
   padding-top: 50px;
@@ -764,6 +733,7 @@ rt {
     transform: translateY(0);
   }
 }
+
 /* food */
 #stayfood {
   display: flex;
@@ -787,7 +757,6 @@ rt {
   min-width: 200px;
   order: 1;
 }
-
 @media screen and (min-width: 768px) {
   #stayfood {
     width: 95%;
@@ -912,6 +881,7 @@ rt {
     gap: 1%;
   }
 }
+
 /* price */
 #price {
   width: 90%;
@@ -996,6 +966,7 @@ table {
     font-size: 2.5rem;
   }
 }
+
 /* footer */
 footer {
   margin-top: 5%;
@@ -1025,7 +996,6 @@ footer div p {
   color: white;
   font-size: 0.5rem;
 }
-
 @media screen and (min-width: 768px) {
   footer {
     margin-top: 0;

@@ -1,5 +1,4 @@
 @charset "utf-8";
-/* reset */
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +36,6 @@ ul {
     width: 90%;
   }
 }
-
 .topback {
   position: fixed;
   bottom: 10%;
@@ -45,6 +43,7 @@ ul {
   font-size: 2em;
   color: white;
 }
+
 /* menu */
 .menubtn {
   z-index: 100;
@@ -113,7 +112,6 @@ ul {
   justify-content: center;
   align-items: center;
 }
-
 .spmenu ul li {
   width: 40%;
   display: flex;
@@ -122,7 +120,6 @@ ul {
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 .spmenu li a {
   color: white;
   text-align: center;
@@ -207,7 +204,6 @@ nav .spmenu li:nth-child(10) {
   .spmenu ul li {
     height: 10px 0px;
   }
-
   .spmenu li:nth-child(9) {
     width: 100%;
   }
@@ -357,6 +353,7 @@ nav .spmenu li:nth-child(10) {
     border-radius: 50%;
   }
 }
+
 /* main */
 main {
   width: 90%;
@@ -418,7 +415,6 @@ fieldset:nth-of-type(1) {
 fieldset:nth-of-type(2) {
   gap: 60px;
 }
-
 fieldset:nth-of-type(1) div {
   display: flex;
   flex-direction: column;
@@ -438,7 +434,6 @@ fieldset div label {
   width: 30%;
   position: relative;
 }
-
 fieldset div label input {
   margin: auto;
 }
@@ -447,7 +442,6 @@ fieldset div label input {
   width: 70%;
   text-align: center;
 }
-
 textarea {
   height: 25px;
   border-radius: 4px;
@@ -473,7 +467,6 @@ textarea {
   margin: auto;
   font-size: 0.8rem;
 }
-
 #submit-btn {
   display: block;
   width: 90%;
@@ -522,7 +515,6 @@ textarea {
     font-size: 1.5rem;
   }
 }
-
 @media screen and (min-width: 1024px) {
   main h1 {
     padding-top: 25%;
@@ -535,21 +527,13 @@ textarea {
   select {
     height: 40px;
   }
-
   form div label {
     display: flex;
     align-items: center;
     margin: 0;
     line-height: 100%;
   }
-  #postal_code,
-  #prefecture,
-  #city,
-  #address,
-  #checkin,
-  #adults {
-    margin-bottom: 2%;
-  }
+
   .pwidth {
     width: 40%;
   }
@@ -560,7 +544,6 @@ textarea {
   #agree {
     width: 10%;
   }
-
   #confirmationMessage {
     font-size: 2rem;
   }
@@ -568,6 +551,7 @@ textarea {
     margin-top: 100px;
   }
 }
+
 /* footer */
 footer {
   margin-top: 5%;
