@@ -34,7 +34,7 @@ const navbar = document.querySelector("nav");
 let isScrollEnabled = true;
 window.addEventListener("scroll", function () {
   if (!isScrollEnabled) return;
-  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  let currentScroll = window.scrollY || document.documentElement.scrollTop;
   if (currentScroll > lastScrollTop) {
     navbar.style.top = "-150px";
   } else {
@@ -73,7 +73,6 @@ window.onload = function () {
   setTimeout(function () {
     const loadingLoadup = document.getElementById("loading");
     loadingLoadup.classList.add("loading-loadup");
-    loadingLoadup.classList.add("loading-set");
     const steamDiv = document.querySelector("#steam");
     steamDiv.classList.remove("display-none");
   }, 4000);
@@ -112,25 +111,5 @@ window.addEventListener("scroll", function () {
     });
   }
 });
-function handleScroll() {
-  if (window.innerWidth >= 2048) {
-    const elements = [
-      { id: "room", elementClass: "visible" },
-      { id: "food-container", elementClass: "visible" },
-    ];
-    elements.forEach(function ({ id, elementClass }) {
-      const element = document.getElementById(id);
-      if (element) {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (elementPosition < windowHeight) {
-          element.classList.add(elementClass);
-        } else {
-          element.classList.remove(elementClass);
-        }
-      }
-    });
-  }
-}
-document.addEventListener("DOMContentLoaded", handleScroll);
-window.addEventListener("scroll", handleScroll);
+
+

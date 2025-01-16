@@ -78,7 +78,7 @@ const navbar = document.querySelector("nav");
 let isScrollEnabled = true;
 window.addEventListener("scroll", function () {
   if (!isScrollEnabled) return;
-  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  let currentScroll = window.scrollY || document.documentElement.scrollTop;
   if (currentScroll > lastScrollTop) {
     navbar.style.top = "-150px";
   } else {
@@ -113,7 +113,7 @@ window.addEventListener("mousemove", function (event) {
 });
 window.addEventListener("scroll", function () {
   const currentScroll =
-    window.pageYOffset || document.documentElement.scrollTop;
+     window.scrollY|| document.documentElement.scrollTop;
   if (currentScroll <= 50) {
     navbar.style.top = "0";
   }
