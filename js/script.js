@@ -112,8 +112,7 @@ window.addEventListener("mousemove", function (event) {
   }
 });
 window.addEventListener("scroll", function () {
-  const currentScroll =
-     window.scrollY|| document.documentElement.scrollTop;
+  const currentScroll = window.scrollY || document.documentElement.scrollTop;
   if (currentScroll <= 50) {
     navbar.style.top = "0";
   }
@@ -128,3 +127,4 @@ function showNextFrame() {
   currentFrame = (currentFrame + 1) % totalFrames;
   frames[currentFrame].style.display = "block";
 }
+setInterval(showNextFrame, 150);
