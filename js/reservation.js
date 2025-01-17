@@ -32,12 +32,12 @@ links.forEach(function (link) {
 });
 
 // pc-nav
-let lastScrollTop = 0;
+const lastScrollTop = 0;
 const navbar = document.querySelector("nav");
-let isScrollEnabled = true;
+const isScrollEnabled = true;
 window.addEventListener("scroll", function () {
   if (!isScrollEnabled) return;
-  let currentScroll = window.scrollY || document.documentElement.scrollTop;
+  const currentScroll = window.scrollY || document.documentElement.scrollTop;
   if (currentScroll > lastScrollTop) {
     navbar.style.top = "-150px";
   } else {
@@ -71,8 +71,7 @@ window.addEventListener("mousemove", function (event) {
   }
 });
 window.addEventListener("scroll", function () {
-  const currentScroll =
-    window.pageYOffset || document.documentElement.scrollTop;
+  const currentScroll = window.scrollY || document.documentElement.scrollTop;
   if (currentScroll <= 50) {
     navbar.style.top = "0";
   }
@@ -106,150 +105,131 @@ function toggleMealOptions() {
   }
 }
 
-document
-  .getElementById("reservationForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    var errorSpans = document.querySelectorAll(".error-mark");
-    errorSpans.forEach(function (span) {
-      span.textContent = "";
-    });
-    const errors = [];
-    var name = document.getElementById("name").value;
-    if (!name) {
-      document.getElementById("nameError").textContent = "名前は必須です。";
-      errors.push("名前は必須です。");
-    }
-    var postalCode = document.getElementById("postal_code").value;
-    if (!postalCode) {
-      document.getElementById("postalCodeError").textContent =
-        "郵便番号は必須です。";
-      errors.push("郵便番号は必須です。");
-    } else if (!/^\d{3}-\d{4}$/.test(postalCode)) {
-      document.getElementById("postalCodeError").textContent =
-        "郵便番号は正しい形式で入力してください（例: 123-4567）。";
-      errors.push("郵便番号は正しい形式で入力してください（例: 123-4567）。");
-    }
-    var prefecture = document.getElementById("prefecture").value;
-    if (!prefecture) {
-      document.getElementById("prefectureError").textContent =
-        "都道府県は必須です。";
-      errors.push("都道府県は必須です。");
-    }
-    var city = document.getElementById("city").value;
-    if (!city) {
-      document.getElementById("cityError").textContent = "市区町村は必須です。";
-      errors.push("市区町村は必須です。");
-    }
-    var address = document.getElementById("address").value;
-    if (!address) {
-      document.getElementById("addressError").textContent =
-        "番地・建物名は必須です。";
-      errors.push("番地・建物名は必須です。");
-    }
-    var email = document.getElementById("email").value;
-    if (!email) {
-      document.getElementById("emailError").textContent =
-        "メールアドレスは必須です。";
-      errors.push("メールアドレスは必須です。");
-    } else if (
-      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
-    ) {
-      document.getElementById("emailError").textContent =
-        "正しい形式でメールアドレスを入力してください。";
-      errors.push("正しい形式でメールアドレスを入力してください。");
-    }
-    var phone = document.getElementById("phone").value;
-    if (!phone) {
-      document.getElementById("phoneError").textContent =
-        "電話番号は必須です。";
-      errors.push("電話番号は必須です。");
-    }
-    var checkin = document.getElementById("checkin").value;
-    if (!checkin) {
-      document.getElementById("checkinError").textContent =
-        "チェックイン日時は必須です。";
-      errors.push("チェックイン日時は必須です。");
-    } else {
-      var checkinDate = new Date(checkin);
-      var checkinHour = checkinDate.getHours();
-      if (checkinHour < 15 || checkinHour > 19) {
-        document.getElementById("checkinError").textContent =
-          "チェックインは15:00〜19:00です。";
-        errors.push("チェックインは15:00〜19:00です。");
-      }
-    }
-    var checkout = document.getElementById("checkout").value;
-    if (!checkout) {
-      document.getElementById("checkoutError").textContent =
-        "チェックアウト日時は必須です。";
-      errors.push("チェックアウト日時は必須です。");
-    } else {
-      var checkinDate = new Date(document.getElementById("checkin").value);
-      var checkoutDate = new Date(checkout);
-      if (checkoutDate.getTime() <= checkinDate.getTime()) {
-        document.getElementById("checkoutError").textContent =
-          "チェックアウト日時はチェックイン日時以降をご指定ください。";
-        errors.push(
-          "チェックアウト日時はチェックイン日時以降をご指定ください。"
-        );
-      } else if (checkoutDate.getHours() > 10) {
-        document.getElementById("checkoutError").textContent =
-          "チェックアウトは～10:00までです。";
-        errors.push("チェックアウトは～10:00までです。");
-      }
-    }
-    var adults = document.getElementById("adults").value;
-    if (!adults) {
-      document.getElementById("adultsError").textContent =
-        "大人の人数は必須です。";
-      errors.push("大人の人数は必須です。");
-    }
-    var children = document.getElementById("children").value;
-    if (!children) {
-      document.getElementById("childrenError").textContent =
-        "子どもの人数は必須です。";
-      errors.push("子どもの人数は必須です。");
-    }
-    function toggleMealOptions() {
-      const plan = document.querySelector('input[name="plan"]:checked').value;
-      const dinnerCheckbox = document.getElementById("dinner");
-      const breakfastCheckbox = document.getElementById("breakfast");
-      if (plan === "with_meal") {
-        dinnerCheckbox.disabled = false;
-        breakfastCheckbox.disabled = false;
-      } else {
-        dinnerCheckbox.disabled = true;
-        breakfastCheckbox.disabled = true;
-        dinnerCheckbox.checked = false;
-        breakfastCheckbox.checked = false;
-      }
-    }
-    function validateMealSelection() {
-      const plan = document.querySelector('input[name="plan"]:checked').value;
-      if (plan === "with_meal") {
-        const mealCheckboxes = document.querySelectorAll(
-          'input[name="meal[]"]:checked'
-        );
-        if (mealCheckboxes.length === 0) {
-          document.getElementById("mealError").textContent =
-            "食事内容（夕食または朝食）を選択してください。";
-          return false;
-        } else {
-          document.getElementById("mealError").textContent = "";
-          return true; // 正常
-        }
-      }
-      return true;
-    }
-    window.addEventListener("load", function () {
-      toggleMealOptions();
-    });
-    const confirmationMessage = document.getElementById("confirmationMessage");
-    if (errors.length === 0) {
-      confirmationMessage.style.display = "block";
-    }
+const reservationForm = document.getElementById("reservationForm");
+reservationForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const errorSpans = document.querySelectorAll(".error-mark");
+  errorSpans.forEach(function (span) {
+    span.textContent = "";
   });
+  const errors = [];
+  const name = document.getElementById("name").value;
+  if (!name) {
+    document.getElementById("nameError").textContent = "名前は必須です。";
+    errors.push("名前は必須です。");
+  }
+  const postalCode = document.getElementById("postal_code").value;
+  if (!postalCode) {
+    document.getElementById("postalCodeError").textContent =
+      "郵便番号は必須です。";
+    errors.push("郵便番号は必須です。");
+  } else if (!/^\d{3}-\d{4}$/.test(postalCode)) {
+    document.getElementById("postalCodeError").textContent =
+      "郵便番号は正しい形式で入力してください（例: 123-4567）。";
+    errors.push("郵便番号は正しい形式で入力してください（例: 123-4567）。");
+  }
+  const prefecture = document.getElementById("prefecture").value;
+  if (!prefecture) {
+    document.getElementById("prefectureError").textContent =
+      "都道府県は必須です。";
+    errors.push("都道府県は必須です。");
+  }
+  const city = document.getElementById("city").value;
+  if (!city) {
+    document.getElementById("cityError").textContent = "市区町村は必須です。";
+    errors.push("市区町村は必須です。");
+  }
+  const address = document.getElementById("address").value;
+  if (!address) {
+    document.getElementById("addressError").textContent =
+      "番地・建物名は必須です。";
+    errors.push("番地・建物名は必須です。");
+  }
+  const email = document.getElementById("email").value;
+  if (!email) {
+    document.getElementById("emailError").textContent =
+      "メールアドレスは必須です。";
+    errors.push("メールアドレスは必須です。");
+  } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+    document.getElementById("emailError").textContent =
+      "正しい形式でメールアドレスを入力してください。";
+    errors.push("正しい形式でメールアドレスを入力してください。");
+  }
+  const phone = document.getElementById("phone").value;
+  if (!phone) {
+    document.getElementById("phoneError").textContent = "電話番号は必須です。";
+    errors.push("電話番号は必須です。");
+  }
+  const checkin = document.getElementById("checkin").value;
+  if (!checkin) {
+    document.getElementById("checkinError").textContent =
+      "チェックイン日時は必須です。";
+    errors.push("チェックイン日時は必須です。");
+  } else {
+    const checkinDate = new Date(checkin);
+    const checkinHour = checkinDate.getHours();
+    if (checkinHour < 15 || checkinHour > 19) {
+      document.getElementById("checkinError").textContent =
+        "チェックインは15:00〜19:00です。";
+      errors.push("チェックインは15:00〜19:00です。");
+    }
+  }
+  const checkout = document.getElementById("checkout").value;
+  if (!checkout) {
+    document.getElementById("checkoutError").textContent =
+      "チェックアウト日時は必須です。";
+    errors.push("チェックアウト日時は必須です。");
+  } else {
+    const checkinDate = new Date(document.getElementById("checkin").value);
+    const checkoutDate = new Date(checkout);
+    if (checkoutDate.getTime() <= checkinDate.getTime()) {
+      document.getElementById("checkoutError").textContent =
+        "チェックアウト日時はチェックイン日時以降をご指定ください。";
+      errors.push("チェックアウト日時はチェックイン日時以降をご指定ください。");
+    } else if (checkoutDate.getHours() > 10) {
+      document.getElementById("checkoutError").textContent =
+        "チェックアウトは～10:00までです。";
+      errors.push("チェックアウトは～10:00までです。");
+    }
+  }
+  const adults = document.getElementById("adults").value;
+  if (!adults) {
+    document.getElementById("adultsError").textContent =
+      "大人の人数は必須です。";
+    errors.push("大人の人数は必須です。");
+  }
+  const children = document.getElementById("children").value;
+  if (!children) {
+    document.getElementById("childrenError").textContent =
+      "子どもの人数は必須です。";
+    errors.push("子どもの人数は必須です。");
+  }
+
+  function toggleMealOptions() {
+    const plan = document.querySelector('input[name="plan"]:checked').value;
+    const dinnerCheckbox = document.getElementById("dinner");
+    const breakfastCheckbox = document.getElementById("breakfast");
+    if (plan === "with_meal") {
+      dinnerCheckbox.disabled = false;
+      breakfastCheckbox.disabled = false;
+    } else {
+      dinnerCheckbox.disabled = true;
+      breakfastCheckbox.disabled = true;
+      dinnerCheckbox.checked = false;
+      breakfastCheckbox.checked = false;
+    }
+  }
+  window.addEventListener("load", function () {
+    toggleMealOptions();
+  });
+
+  const confirmationMessage = document.getElementById("confirmationMessage");
+  if (errors.length === 0) {
+    confirmationMessage.style.display = "block";
+  }
+});
+
+// 郵便番号での住所情報の取得
 function fetchAddressFromPostalCode() {
   const postalCode = document.getElementById("postal_code").value;
   if (!/^\d{3}-\d{4}$/.test(postalCode)) return;
