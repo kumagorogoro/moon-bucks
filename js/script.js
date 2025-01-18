@@ -46,7 +46,6 @@ function change() {
 }
 adjustImagesBasedOnWidth();
 window.addEventListener("resize", adjustImagesBasedOnWidth);
-setInterval(change, 5000);
 function adjustImagesBasedOnWidth() {
   const cafeImg = images[0];
   if (window.innerWidth <= 767) {
