@@ -24,20 +24,12 @@ window.addEventListener("click", function (e) {
     menu.classList.remove("show");
   }
 });
-
-links.forEach(function (link) {
-  link.addEventListener("click", function () {
-    menu.classList.remove("show");
-  });
-});
-
 // pc-nav
-const lastScrollTop = 0;
+let lastScrollTop = 0;
 const navbar = document.querySelector("nav");
-const isScrollEnabled = true;
+
 window.addEventListener("scroll", function () {
-  if (!isScrollEnabled) return;
-  const currentScroll = window.scrollY || document.documentElement.scrollTop;
+  let currentScroll = window.scrollY || document.documentElement.scrollTop;
   if (currentScroll > lastScrollTop) {
     navbar.style.top = "-150px";
   } else {
@@ -45,25 +37,20 @@ window.addEventListener("scroll", function () {
   }
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
+
 const navLinks = document.querySelectorAll("nav ul li a");
 navLinks.forEach((link) => {
-  link.addEventListener("click", function (event) {
-    if (link.textContent === "Top") {
-      return;
-    } else if (link.textContent === "Cafe") {
+  link.addEventListener("click", function () {
+    if (link.textContent === "Cafe") {
       return;
     } else if (link.textContent === "Stay") {
       return;
-    }
-    isScrollEnabled = false;
-    Promise.resolve().then(() => {
+    } else {
       navbar.style.top = "-150px";
-      setTimeout(() => {
-        isScrollEnabled = true;
-      }, 100);
-    });
+    }
   });
 });
+
 window.addEventListener("mousemove", function (event) {
   const mouseY = event.clientY;
   if (mouseY < 50) {

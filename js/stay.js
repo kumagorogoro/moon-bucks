@@ -24,16 +24,12 @@ window.addEventListener("click", function (e) {
     menu.classList.remove("show");
   }
 });
-links.forEach(function (link) {
-  link.addEventListener("click", function () {
-    menu.classList.remove("show");
-  });
-});
+
+// pc-nav
 let lastScrollTop = 0;
 const navbar = document.querySelector("nav");
-let isScrollEnabled = true;
+
 window.addEventListener("scroll", function () {
-  if (!isScrollEnabled) return;
   let currentScroll = window.scrollY || document.documentElement.scrollTop;
   if (currentScroll > lastScrollTop) {
     navbar.style.top = "-150px";
@@ -43,22 +39,16 @@ window.addEventListener("scroll", function () {
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
 
-// pc-nav
 const navLinks = document.querySelectorAll("nav ul li a");
 navLinks.forEach((link) => {
-  link.addEventListener("click", function (event) {
-    if (link.textContent === "Stay") {
+  link.addEventListener("click", function () {
+    if (link.textContent === "Cafe") {
       return;
-    } else if (link.textContent === "Cafe") {
+    } else if (link.textContent === "Stay") {
       return;
-    }
-    isScrollEnabled = false;
-    Promise.resolve().then(() => {
+    } else {
       navbar.style.top = "-150px";
-      setTimeout(() => {
-        isScrollEnabled = true;
-      }, 100);
-    });
+    }
   });
 });
 window.addEventListener("mousemove", function (event) {
@@ -111,5 +101,3 @@ window.addEventListener("scroll", function () {
     });
   }
 });
-
-
