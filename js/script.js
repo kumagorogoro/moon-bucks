@@ -74,9 +74,8 @@ btn.addEventListener("click", function () {
 // pc-nav
 let lastScrollTop = 0;
 const navbar = document.querySelector("nav");
-let isScrollEnabled = true;
+
 window.addEventListener("scroll", function () {
-  if (!isScrollEnabled) return;
   let currentScroll = window.scrollY || document.documentElement.scrollTop;
   if (currentScroll > lastScrollTop) {
     navbar.style.top = "-150px";
@@ -88,18 +87,16 @@ window.addEventListener("scroll", function () {
 
 const navLinks = document.querySelectorAll("nav ul li a");
 navLinks.forEach((link) => {
-  link.addEventListener("click", function (event) {
+  link.addEventListener("click", function () {
     if (link.textContent === "Cafe") {
       return;
     } else if (link.textContent === "Stay") {
       return;
     }
-    isScrollEnabled = false;
+
     Promise.resolve().then(() => {
       navbar.style.top = "-150px";
-      setTimeout(() => {
-        isScrollEnabled = true;
-      }, 100);
+      setTimeout(() => {}, 100);
     });
   });
 });
