@@ -92,12 +92,9 @@ navLinks.forEach((link) => {
       return;
     } else if (link.textContent === "Stay") {
       return;
-    }
-
-    Promise.resolve().then(() => {
+    } else {
       navbar.style.top = "-150px";
-      setTimeout(() => {}, 100);
-    });
+    }
   });
 });
 
