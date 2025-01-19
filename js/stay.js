@@ -90,14 +90,12 @@ window.addEventListener("scroll", function () {
     ];
     elements.forEach(function ({ id, elementClass }) {
       const element = document.getElementById(id);
-      if (element) {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (elementPosition < windowHeight) {
-          element.classList.add(elementClass);
-        } else {
-          element.classList.remove(elementClass);
-        }
+      const elementPosition = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (elementPosition < windowHeight) {
+        element.classList.add(elementClass);
+      } else {
+        element.classList.remove(elementClass);
       }
     });
   }
