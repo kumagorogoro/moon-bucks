@@ -60,14 +60,14 @@ window.addEventListener("mousemove", function (event) {
 });
 
 // ローディング画面
-window.onload = function () {
+window.addEventListener("load", function () {
   setTimeout(function () {
     const loadingLoadup = document.getElementById("loading");
     loadingLoadup.classList.add("loading-loadup");
     const steamDiv = document.querySelector("#steam");
     steamDiv.classList.remove("display-none");
   }, 4000);
-};
+});
 const loadingLoadup = document.getElementById("loading");
 loadingLoadup.addEventListener("click", function () {
   const steamDiv = document.querySelector("#steam");
