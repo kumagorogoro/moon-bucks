@@ -1,5 +1,4 @@
 // form
-// load
 window.addEventListener("load", function () {
   toggleMealOptions();
 });
@@ -13,21 +12,6 @@ agreeCheckbox.addEventListener("change", () => {
     submitBtn.disabled = true;
   }
 });
-
-function toggleMealOptions() {
-  const plan = document.querySelector('input[name="plan"]:checked').value;
-  const dinnerCheckbox = document.getElementById("dinner");
-  const breakfastCheckbox = document.getElementById("breakfast");
-  if (plan === "no_meal") {
-    dinnerCheckbox.disabled = true;
-    breakfastCheckbox.disabled = true;
-    dinnerCheckbox.checked = false;
-    breakfastCheckbox.checked = false;
-  } else {
-    dinnerCheckbox.disabled = false;
-    breakfastCheckbox.disabled = false;
-  }
-}
 
 const reservationForm = document.getElementById("reservationForm");
 reservationForm.addEventListener("submit", function (event) {
@@ -99,7 +83,8 @@ reservationForm.addEventListener("submit", function (event) {
     noMeal.checked === true &&
     (dinnerCheckbox === true || breakfastCheckbox === true)
   ) {
-    document.getElementById("nomealError").textContent = "素泊まりは食事の選択ができません。";
+    document.getElementById("nomealError").textContent =
+      "素泊まりは食事の選択ができません。";
     errors.push("素泊まりは食事の選択ができません。");
   }
 
@@ -109,7 +94,8 @@ reservationForm.addEventListener("submit", function (event) {
     dinnerCheckbox === false &&
     breakfastCheckbox === false
   ) {
-    document.getElementById("withmealError").textContent = "お食事を選択してください。";
+    document.getElementById("withmealError").textContent =
+      "お食事を選択してください。";
     errors.push("お食事を選択してください。");
   }
 
