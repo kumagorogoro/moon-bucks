@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="scss/style.css" />
     <link rel="icon" href="img/favicon.svg" alt="favicon画像" />
     <script src="js/reservation.js" defer></script>
+    <script src="js/menu.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -212,26 +213,17 @@
               <legend>宿泊プラン*</legend>
               <div>
                 <label>
-                  <input
-                    type="radio"
-                    name="plan"
-                    value="no_meal"
-                    onclick="toggleMealOptions()"
-                    checked
-                  />
+                  <input type="radio" name="plan" value="no_meal" checked />
                 </label>
                 <p class="pwidth">素泊まり</p>
+                <span id="nomealError" class="error-mark"></span>
               </div>
               <div>
                 <label>
-                  <input
-                    type="radio"
-                    name="plan"
-                    value="with_meal"
-                    onclick="toggleMealOptions()"
-                  />
+                  <input type="radio" name="plan" value="with_meal" />
                 </label>
                 <p class="pwidth">食事付き</p>
+                <span id="withmealError" class="error-mark"></span>
               </div>
             </fieldset>
             <fieldset>
@@ -244,7 +236,6 @@
                     id="dinner"
                     value="dinner"
                     disabled
-                    checked
                 /></label>
                 <p class="pwidth">夕食</p>
               </div>
@@ -256,7 +247,6 @@
                     id="breakfast"
                     value="breakfast"
                     disabled
-                    checked
                 /></label>
                 <p class="pwidth">朝食</p>
               </div>
@@ -301,7 +291,6 @@
               type="submit"
               value="送信"
               class="submit"
-              onclick="validateForm(event)"
               class="submit-btn"
               id="submit-btn"
               disabled
@@ -327,6 +316,5 @@
         <div class="particle particle-4"></div>
       </div>
     </div>
-    <script src="js/reservation.js"></script>
   </body>
 </html>
