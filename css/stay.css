@@ -492,30 +492,6 @@ rt {
   content: "";
   animation: caret calc(var(--duration-base) * 2) step-end infinite;
 }
-@media screen and (min-width: 768px) {
-  .steam {
-    height: 250%;
-  }
-  ruby,
-  rt {
-    font-size: 2rem;
-  }
-  .cursor::after {
-    height: 2rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .steam {
-    height: 500%;
-  }
-  ruby,
-  rt {
-    font-size: 2.5rem;
-  }
-  .cursir::after {
-    height: 2rem;
-  }
-}
 .text {
   overflow: hidden;
 }
@@ -625,6 +601,30 @@ rt {
 @keyframes caret {
   50% {
     background: transparent;
+  }
+}
+@media screen and (min-width: 768px) {
+  .steam {
+    height: 250%;
+  }
+  ruby,
+  rt {
+    font-size: 2rem;
+  }
+  .cursor::after {
+    height: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .steam {
+    height: 500%;
+  }
+  ruby,
+  rt {
+    font-size: 2.5rem;
+  }
+  .cursir::after {
+    height: 2rem;
   }
 }
 
