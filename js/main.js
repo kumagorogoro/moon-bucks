@@ -7,6 +7,8 @@ function change() {
   index = (index + 1) % images.length;
   images[index].classList.add("active");
 }
+
+// 写真の変更
 adjustImagesBasedOnWidth();
 window.addEventListener("resize", adjustImagesBasedOnWidth);
 function adjustImagesBasedOnWidth() {

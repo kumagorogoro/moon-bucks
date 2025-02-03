@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
 
 const agreeCheckbox = document.getElementById("agree");
 const submitBtn = document.getElementById("submit-btn");
-agreeCheckbox.addEventListener("change", () => {
+agreeCheckbox.addEventListener("change", function () {
   if (agreeCheckbox.checked) {
     submitBtn.disabled = false;
   } else {
