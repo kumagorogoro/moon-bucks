@@ -154,13 +154,12 @@ reservationForm.addEventListener("submit", function (event) {
 
 const queryPlans = 'input[name="plan"]';
 const plans = document.querySelectorAll(queryPlans);
-plans.forEach((v) => {
+plans.forEach(function (v) {
   v.addEventListener("click", toggleMealOptions);
 });
 
 function toggleMealOptions() {
   const plan = document.querySelector('input[name="plan"]:checked');
-  if (!plan) return;
 
   const mealType = plan.value;
   const dinnerCheckbox = document.getElementById("dinner");
@@ -202,11 +201,5 @@ function fetchAddressFromPostalCode() {
     .catch((error) => {
       console.error("住所の取得エラー:", error);
       alert("住所情報の取得に失敗しました。");
-      const confirmationMessage = document.getElementById(
-        "confirmationMessage"
-      );
-      if (errors.length === 0) {
-        confirmationMessage.style.display = "block";
-      }
     });
 }
